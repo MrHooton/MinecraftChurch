@@ -1,0 +1,52 @@
+# Environment and configuration files (never commit these!)
+.env
+config.json
+config.yml
+config.js
+
+# Logs
+*.log
+logs/
+*.log.*
+
+# Node.js (if using Node.js)
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+
+# Python (if using Python)
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+*.egg-info/
+dist/
+build/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# SSL certificates (if storing locally)
+*.pem
+*.key
+*.crt
+*.cert
+
+# Temporary files
+*.tmp
+*.temp

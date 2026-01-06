@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS verification_codes (
     child_name VARCHAR(16) NOT NULL COMMENT 'Minecraft username of child',
     child_uuid VARCHAR(36) NULL COMMENT 'UUID of child player (optional, may be NULL for Bedrock)',
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT 'When code was generated',
-    expires_at TIMESTAMP NOT NULL COMMENT 'Code expiration time (15 minutes from creation)',
+    expires_at TIMESTAMP NOT NULL DEFAULT (DATE_ADD(CURRENT_TIMESTAMP, INTERVAL 15 MINUTE)) COMMENT 'Code expiration time (15 minutes from creation)',
     used_at TIMESTAMP NULL DEFAULT NULL COMMENT 'When code was used (NULL if unused)',
     used_by_email VARCHAR(255) NULL COMMENT 'Email of parent who used the code',
     used_ip VARCHAR(45) NULL COMMENT 'IP address of parent submission (IPv4 or IPv6)',

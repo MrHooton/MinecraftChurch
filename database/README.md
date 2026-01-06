@@ -6,6 +6,8 @@ This directory contains the MySQL database schema for the Minecraft Church serve
 
 - `schema.sql` - Complete database schema with all required tables
 - `setup.sql` - Database initialization script (creates database if needed)
+- `SCHEMA_REVIEW_GUIDE.md` - **Plain-language explanation** of what each table does (for client review)
+- `SCHEMA_VERIFICATION.md` - **Technical checklist** for verifying schema is correctly installed
 
 ## Database Requirements
 
@@ -126,6 +128,18 @@ DESCRIBE verification_requests;
 DESCRIBE access_grants;
 DESCRIBE known_players;
 ```
+
+## Documentation
+
+### For Client Review
+If you're reviewing the schema and want to understand what you're looking at:
+- 📖 **Read `SCHEMA_REVIEW_GUIDE.md`** - Plain-language explanation with real-world analogies
+- ✅ **Use `SCHEMA_VERIFICATION.md`** - Technical checklist to verify everything is correct
+
+### For Developers
+- This README provides overview and quick setup
+- `schema.sql` contains the complete database structure
+- `setup.sql` automates database creation
 
 ## Next Steps
 
