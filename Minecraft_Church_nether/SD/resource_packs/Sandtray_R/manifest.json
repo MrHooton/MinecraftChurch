@@ -1,0 +1,24 @@
+{
+	"format_version": 2,
+	"header": {
+		"name": "Sandtray_RP_v29",
+		"description": "Sandtray RP v29",
+		"uuid": "0073ce1e-0ed1-4087-9c8c-738d71dc307a",
+		"version": [29, 0, 0],
+		"min_engine_version": [1, 16, 0]
+	},
+	"metadata": {
+		"authors": ["otb"],
+		"generated_with": {
+			"blockbench_entity_wizard": ["1.4.0"]
+		}
+	},
+	"modules": [
+		{
+			"description": "Sandtray_RP_v29",
+			"type": "resources",
+			"uuid": "d708fafb-a536-427b-83f4-9b3296294cd6",
+			"version": [1, 0, 0]
+		}
+	]
+}

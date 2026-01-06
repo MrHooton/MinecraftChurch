@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 34,
+  "name": "vid",
+  "url": "https://static.wixstatic.com/media/d33f67_c673b356a3124b4ba41b53af5b642ca7~mv2.png",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755811339552,
+  "mapdata": [
+    {
+      "mapid": 376,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

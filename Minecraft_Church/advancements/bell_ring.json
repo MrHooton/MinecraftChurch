@@ -1,0 +1,13 @@
+{
+  "criteria": {
+    "bell": {
+      "trigger": "minecraft:player_interacted_with_block",
+      "conditions": {
+        "block": "minecraft:bell"
+      }
+    }
+  },
+  "rewards": {
+    "function": "singbowl:ring"
+  }
+}

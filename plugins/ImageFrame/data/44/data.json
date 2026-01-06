@@ -1,0 +1,119 @@
+{
+  "type": "imageframe:url_static",
+  "index": 44,
+  "name": "w0b",
+  "url": "https://static.wixstatic.com/media/d33f67_041e89fd2e89417f8f1a02f094e6ef25~mv2.png",
+  "width": 3,
+  "height": 7,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1757618236332,
+  "mapdata": [
+    {
+      "mapid": 400,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 401,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 402,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 403,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 404,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 405,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 406,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 407,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 408,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 409,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 410,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 411,
+      "image": "11.png",
+      "markers": []
+    },
+    {
+      "mapid": 412,
+      "image": "12.png",
+      "markers": []
+    },
+    {
+      "mapid": 413,
+      "image": "13.png",
+      "markers": []
+    },
+    {
+      "mapid": 414,
+      "image": "14.png",
+      "markers": []
+    },
+    {
+      "mapid": 415,
+      "image": "15.png",
+      "markers": []
+    },
+    {
+      "mapid": 416,
+      "image": "16.png",
+      "markers": []
+    },
+    {
+      "mapid": 417,
+      "image": "17.png",
+      "markers": []
+    },
+    {
+      "mapid": 418,
+      "image": "18.png",
+      "markers": []
+    },
+    {
+      "mapid": 419,
+      "image": "19.png",
+      "markers": []
+    },
+    {
+      "mapid": 420,
+      "image": "20.png",
+      "markers": []
+    }
+  ]
+}

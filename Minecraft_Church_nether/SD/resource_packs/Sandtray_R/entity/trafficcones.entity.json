@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:trafficcones",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/trafficcone"
+			},
+			"geometry": {
+				"default": "geometry.trafficcone"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#a29aad",
+				"overlay_color": "#f70909"
+			}
+		}
+	}
+}

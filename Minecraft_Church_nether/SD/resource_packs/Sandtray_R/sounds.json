@@ -1,0 +1,48 @@
+{
+	"entity_sounds": {
+		"entities": {
+			"otb:toycowbig": {
+				"events": {
+					"ambient": "mob.cow.say",
+					"death": "mob.cow.hurt",
+					"hurt": "mob.cow.hurt",
+					"step": {
+						"pitch": [0.9, 1.1],
+						"sound": "mob.cow.step",
+						"volume": 0.65
+					}
+				},
+				"pitch": [0.8, 1.2],
+				"volume": 1
+			},
+			"otb:toycowmedium": {
+				"events": {
+					"ambient": "mob.cow.say",
+					"death": "mob.cow.hurt",
+					"hurt": "mob.cow.hurt",
+					"step": {
+						"pitch": [0.9, 1.1],
+						"sound": "mob.cow.step",
+						"volume": 0.65
+					}
+				},
+				"pitch": [0.8, 1.2],
+				"volume": 1
+			},
+			"otb:toycowsmall": {
+				"events": {
+					"ambient": "mob.cow.say",
+					"death": "mob.cow.hurt",
+					"hurt": "mob.cow.hurt",
+					"step": {
+						"pitch": [0.9, 1.1],
+						"sound": "mob.cow.step",
+						"volume": 0.65
+					}
+				},
+				"pitch": [0.8, 1.2],
+				"volume": 1
+			}
+		}
+	}
+}

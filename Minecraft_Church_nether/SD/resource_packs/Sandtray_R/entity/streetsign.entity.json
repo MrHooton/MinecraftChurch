@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:streetsign",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/streetsign"
+			},
+			"geometry": {
+				"default": "geometry.streetsign"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#a29aad",
+				"overlay_color": "#f70909"
+			}
+		}
+	}
+}

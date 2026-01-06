@@ -1,0 +1,36 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:frostyl",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/frosty"
+			},
+			"geometry": {
+				"default": "geometry.frosty"
+			},
+			"animations": {
+				"move": "animation.frosty.move",
+				"sheared": "animation.frosty.sheared",
+				"look_at_target": "animation.common.look_at_target",
+				"move_controller": "controller.animation.snowgolem.move.v1.8"
+			},
+			"scripts": {
+				"animate": [
+					"move_controller",
+					{
+						"sheared": "query.is_sheared"
+					}
+				]
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#fcfdf9",
+				"overlay_color": "#1e34c1"
+			}
+		}
+	}
+}

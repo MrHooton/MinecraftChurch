@@ -1,0 +1,70 @@
+{
+	"format_version": "1.16.100",
+	"minecraft:entity": {
+		"description": {
+			"identifier": "otb:schooldesk",
+			"is_spawnable": true,
+			"is_summonable": true,
+			"is_experimental": false
+		},
+		"component_groups": {
+		  "minecraft:seated": {
+			"minecraft:standing": {}
+		  }
+		},
+		"components": {
+			"minecraft:rideable": {
+			  "seat_count": 1,
+			  "crouching_skip_interact": true,
+			  "family_types": ["player"],
+			  "interact_text": "Right click to mount",
+			  "seats": {
+				"position": [0, 0.1, 0.3],
+				"rotate_rider_by": 180,
+				"lock_rider_rotation": 0
+			  },
+			  "controlling_seat": 0
+			},
+			"minecraft:sittable": {
+				"sit_event": {
+					"event": "minecraft:entity_sit"
+				},
+				"stand_event": {
+					"event":"minecraft:entity_stand"
+				}
+			},
+			"minecraft:movement": {
+				"value": 0.0
+			},
+			"minecraft:physics": {
+				"has_gravity": true,
+				"has_collision": true
+			},
+			"minecraft:pushable": {
+				"is_pushable": false
+			},
+			"minecraft:push_through": {
+				"value": 1
+			},
+			"minecraft:scale": {
+				"value": 1.5
+			},
+			"minecraft:health": {
+				"value": 1,
+				"max": 1
+			}
+		},
+		"events": {
+			  "minecraft:entity_sit": {
+				"add": {
+				  "component_groups": ["minecraft:seated"]
+				}
+			  },
+			  "minecraft:entity_stand": {
+				"remove": {
+				  "component_groups": ["minecraft:standing"]
+				}
+			  }
+			}
+		  }
+		}

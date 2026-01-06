@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 39,
+  "name": "pantocrator",
+  "url": "https://static.wixstatic.com/media/d33f67_b69ab67147aa48cab4611288da579a36~mv2.jpg",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755811902301,
+  "mapdata": [
+    {
+      "mapid": 381,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "id": 6,
+  "name": "i4",
+  "disabled": false,
+  "activation_mode": "BOTH",
+  "location": {
+    "x": -26.0,
+    "y": -60.0,
+    "z": -3.0,
+    "world": "sd"
+  },
+  "timer": {
+    "duration": 0,
+    "cancelled_on_move": false,
+    "reset_on_move": false
+  },
+  "commands": [
+    "/if refresh chrishooton:WallIcon https://static.wixstatic.com/media/d33f67_d5efb96ae0fb4da99dc0e0e20a5aedba~mv2.jpg"
+  ],
+  "temporarily_granted_permissions": [],
+  "addons": {
+    "ncs_economy": {
+      "price": 0.0
+    },
+    "ncs_confirmation": {
+      "require_confirmation": false
+    },
+    "ncs_required_permissions": {
+      "required_permissions": []
+    },
+    "ncs_cooldowns": {
+      "global_cooldown": -1,
+      "player_cooldown": -1,
+      "is_global_once": false,
+      "is_player_once": false
+    }
+  }
+}

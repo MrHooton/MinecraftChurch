@@ -1,0 +1,54 @@
+{
+  "type": "imageframe:url_static",
+  "index": 20,
+  "name": "w13-9",
+  "url": "https://static.wixstatic.com/media/d33f67_8b96b8d8be5d45c8b8148de49eee57f2~mv2.png",
+  "width": 4,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755616646648,
+  "mapdata": [
+    {
+      "mapid": 149,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 150,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 151,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 152,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 153,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 154,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 155,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 156,
+      "image": "7.png",
+      "markers": []
+    }
+  ]
+}

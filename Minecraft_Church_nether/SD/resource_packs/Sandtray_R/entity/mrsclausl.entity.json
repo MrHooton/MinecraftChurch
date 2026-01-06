@@ -1,0 +1,31 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "otb:mrsclausl",
+      "materials": {
+        "default": "villager_v2"
+      },
+      "textures": {
+        "default": "textures/entity/mrsclaus"
+      },
+      "geometry": {
+        "default": "geometry.mrsclaus"
+      },
+      "scripts": {
+        "scale": "0.9375",
+        "pre_animation": ["variable.num_professions = 15;", "variable.num_tiers = 3;", "variable.profession_index = (query.variant < variable.num_professions ? query.variant : 0);", "variable.level_index = query.trade_tier;"]
+      },
+      "animations": {
+        "general": "animation.villager.general",
+        "look_at_target": "animation.common.look_at_target",
+        "move": "animation.villager.move"
+      },
+      "render_controllers": ["controller.render.default"],
+      "spawn_egg": {
+        "base_color": "#fbf9fb",
+        "overlay_color": "#ea50d1"
+      }
+    }
+  }
+}

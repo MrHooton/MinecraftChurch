@@ -1,0 +1,59 @@
+{
+  "type": "imageframe:url_static",
+  "index": 5,
+  "name": "office",
+  "url": "https://static.wixstatic.com/media/d33f67_ad07c8926f6f47738daa8de4c6f5be1f~mv2.jpg",
+  "width": 3,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755114547548,
+  "mapdata": [
+    {
+      "mapid": 74,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 75,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 76,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 77,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 78,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 79,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 80,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 81,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 82,
+      "image": "8.png",
+      "markers": []
+    }
+  ]
+}

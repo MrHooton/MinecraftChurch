@@ -1,0 +1,130 @@
+# Citizens NPC Storage
+last-created-npc-id: 2
+npc:
+- metadata:
+    cached-skin-uuid: b3a55d88-4a99-4f78-87e4-f28d3ebf6a21
+    cached-skin-uuid-name: maizy
+  traits:
+    owner:
+      uuid: c48f0113-4076-3aca-b576-7f42341d2531
+    scoreboardtrait:
+      tags:
+      - CITIZENS_NPC
+    skintrait:
+      signature: W2uWMaDZ34iU8jPZ3UV3a8lS7nhceA/eIyWYNxbx2e2HqGTtx8Qx20bgfVRjRrCmLoTIbhdqv7pki7ny0+0litjXSltObsYopQ7NKOPJmblGAFdDL2We+ovh1I6cV9GdgaY/V6jQg/nPa326LNxr/jgG4TjYRiudSSKWMXk8+BgKEOQH1Ib7lMi2OYVhaDJhHbKieV4OtOxs743z2BG2a69LXmeVmvIK+rkt1CPhUgdORUHTlJsKk1KCye8d10+TGx1l8+k6YkDrTpRhVhlaV5yLzTPFJk04pb/GUXuo5eWrYYdjqwazXD6AaZotNqS07ZkdEeOmY89KRuQI713PQKE/6Cf83+Bkfy8v6EhssDVd9t7XV5c8qeAE8/ootBVYFfxHsVWzsE6Cq7sVb/gn7/gWyL423SV7arGz/XirI1ySTs6OmRcPvNjUJyY9L6RMThbZbGoD20+o2QBcITl3bPRKC4v4f3/kORynG1PUOLLrjJpH4MF9CK2OqOA6ipIIoZo6vGcg9XbfkohG2PY+OAhymg16RjHZwnGiHk4Qn9WCwHy2tVMgfGJJ8r8hby8hd3novM65QWrcz1VV4TO3kbCj4TcVog7IWy9z6QFX2o+t6LIu5TFBwexyeth9VBhoQh9RcJtanDdTsYm5c5fBVhtpt0UFTH0GeA+OVYXCzjk=
+      textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTc2NzI5MjEzMjU5NSwKICAicHJvZmlsZUlkIiA6ICJiM2E1NWQ4ODRhOTk0Zjc4ODdlNGYyOGQzZWJmNmEyMSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNYWl6eSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hM2JkMTYwNzlmNzY0Y2Q1NDFlMDcyZTg4OGZlNDM4ODVlNzExZjk4NjU4MzIzZGIwZjlhNjA0NWRhOTFlZTdhIgogICAgfQogIH0KfQ==
+    location:
+      worldid: 1a550e8d-87c3-4fbf-8a99-3c1065b199a6
+      x: 8.264
+      y: 63.0
+      z: 49.6424
+      bodyYaw: -177.7498
+      pitch: 24.75
+      yaw: -177.7498
+    type: PLAYER
+  traitnames: owner,spawned,scoreboardtrait,skintrait,location,type,inventory,chunktickettrait
+  name: Maizy
+  navigator:
+    usedefaultstuckaction: false
+    speedmodifier: 1.0
+    avoidwater: false
+  uuid: f8f9360f-8911-48d2-bffc-94c83ca908fa
+- traits:
+    owner:
+      uuid: c48f0113-4076-3aca-b576-7f42341d2531
+    scoreboardtrait:
+      tags:
+      - CITIZENS_NPC
+    assignment:
+      assignment_list:
+      - hello_shepherd
+    location:
+      worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+      x: 36.5134
+      y: 80.0
+      z: -32.0048
+      bodyYaw: 297.05115
+      pitch: 0.0
+      yaw: -62.9489
+    type: VILLAGER
+    triggers:
+      enabled:
+        CHAT: true
+        CLICK: true
+        PROXIMITY: false
+        DAMAGE: false
+      properly_set:
+        CHAT: false
+        CLICK: false
+        PROXIMITY: false
+        DAMAGE: false
+  traitnames: owner,scoreboardtrait,spawned,assignment,location,constants,type,triggers,targetable,chunktickettrait
+  name: Shepherd
+  navigator:
+    usedefaultstuckaction: false
+    speedmodifier: 1.0
+    avoidwater: false
+  uuid: 262c783e-21c7-46e3-81ea-cd0b1dc242cf
+  metadata:
+    minecraft-ai: true
+- metadata:
+    cached-skin-uuid: 7f75cd28-66fb-46df-ad64-3f818ce20177
+    cached-skin-uuid-name: 0690297e-25a1-435c-be35-fa3515319e69
+  traits:
+    scoreboardtrait:
+      tags:
+      - CITIZENS_NPC
+    owner:
+      uuid: c48f0113-4076-3aca-b576-7f42341d2531
+    assignment:
+      assignment_list:
+      - doorkeeper_assign
+    skintrait:
+      signature: TuVnAuK5MJQvXPBVvQc/I3Y+REbHIifhvLrzpizf/CK4x8Ejaf8FFQdkzXjgU4amWugGe8yMBqf4xRNMKLASTEmsqfuJ3AbcE7wklklhNOTjdgZ/r6CgwyEAaWxPA41ri7VncD3e98CmOZGQXUJOaHnXqi+Y8kn7owmI+4B2g+Ql2qDh6H8SkaBWJEnXLJFdN5sQx0NeBWugJg35+QXskSQFllKXXJl7wRve6PTRyYcfxZwubt/Ryswm2Pq//EiA7j44CAt5Zho0q654mOCkJGlyNzkivCh1I76zIBTd3tGtgobL2xZS/ArZDM8FVpAREc5FhyzxkFcE8/moTOR+E3DlP2AT1pTHIz5+56VRImg8URveUDb+2U3Tji7vHdgGaWnlG68fyri7lX7Ar9E//pSgeG8hNgKl55SPxMkWk8SX5YH8SIPpxPVXEr9NETqd/nh5q8vEUjdQvHZ7h8VaQA2LtER53ufOKfyGWMzzJtDCpcLUpRIhppZ+tosRIxyIBanbFiLwhzOKWSlmu/Paz+8YFG34+wpaozbmaZBHgEHJII8CAgUJtLsBi6+IpA870wGnywf8aDi7b075T/4U1BgkT9mRWaKPuqLG6tUwKYA2mYAZIhCsRyj3MRfXo2d5Q8IFUCtcen3W5EqZmF2zbAROYFt+dTMg43l3K/kCe00=
+      skinName: 0690297e-25a1-435c-be35-fa3515319e69
+      textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTc2NzYzNTgwMTcyNCwKICAicHJvZmlsZUlkIiA6ICJmZDFhYjdjNTYwMTM0YzQ1YTA2YWZjZWY1OGViZDVkNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJDbGF1MTA3IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkODNmOTRjZTc2YjE2YWZlMjdjODI3NjNmOGJjYWE0OTU3MWE4ZjA4NjYyMGZmMTZlZDJhY2UwZjQzYzBlZWQiCiAgICB9CiAgfQp9
+    lookclose:
+      enableRandomLook: false
+      disablewhilenavigating: true
+      headonly: false
+      randomSwitchTargets: false
+      randomYawRange:
+      - 0.0
+      - 360.0
+      realisticlooking: false
+      linkedbody: false
+      range: 10.0
+      randomLookDelay: 60
+      enabled: true
+      targetnpcs: false
+      perplayer: false
+      randomPitchRange:
+      - 0.0
+      - 0.0
+    location:
+      worldid: 1a550e8d-87c3-4fbf-8a99-3c1065b199a6
+      x: 5.7879
+      y: 63.0625
+      z: 118.3173
+      bodyYaw: -0.9474869
+      pitch: 0.0
+      yaw: -0.9475
+    type: PLAYER
+    triggers:
+      properly_set:
+        CHAT: false
+        CLICK: true
+        PROXIMITY: false
+        DAMAGE: false
+      enabled:
+        CHAT: true
+        CLICK: true
+        PROXIMITY: false
+        DAMAGE: false
+  traitnames: scoreboardtrait,owner,spawned,rotationtrait,assignment,skintrait,lookclose,inventory,type,triggers,location,constants,chunktickettrait
+  name: Doorkeeper
+  navigator:
+    usedefaultstuckaction: false
+    speedmodifier: 1.0
+    avoidwater: false
+  uuid: de704b02-bf31-4504-94bf-7bb073257ca1

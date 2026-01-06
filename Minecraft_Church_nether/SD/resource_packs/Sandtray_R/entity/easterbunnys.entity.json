@@ -1,0 +1,42 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:easterbunnys",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"brown": "textures/entity/easterbunny/brown",
+				"white": "textures/entity/easterbunny/white",
+				"black": "textures/entity/easterbunny/black",
+				"white_splotched": "textures/entity/easterbunny/white_splotched",
+				"gold": "textures/entity/easterbunny/gold",
+				"salt": "textures/entity/easterbunny/salt",
+				"toast": "textures/entity/easterbunny/toast"
+			},
+			"geometry": {
+				"default": "geometry.easterbunny"
+			},
+			"animations": {
+				"move": "animation.easterbunny.move",
+				"baby_transform": "animation.easterbunny.baby_transform",
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"animation_controllers": [
+				{
+					"general": "controller.animation.rabbit.general"
+				},
+				{
+					"baby": "controller.animation.rabbit.baby"
+				}
+			],
+			"render_controllers": ["controller.render.rabbit"],
+			"spawn_egg": {
+				"base_color": "#ffffff",
+				"overlay_color": "#96a99e"
+			}
+		}
+	}
+}

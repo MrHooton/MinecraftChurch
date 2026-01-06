@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 28,
+  "name": "sleepy",
+  "url": "https://static.wixstatic.com/media/d33f67_7937513067184a2485a7ff1e33dabb2d~mv2.jpg",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755800559412,
+  "mapdata": [
+    {
+      "mapid": 370,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

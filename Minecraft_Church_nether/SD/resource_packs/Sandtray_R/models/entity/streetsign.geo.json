@@ -1,0 +1,35 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.streetsign",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 2,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "root",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-0.5, 0, -1], "size": [2, 46, 2], "uv": [2, 0]}
+					]
+				},
+				{
+					"name": "octagon",
+					"pivot": [3, 39, 1],
+					"rotation": [79.49047, -89.47663, -101.73444],
+					"cubes": [
+						{"origin": [0.5, 37.68629, -5], "size": [1, 6.62742, 16], "pivot": [1, 41, 3], "rotation": [22.5, 0, 0], "uv": [14, 17]},
+						{"origin": [0.5, 37.68629, -5], "size": [1, 6.62742, 16], "pivot": [1, 41, 3], "rotation": [-22.5, 0, 0], "uv": [30, 42]},
+						{"origin": [0.5, 33, -0.31371], "size": [1, 16, 6.62742], "pivot": [1, 41, 3], "rotation": [-22.5, 0, 0], "uv": [50, 0]},
+						{"origin": [0.5, 33, -0.31371], "size": [1, 16, 6.62742], "pivot": [1, 41, 3], "rotation": [22.5, 0, 0], "uv": [50, 22]}
+					]
+				}
+			]
+		}
+	]
+}

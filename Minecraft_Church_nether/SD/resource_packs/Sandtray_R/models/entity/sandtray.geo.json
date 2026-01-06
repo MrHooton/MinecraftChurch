@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.sandtray",
+				"texture_width": 128,
+				"texture_height": 128,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 2.5,
+				"visible_bounds_offset": [0, 0.75, 0]
+			},
+			"bones": [
+				{
+					"name": "tray",
+					"pivot": [0, 11, 0],
+					"cubes": [
+						{"origin": [-14, 11, -8], "size": [28, 6, 1], "uv": [67, 119]},
+						{"origin": [-14, 11, 7], "size": [28, 6, 1], "uv": [2, 119]},
+						{"origin": [-14, 11, -7], "size": [1, 6, 14], "uv": [32, 95]},
+						{"origin": [13, 11, -7], "size": [1, 6, 14], "uv": [32, 95], "mirror": true},
+						{"origin": [-13, 11, -7], "size": [26, 1, 14], "uv": [0, 73]}
+					]
+				},
+				{
+					"name": "legs",
+					"pivot": [0, 0, 0],
+					"cubes": [
+						{"origin": [-13, 0, 6], "size": [1, 11, 1], "uv": [0, 57]},
+						{"origin": [-13, 0, -7], "size": [1, 11, 1], "uv": [0, 57]},
+						{"origin": [12, 0, -7], "size": [1, 11, 1], "uv": [0, 57], "mirror": true},
+						{"origin": [12, 0, 6], "size": [1, 11, 1], "uv": [0, 57], "mirror": true}
+					]
+				}
+			]
+		}
+	]
+}

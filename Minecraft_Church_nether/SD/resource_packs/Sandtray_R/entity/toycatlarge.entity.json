@@ -1,0 +1,52 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:toycatlarge",
+			"materials": {
+				"default": "cat"
+			},
+			"textures": {
+				"white": "textures/entity/toycat/white",
+				"black": "textures/entity/toycat/tuxedo",
+				"red": "textures/entity/toycat/red",
+				"siamese": "textures/entity/toycat/siamese",
+				"british": "textures/entity/toycat/britishshorthair",
+				"calico": "textures/entity/toycat/calico",
+				"persian": "textures/entity/toycat/persian",
+				"ragdoll": "textures/entity/toycat/ragdoll",
+				"tabby": "textures/entity/toycat/tabby",
+				"jellie": "textures/entity/toycat/jellie",
+				"all_black": "textures/entity/toycat/allblackcat",
+				"allblackcat": "textures/entity/toycat/allblackcat",
+				"blackcat": "textures/entity/toycat/blackcat",
+				"britishshorthair": "textures/entity/toycat/britishshorthair",
+				"redtabby": "textures/entity/toycat/redtabby",
+				"siamesecat": "textures/entity/toycat/siamesecat",
+				"tuxedo": "textures/entity/toycat/tuxedo"
+			},
+			"geometry": {
+				"default": "geometry.toycat"
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"animation_controllers": [
+				{
+					"look_at_target": "controller.animation.cat.look_at_target"
+				},
+				{
+					"move": "controller.animation.cat.move"
+				},
+				{
+					"baby": "controller.animation.cat.baby"
+				}
+			],
+			"render_controllers": ["controller.render.cat"],
+			"spawn_egg": {
+				"base_color": "#cb9b1f",
+				"overlay_color": "#f8fbf6"
+			}
+		}
+	}
+}

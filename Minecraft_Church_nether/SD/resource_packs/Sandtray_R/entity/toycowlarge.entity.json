@@ -1,0 +1,39 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:toycowlarge",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/toycow"
+			},
+			"geometry": {
+				"default": "geometry.toycow"
+			},
+			"animations": {
+				"walk": "animation.toycow.walk",
+				"look_at_target": "animation.common.look_at_target",
+				"baby_transform": "animation.toycow.baby_transform"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"walk": "query.modified_move_speed"
+					},
+					"look_at_target",
+					{
+						"baby_transform": "query.is_baby"
+					}
+				]
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#3165c5",
+				"overlay_color": "#7bec42"
+			}
+		}
+	}
+}

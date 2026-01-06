@@ -1,0 +1,6 @@
+FINISHED_NOTIFY: §6The biome conversion by §a%s0 §6has finished!
+INTERRUPTED: §aBiome conversion was interrupted!
+IN_PROGRESS: §cSome user is already executing a biome conversion. We will remind you
+  when this finishes
+ESTIMATE: '§6Estimated time: §a%s0 seconds'
+UNEXPLORED: §cPlease explore the selection fully.

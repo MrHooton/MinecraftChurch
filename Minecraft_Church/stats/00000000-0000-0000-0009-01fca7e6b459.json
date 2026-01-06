@@ -1,0 +1,83 @@
+{
+  "stats": {
+    "minecraft:picked_up": {
+      "minecraft:egg": 2,
+      "minecraft:light_blue_bundle": 1,
+      "minecraft:soul_torch": 1,
+      "minecraft:bamboo": 10,
+      "minecraft:magenta_bundle": 1,
+      "minecraft:crimson_stairs": 1,
+      "minecraft:leather": 1,
+      "minecraft:item_frame": 2,
+      "minecraft:blue_bundle": 1,
+      "minecraft:written_book": 1,
+      "minecraft:beef": 2
+    },
+    "minecraft:mined": {
+      "minecraft:crimson_stairs": 1
+    },
+    "minecraft:dropped": {
+      "minecraft:blaze_rod": 64,
+      "minecraft:magenta_bundle": 1,
+      "minecraft:light_blue_bundle": 1,
+      "minecraft:blue_bundle": 1
+    },
+    "minecraft:custom": {
+      "minecraft:interact_with_crafting_table": 1,
+      "minecraft:time_since_rest": 289542,
+      "minecraft:walk_one_cm": 448718,
+      "minecraft:leave_game": 31,
+      "minecraft:walk_under_water_one_cm": 57054,
+      "minecraft:mob_kills": 2,
+      "minecraft:damage_taken": 520,
+      "minecraft:interact_with_lectern": 2,
+      "minecraft:play_time": 941641,
+      "minecraft:damage_dealt": 278,
+      "minecraft:jump": 556,
+      "minecraft:time_since_death": 289126,
+      "minecraft:drop": 4,
+      "minecraft:sprint_one_cm": 22332,
+      "minecraft:total_world_time": 941641,
+      "minecraft:swim_one_cm": 2485,
+      "minecraft:fly_one_cm": 2363025,
+      "minecraft:walk_on_water_one_cm": 10371,
+      "minecraft:crouch_one_cm": 30676,
+      "minecraft:sneak_time": 55985,
+      "minecraft:deaths": 2
+    },
+    "minecraft:killed": {
+      "minecraft:sheep": 1,
+      "minecraft:cow": 1
+    },
+    "minecraft:used": {
+      "minecraft:diamond_block": 62,
+      "minecraft:respawn_anchor": 2,
+      "minecraft:smooth_quartz_slab": 34,
+      "minecraft:firework_rocket": 192,
+      "minecraft:birch_planks": 35,
+      "minecraft:slime_block": 5,
+      "minecraft:bookshelf": 52,
+      "minecraft:ladder": 8,
+      "minecraft:glass_pane": 59,
+      "minecraft:written_book": 9,
+      "minecraft:quartz_block": 277,
+      "minecraft:red_nether_bricks": 37,
+      "minecraft:green_bundle": 3,
+      "minecraft:bricks": 255,
+      "minecraft:oak_leaves": 19,
+      "minecraft:dark_oak_door": 9,
+      "minecraft:light_gray_carpet": 5,
+      "minecraft:crimson_stairs": 175,
+      "minecraft:copper_block": 2,
+      "minecraft:honeycomb_block": 1,
+      "minecraft:lectern": 3,
+      "minecraft:smooth_quartz_stairs": 37,
+      "minecraft:crafting_table": 1,
+      "minecraft:beef": 33,
+      "minecraft:oak_sapling": 18,
+      "minecraft:white_bed": 3,
+      "minecraft:gold_block": 197
+    }
+  },
+  "DataVersion": 4671
+}

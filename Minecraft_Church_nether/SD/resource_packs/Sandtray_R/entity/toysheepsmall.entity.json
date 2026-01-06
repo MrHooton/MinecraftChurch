@@ -1,0 +1,42 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:toysheepsmall",
+			"min_engine_version": "1.8.0",
+			"materials": {
+				"default": "sheep"
+			},
+			"textures": {
+				"default": "textures/entity/toysheep"
+			},
+			"geometry": {
+				"default": "geometry.toysheep",
+				"sheared": "geometry.sheep.sheared.v1.8"
+			},
+			"animations": {
+				"setup": "animation.toysheep.setup",
+				"grazing": "animation.toysheep.grazing",
+				"walk": "animation.toysheep.walk",
+				"look_at_target": "animation.common.look_at_target",
+				"baby_transform": "animation.toysheep.baby_transform",
+				"move": "controller.animation.sheep.move"
+			},
+			"scripts": {
+				"animate": [
+					"setup",
+					"look_at_target",
+					"move",
+					{
+						"baby_transform": "query.is_baby"
+					}
+				]
+			},
+			"render_controllers": ["controller.render.sheep"],
+			"spawn_egg": {
+				"base_color": "#ffffff",
+				"overlay_color": "#964f14"
+			}
+		}
+	}
+}

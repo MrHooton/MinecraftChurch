@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:constructionbarrier",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/constructionbarrier"
+			},
+			"geometry": {
+				"default": "geometry.constructionbarrier"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#0c0d04",
+				"overlay_color": "#f9f725"
+			}
+		}
+	}
+}

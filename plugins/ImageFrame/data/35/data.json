@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 35,
+  "name": "swing",
+  "url": "https://static.wixstatic.com/media/d33f67_2bdbebd0ee96452b9c0a2ee968fd2577~mv2.jpg",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755811458011,
+  "mapdata": [
+    {
+      "mapid": 377,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

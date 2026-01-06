@@ -1,0 +1,1605 @@
+[16:18:37] [ServerMain/INFO]: [bootstrap] Running Java 25 (OpenJDK 64-Bit Server VM 25.0.1+8-LTS; Eclipse Adoptium Temurin-25.0.1+8) on Linux 5.15.0-117-generic (amd64)
+[16:18:37] [ServerMain/INFO]: [bootstrap] Loading Paper 1.21.11-72-main@cd445fd (2025-12-31T17:02:56Z) for Minecraft 1.21.11
+[16:18:37] [ServerMain/INFO]: [PluginInitializerManager] Initializing plugins...
+[16:18:37] [ServerMain/ERROR]: [DirectoryProviderSource] Error preparing plugin context: Directory 'plugins/hubbasics_2654_432436.jar' failed to update!
+java.lang.RuntimeException: Directory 'plugins/hubbasics_2654_432436.jar' failed to update!
+	at io.papermc.paper.plugin.provider.source.FileProviderSource.prepareContext(FileProviderSource.java:61) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.lambda$prepareContext$1(DirectoryProviderSource.java:33) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:186) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:197) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:214) ~[?:?]
+	at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133) ~[?:?]
+	at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1939) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:570) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:560) ~[?:?]
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:153) ~[?:?]
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:176) ~[?:?]
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:265) ~[?:?]
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:632) ~[?:?]
+	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.walkFiles(DirectoryProviderSource.java:64) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.prepareContext(DirectoryProviderSource.java:31) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.provider.source.DirectoryProviderSource.prepareContext(DirectoryProviderSource.java:17) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.util.EntrypointUtil.registerProvidersFromSource(EntrypointUtil.java:14) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.PluginInitializerManager.load(PluginInitializerManager.java:113) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at net.minecraft.server.Main.main(Main.java:108) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.PaperBootstrap.boot(PaperBootstrap.java:21) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at org.bukkit.craftbukkit.Main.main(Main.java:242) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paperclip.Paperclip.lambda$main$0(Paperclip.java:42) ~[?:?]
+	at java.base/java.lang.Thread.run(Thread.java:1474) ~[?:?]
+Caused by: org.bukkit.plugin.InvalidPluginException: java.lang.IllegalArgumentException: plugins/hubbasics_2654_432436.jar does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
+	at io.papermc.paper.plugin.provider.source.FileProviderSource.checkUpdate(FileProviderSource.java:141) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.provider.source.FileProviderSource.prepareContext(FileProviderSource.java:59) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	... 22 more
+Caused by: java.lang.IllegalArgumentException: plugins/hubbasics_2654_432436.jar does not contain a paper-plugin.yml or plugin.yml! Could not determine plugin type, cannot load a plugin from it!
+	at io.papermc.paper.plugin.provider.source.FileProviderSource.getPluginName(FileProviderSource.java:150) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	at io.papermc.paper.plugin.provider.source.FileProviderSource.checkUpdate(FileProviderSource.java:111) ~[paper-1.21.11.jar:1.21.11-72-cd445fd]
+	... 23 more
+[16:18:37] [ServerMain/INFO]: [PluginInitializerManager] Initialized 19 plugins
+[16:18:37] [ServerMain/INFO]: [PluginInitializerManager] Bukkit plugins (19):
+ - Citizens (2.0.41-SNAPSHOT (build 4043)), CommandSigns (2.2.0), CourierPrime (1.4.0), Denizen (1.3.1-SNAPSHOT (build 7244-DEV)), DriveBackupV2 (1.8.1), FastAsyncWorldEdit (2.14.4-SNAPSHOT-1257+373dfbc), Geyser-Spigot (2.9.2-SNAPSHOT), ImageFrame (1.9.0.0), LuckPerms (5.5.0), LumberJack (5.4.0), Multiverse-Core (5.1.2), Multiverse-Inventories (5.1.1), Multiverse-Portals (5.1.0), NoFlyZone (2.0.0), SimplePushEvents (0.0.5), ViaBackwards (5.7.0), ViaVersion (5.7.0), WorldGuard (7.0.14+2339-43997ec), floodgate (2.2.5-SNAPSHOT (b121-55a85ec))
+[16:18:40] [ServerMain/INFO]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, profilesHost=https://api.mojang.com, name=PROD]
+[16:18:41] [ServerMain/INFO]: Loaded 1470 recipes
+[16:18:41] [ServerMain/INFO]: Loaded 1584 advancements
+[16:18:41] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Initialising converters for DataConverter...
+[16:18:42] [ServerMain/INFO]: [ca.spottedleaf.dataconverter.minecraft.datatypes.MCTypeRegistry] Finished initialising converters for DataConverter in 261.4ms
+[16:18:42] [Server thread/INFO]: Starting minecraft server version 1.21.11
+[16:18:42] [Server thread/INFO]: Loading properties
+[16:18:42] [Server thread/INFO]: This server is running Paper version 1.21.11-72-main@cd445fd (2025-12-31T17:02:56Z) (Implementing API version 1.21.11-R0.1-SNAPSHOT)
+[16:18:42] [Server thread/INFO]: [spark] This server bundles the spark profiler. For more information please visit https://docs.papermc.io/paper/profiling
+[16:18:42] [Server thread/INFO]: Server Ping Player Sample Count: 12
+[16:18:42] [Server thread/INFO]: Using 4 threads for Netty based IO
+[16:18:42] [Server thread/INFO]: [MoonriseCommon] Paper is using 1 worker threads, 1 I/O threads
+[16:18:42] [Server thread/INFO]: Default game type: CREATIVE
+[16:18:42] [Server thread/INFO]: Generating keypair
+[16:18:43] [Server thread/INFO]: Starting Minecraft server on 172.240.13.51:25588
+[16:18:43] [Server thread/INFO]: Paper: Using libdeflate (Linux x86_64) compression from Velocity.
+[16:18:43] [Server thread/INFO]: Paper: Using OpenSSL 3.x.x (Linux x86_64) cipher from Velocity.
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loading 4 libraries... please wait
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/ch/ethz/globis/phtree/phtree/2.8.2/phtree-2.8.2.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/joml/joml/1.10.8/joml-1.10.8.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/it/unimi/dsi/fastutil/8.5.16/fastutil-8.5.16.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/team/unnamed/mocha/3.0.0/mocha-3.0.0.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/javassist/javassist/3.30.2-GA/javassist-3.30.2-GA.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Citizens] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/jetbrains/annotations/24.0.1/annotations-24.0.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loading 2 libraries... please wait
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/mongodb/mongodb-driver-sync/4.8.1/mongodb-driver-sync-4.8.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/mongodb/bson/4.8.1/bson-4.8.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/mongodb/mongodb-driver-core/4.8.1/mongodb-driver-core-4.8.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/mongodb/bson-record-codec/4.8.1/bson-record-codec-4.8.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/redis/clients/jedis/4.3.1/jedis-4.3.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/slf4j/slf4j-api/1.7.36/slf4j-api-1.7.36.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/apache/commons/commons-pool2/2.11.1/commons-pool2-2.11.1.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/org/json/json/20220320/json-20220320.jar
+[16:18:43] [Server thread/INFO]: [SpigotLibraryLoader] [Denizen] Loaded library /home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/libraries/com/google/code/gson/gson/2.8.9/gson-2.8.9.jar
+[16:18:43] [Server thread/INFO]: [FastAsyncWorldEdit] Loading server plugin FastAsyncWorldEdit v2.14.4-SNAPSHOT-1257+373dfbc
+[16:18:43] [Server thread/WARN]: 
+**********************************************
+** You are using the Spigot-mapped FAWE jar on a modern Paper version.
+** This will result in slower first-run times and wasted disk space from plugin remapping.
+** Download the Paper FAWE jar from Modrinth to avoid this: https://modrinth.com/plugin/fastasyncworldedit/
+**********************************************
+[16:18:44] [Server thread/INFO]: Got request to register class com.sk89q.worldedit.bukkit.BukkitServerInterface with WorldEdit [com.sk89q.worldedit.extension.platform.PlatformManager@32e4e4e8]
+[16:18:44] [Server thread/INFO]: [SimplePushEvents] Loading server plugin SimplePushEvents v0.0.5
+[16:18:44] [Server thread/INFO]: [DriveBackupV2] Loading server plugin DriveBackupV2 v1.8.1
+[16:18:44] [Server thread/INFO]: [LumberJack] Loading server plugin LumberJack v5.4.0
+[16:18:44] [Server thread/INFO]: [CourierPrime] Loading server plugin CourierPrime v1.4.0
+[16:18:44] [Server thread/INFO]: [ViaVersion] Loading server plugin ViaVersion v5.7.0
+[16:18:44] [Server thread/INFO]: [ViaVersion] ViaVersion 5.7.0 is now loaded. Registering protocol transformers and injecting...
+[16:18:44] [Via-Mappingloader-1/INFO]: [ViaVersion] Loading block connection mappings ...
+[16:18:44] [Via-Mappingloader-1/INFO]: [ViaVersion] Using FastUtil Long2ObjectOpenHashMap for block connections
+[16:18:44] [Server thread/INFO]: [ViaBackwards] Loading translations...
+[16:18:44] [Server thread/INFO]: [ViaBackwards] Registering protocols...
+[16:18:44] [Server thread/INFO]: [floodgate] Loading server plugin floodgate v2.2.5-SNAPSHOT (b121-55a85ec)
+[16:18:45] [Server thread/INFO]: [floodgate] Took 322ms to boot Floodgate
+[16:18:45] [Server thread/INFO]: [ViaBackwards] Loading server plugin ViaBackwards v5.7.0
+[16:18:45] [Server thread/INFO]: [CoreLogging] Loading server plugin Multiverse-Core v5.1.2
+[16:18:45] [Server thread/INFO]: [WorldGuard] Loading server plugin WorldGuard v7.0.14+2339-43997ec
+[16:18:45] [Server thread/INFO]: [LuckPerms] Loading server plugin LuckPerms v5.5.0
+[16:18:45] [Server thread/INFO]: [ImageFrame] Loading server plugin ImageFrame v1.9.0.0
+[16:18:45] [Server thread/INFO]: [Multiverse-Inventories] Loading server plugin Multiverse-Inventories v5.1.1
+[16:18:45] [Server thread/INFO]: [NoFlyZone] Loading server plugin NoFlyZone v2.0.0
+[16:18:45] [Server thread/INFO]: [Geyser-Spigot] Loading server plugin Geyser-Spigot v2.9.2-SNAPSHOT
+[16:18:45] [Server thread/INFO]: [Geyser-Spigot] Loading extensions...
+[16:18:45] [Server thread/INFO]: [Geyser-Spigot] Enabled extension MCXboxBroadcast
+[16:18:45] [Server thread/INFO]: [Geyser-Spigot] Loaded 1 extension(s)
+[16:18:45] [Server thread/INFO]: [Multiverse-Portals] Loading server plugin Multiverse-Portals v5.1.0
+[16:18:45] [Server thread/INFO]: [CommandSigns] Loading server plugin CommandSigns v2.2.0
+[16:18:45] [Server thread/INFO]: [Citizens] Loading server plugin Citizens v2.0.41-SNAPSHOT (build 4043)
+[16:18:45] [Server thread/INFO]: [Denizen] Loading server plugin Denizen v1.3.1-SNAPSHOT (build 7244-DEV)
+[16:18:45] [Server thread/INFO]: Server permissions file permissions.yml is empty, ignoring it
+[16:18:45] [Server thread/INFO]: [FastAsyncWorldEdit] Enabling FastAsyncWorldEdit v2.14.4-SNAPSHOT-1257+373dfbc
+[16:18:45] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] LZ4 Compression Binding loaded successfully
+[16:18:45] [Server thread/INFO]: [com.fastasyncworldedit.core.Fawe] ZSTD Compression Binding loaded successfully
+[16:18:45] [Server thread/INFO]: Registering commands with com.sk89q.worldedit.bukkit.BukkitServerInterface
+[16:18:45] [Server thread/INFO]: WEPIF: Using the Bukkit Permissions API.
+[16:18:45] [Server thread/INFO]: Using com.sk89q.worldedit.bukkit.adapter.impl.fawe.v1_21_11.PaperweightFaweAdapter as the Bukkit adapter
+[16:18:46] [Server thread/INFO]: [LuckPerms] Enabling LuckPerms v5.5.0
+[16:18:46] [Server thread/INFO]:         __    
+[16:18:46] [Server thread/INFO]:   |    |__)   LuckPerms v5.5.0
+[16:18:46] [Server thread/INFO]:   |___ |      Running on Bukkit - Paper
+[16:18:46] [Server thread/INFO]: 
+[16:18:46] [Server thread/INFO]: [LuckPerms] Loading configuration...
+[16:18:46] [ForkJoinPool.commonPool-worker-1/WARN]: [com.fastasyncworldedit.core.util.UpdateNotification] An update for FastAsyncWorldEdit is available. You are 1 build(s) out of date.
+You are running build 1257, the latest version is build 1258.
+Update at https://ci.athion.net/job/FastAsyncWorldEdit
+[16:18:46] [Server thread/INFO]: [LuckPerms] Loading storage provider... [H2]
+[16:18:46] [Server thread/INFO]: [LuckPerms] Loading internal permission managers...
+[16:18:47] [Server thread/INFO]: [LuckPerms] Performing initial data load...
+[16:18:47] [Server thread/INFO]: [LuckPerms] Successfully enabled. (took 675ms)
+[16:18:47] [Server thread/WARN]: **** SERVER IS RUNNING IN OFFLINE/INSECURE MODE!
+[16:18:47] [Server thread/WARN]: The server will make no attempt to authenticate usernames. Beware.
+[16:18:47] [Server thread/WARN]: While this makes the game possible to play without internet access, it also opens up the ability for hackers to connect with any username they choose.
+[16:18:47] [Server thread/WARN]: To change this, set "online-mode" to "true" in the server.properties file.
+[16:18:47] [Server thread/INFO]: Preparing level "Minecraft_Church"
+[16:18:47] [Server thread/INFO]: -------- World Settings For [Minecraft_Church] --------
+[16:18:47] [Server thread/INFO]: View Distance: 10
+[16:18:47] [Server thread/INFO]: Simulation Distance: 10
+[16:18:47] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:47] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:47] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:47] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:47] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:47] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:47] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:47] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:47] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:47] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:47] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:47] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:47] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:47] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:47] [Server thread/INFO]: -------- World Settings For [Minecraft_Church_the_end] --------
+[16:18:47] [Server thread/INFO]: View Distance: 10
+[16:18:47] [Server thread/INFO]: Simulation Distance: 10
+[16:18:47] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:47] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:47] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:47] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:47] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:47] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:47] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:47] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:47] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:47] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:47] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:47] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:47] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:47] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:47] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:47] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:overworld'...
+[16:18:47] [Server thread/INFO]: Preparing spawn area: 100%
+[16:18:47] [Server thread/INFO]: Prepared spawn area in 1 ms
+[16:18:47] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:the_end'...
+[16:18:47] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:47] [Server thread/INFO]: Done preparing level "Minecraft_Church" (0.383s)
+[16:18:47] [Server thread/INFO]: [SimplePushEvents] Enabling SimplePushEvents v0.0.5
+[16:18:47] [Server thread/INFO]: SimplePushEvents powering on
+[16:18:47] [Server thread/INFO]: [DriveBackupV2] Enabling DriveBackupV2 v1.8.1
+[16:18:47] [Server thread/INFO]: [DriveBackupV2] Config loaded!
+[16:18:47] [Server thread/INFO]: [DriveBackupV2] Scheduling a backup to run every 60 minutes
+[16:18:47] [Server thread/INFO]: [DriveBackupV2] Metrics started
+[16:18:47] [Server thread/INFO]: [LumberJack] Enabling LumberJack v5.4.0
+[16:18:47] [Server thread/INFO]: [LumberJack] Hooked into WorldGuard 7.0.14+2339-43997ec
+[16:18:48] [Server thread/INFO]: [CourierPrime] Enabling CourierPrime v1.4.0
+[16:18:48] [Server thread/INFO]: [CourierPrime] Now loading en-us language
+[16:18:48] [Server thread/INFO]: [ViaVersion] Enabling ViaVersion v5.7.0
+[16:18:48] [Server thread/INFO]: [ViaVersion] ViaVersion detected server version: 1.21.11 (774)
+[16:18:48] [Server thread/INFO]: [floodgate] Enabling floodgate v2.2.5-SNAPSHOT (b121-55a85ec)
+[16:18:48] [Server thread/INFO]: [ViaBackwards] Enabling ViaBackwards v5.7.0
+[16:18:48] [Server thread/INFO]: [Multiverse-Core] Enabling Multiverse-Core v5.1.2
+[16:18:48] [Server thread/INFO]: -------- World Settings For [restore] --------
+[16:18:48] [Server thread/INFO]: View Distance: 10
+[16:18:48] [Server thread/INFO]: Simulation Distance: 10
+[16:18:48] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:48] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:48] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:48] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:48] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:48] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:48] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:48] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:48] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:48] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:48] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:48] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:48] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:48] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:48] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:restore'...
+[16:18:48] [Server thread/INFO]: Prepared spawn area in 1 ms
+[16:18:48] [Server thread/INFO]: -------- World Settings For [paper_1_21_9_3550213_nether] --------
+[16:18:48] [Server thread/INFO]: View Distance: 10
+[16:18:48] [Server thread/INFO]: Simulation Distance: 10
+[16:18:48] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:48] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:48] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:48] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:48] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:48] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:48] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:48] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:48] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:48] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:48] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:48] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:48] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:48] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:48] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:paper_1_21_9_3550213_nether'...
+[16:18:48] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:48] [Server thread/INFO]: -------- World Settings For [paper_1_21_9_3550213] --------
+[16:18:48] [Server thread/INFO]: View Distance: 10
+[16:18:48] [Server thread/INFO]: Simulation Distance: 10
+[16:18:48] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:48] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:48] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:48] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:48] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:48] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:48] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:48] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:48] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:48] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:48] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:48] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:48] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:48] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:48] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:paper_1_21_9_3550213'...
+[16:18:48] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:48] [Server thread/INFO]: -------- World Settings For [Minecraft_Church_nether] --------
+[16:18:48] [Server thread/INFO]: View Distance: 10
+[16:18:48] [Server thread/INFO]: Simulation Distance: 10
+[16:18:48] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:48] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:48] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:48] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:48] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:48] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:48] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:48] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:48] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:48] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:48] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:48] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:48] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:48] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:48] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:48] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:the_nether'...
+[16:18:48] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [sd] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:sd'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [GoodShepherd] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:goodshepherd'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [paper_1_21_9_3550213_the_end] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:paper_1_21_9_3550213_the_end'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [Jungle] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:jungle'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [homes] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:homes'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [AdventWorld] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:adventworld'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [village] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:village'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: -------- World Settings For [sheep] --------
+[16:18:49] [Server thread/INFO]: View Distance: 10
+[16:18:49] [Server thread/INFO]: Simulation Distance: 10
+[16:18:49] [Server thread/INFO]: Item Merge Radius: 2.5
+[16:18:49] [Server thread/INFO]: Experience Merge Radius: 3.0
+[16:18:49] [Server thread/INFO]: Mob Spawn Range: 8
+[16:18:49] [Server thread/INFO]: Item Despawn Rate: 6000
+[16:18:49] [Server thread/INFO]: Arrow Despawn Rate: 1200 Trident Respawn Rate:1200
+[16:18:49] [Server thread/INFO]: Zombie Aggressive Towards Villager: true
+[16:18:49] [Server thread/INFO]: Nerfing mobs spawned from spawners: false
+[16:18:49] [Server thread/INFO]: Allow Zombie Pigmen to spawn from portal blocks: true
+[16:18:49] [Server thread/INFO]: Cactus Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cane Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Melon Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Mushroom Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Pumpkin Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Sapling Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Beetroot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Carrot Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Potato Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TorchFlower Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Wheat Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: NetherWart Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Vine Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Cocoa Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Bamboo Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: SweetBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Kelp Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: TwistingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: WeepingVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: CaveVines Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: GlowBerry Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: PitcherPlant Growth Modifier: 100%
+[16:18:49] [Server thread/INFO]: Entity Activation Range: An 32 / Mo 32 / Ra 48 / Mi 16 / Tiv true / Isa false
+[16:18:49] [Server thread/INFO]: Entity Tracking Range: Pl 48 / An 48 / Mo 48 / Mi 32 / Di 128 / Other 64
+[16:18:49] [Server thread/INFO]: Hopper Transfer: 8 Hopper Check: 1 Hopper Amount: 1 Hopper Can Load Chunks: false
+[16:18:49] [Server thread/INFO]: Custom Map Seeds:  Village: 10387312 Desert: 14357617 Igloo: 14357618 Jungle: 14357619 Swamp: 14357620 Monument: 10387313 Ocean: 14357621 Shipwreck: 165745295 End City: 10387313 Slime: 987234911 Nether: 30084232 Mansion: 10387319 Fossil: 14357921 Portal: 34222645
+[16:18:49] [Server thread/INFO]: Max TNT Explosions: 100
+[16:18:49] [Server thread/INFO]: Tile Max Tick Time: 50ms Entity max Tick Time: 50ms
+[16:18:49] [Server thread/INFO]: Loading 0 persistent chunks for world 'minecraft:sheep'...
+[16:18:49] [Server thread/INFO]: Prepared spawn area in 0 ms
+[16:18:49] [Server thread/INFO]: [Multiverse-Core] API service loaded!
+[16:18:49] [Server thread/INFO]: [WorldGuard] Enabling WorldGuard v7.0.14+2339-43997ec
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'Minecraft_Church'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_the_end) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_the_end) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_the_end) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_the_end) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'Minecraft_Church_the_end'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (restore) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (restore) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (restore) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (restore) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'restore'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_nether) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_nether) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_nether) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_nether) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'paper_1_21_9_3550213_nether'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'paper_1_21_9_3550213'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_nether) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_nether) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_nether) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Minecraft_Church_nether) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'Minecraft_Church_nether'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sd) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sd) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sd) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sd) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'sd'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (GoodShepherd) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (GoodShepherd) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (GoodShepherd) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (GoodShepherd) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'GoodShepherd'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_the_end) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_the_end) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_the_end) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (paper_1_21_9_3550213_the_end) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'paper_1_21_9_3550213_the_end'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Jungle) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Jungle) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Jungle) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (Jungle) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'Jungle'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (homes) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (homes) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (homes) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (homes) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'homes'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (AdventWorld) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (AdventWorld) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (AdventWorld) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (AdventWorld) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'AdventWorld'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (village) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (village) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (village) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (village) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'village'
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sheep) TNT ignition is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sheep) Lighters are PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sheep) Lava fire is PERMITTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] (sheep) Fire spread is UNRESTRICTED.
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loaded configuration for world 'sheep'
+[16:18:49] [Server thread/INFO]: [WorldGuard] Loading region data...
+[16:18:49] [Server thread/INFO]: [ImageFrame] Enabling ImageFrame v1.9.0.0
+[16:18:49] [Server thread/INFO]: [ImageFrame] ImageFrame has hooked into ViaVersion!
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered ImageMapLoader imageframe:url_static
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered ImageMapLoader imageframe:url_animated
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered ImageMapLoader imageframe:url_static_overlay
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered ImageMapLoader imageframe:non_updatable_static
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered MediaLoader imageframe:gif_reader to ImageMapLoader imageframe:url_animated
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered MediaLoader imageframe:imageio to ImageMapLoader imageframe:url_static
+[16:18:54] [Server thread/INFO]: [ImageFrame] Registered MediaLoader imageframe:imageio to ImageMapLoader imageframe:url_static_overlay
+[16:18:54] [Server thread/INFO]: [ImageFrame] ImageFrame has been Enabled!
+[16:18:54] [Server thread/INFO]: [Multiverse-Inventories] Enabling Multiverse-Inventories v5.1.1
+[16:18:54] [Server thread/INFO]: [Multiverse-Inventories] Loading player names map...
+[16:18:54] [Server thread/INFO]: [Multiverse-Inventories] Version 5.1.1 (API v5.1) Enabled - By dumptruckman and benwoo1110
+[16:18:54] [Server thread/INFO]: [NoFlyZone] Enabling NoFlyZone v2.0.0
+[16:18:54] [Server thread/INFO]: [Geyser-Spigot] Enabling Geyser-Spigot v2.9.2-SNAPSHOT
+[16:18:55] [Server thread/INFO]: [Multiverse-Portals] Enabling Multiverse-Portals v5.1.0
+[16:18:55] [Server thread/WARN]: [Multiverse-Portals] Failed Parsing World (World Error, World did not exist or was not imported into Multiverse-Core!)
+[16:18:55] [Server thread/WARN]: [Multiverse-Portals] Portal church2 has an invalid LOCATION!
+[16:18:55] [Server thread/WARN]: [Multiverse-Portals] Portal 'church2' not loaded due to invalid location!
+[16:18:55] [Server thread/WARN]: [Multiverse-Portals] Failed Parsing World (World Error, World did not exist or was not imported into Multiverse-Core!)
+[16:18:55] [Server thread/WARN]: [Multiverse-Portals] Portal church3 has an invalid LOCATION!
+[16:18:55] [Server thread/WARN]: [Multiverse-Portals] Portal 'church3' not loaded due to invalid location!
+[16:18:55] [Server thread/INFO]: [Multiverse-Portals] 15 - Portals(s) loaded
+[16:18:55] [Server thread/INFO]: [Multiverse-Portals] Found FastAsyncWorldEdit. Using it for selections.
+[16:18:55] [Server thread/INFO]: [Multiverse-Portals 5.1.0]  Enabled - By Rigby, fernferret and benwoo1110
+[16:18:55] [Server thread/INFO]: [CommandSigns] Enabling CommandSigns v2.2.0
+[16:18:55] [Server thread/INFO]: [CommandSigns] If this plugin is useful to you, you can make a donation at: https://www.paypal.me/nokorbis
+[16:18:55] [Server thread/INFO]: [Citizens] Enabling Citizens v2.0.41-SNAPSHOT (build 4043)
+[16:18:56] [Server thread/INFO]: [Citizens] Loaded 2 templates.
+[16:18:56] [Server thread/INFO]: [Denizen] Enabling Denizen v1.3.1-SNAPSHOT (build 7244-DEV)
+[16:18:56] [Server thread/INFO]: +> [DenizenCore] Initializing Denizen Core v1.91.0-SNAPSHOT (Build 1411), impl for Spigot v1.3.1-SNAPSHOT (build 7244-DEV) 
+[16:18:56] [Server thread/INFO]: +> [Denizen] Running on java version: 25.0.1 
+[16:18:56] [Server thread/INFO]: +> [Denizen] Running on unrecognized (future?) Java version. May or may not work. 
+[16:18:56] [Server thread/INFO]: +> [Denizen] +-------------------------+ 
+[16:18:56] [Server thread/INFO]: +> [Denizen]  Denizen  scriptable minecraft 
+[16:18:56] [Server thread/INFO]: +> [Denizen]  
+[16:18:56] [Server thread/INFO]: +> [Denizen] by: The DenizenScript team 
+[16:18:56] [Server thread/INFO]: +> [Denizen] Chat with us at: https://discord.gg/Q6pZGSR 
+[16:18:56] [Server thread/INFO]: +> [Denizen] Or learn more at: https://denizenscript.com 
+[16:18:56] [Server thread/INFO]: +> [Denizen] version: 1.3.1-SNAPSHOT (build 7244-DEV) 
+[16:18:56] [Server thread/INFO]: +> [Denizen] +-------------------------+ 
+[16:18:56] [Server thread/INFO]: +> [Denizen] Legacy Spigot name support enabled. This may be unnecessary; see config.yml for more information. 
+[16:18:56] [Server thread/INFO]: +> [TriggerRegistry] Loaded 4 core triggers 
+[16:18:57] [Server thread/INFO]: +> [PaperModule] Loading Paper support module... 
+[16:18:57] [Server thread/INFO]: +> [Denizen] Loaded 153 core commands and 30 core object types, at 948ms from start. 
+[16:18:57] [Server thread/INFO]: +> [ScriptRegistry] Loading 1 script files... 
+[16:18:57] [Server thread/INFO]: +> [DenizenCore] Scripts loaded! File load took 1ms, processing 9ms. 
+[16:18:57] [Server thread/INFO]: +> [Denizen] Final full init took 984ms. 
+[16:18:57] [Server thread/INFO]: [spark] Starting background profiler...
+[16:18:57] [Server thread/INFO]: [Geyser-Spigot] ******************************************
+[16:18:57] [Server thread/INFO]: [Geyser-Spigot] 
+[16:18:57] [Server thread/INFO]: [Geyser-Spigot] Loading Geyser version 2.9.2-b1015 (git-master-3332528)
+[16:18:57] [Server thread/INFO]: [Geyser-Spigot] 
+[16:18:57] [Server thread/INFO]: [Geyser-Spigot] ******************************************
+[16:18:59] [GeyserServer-3-1/INFO]: [Geyser-Spigot] Started Geyser on 172.240.13.51:25588
+[16:18:59] [Server thread/INFO]: [Geyser-Spigot] [mcxboxbroadcast] Starting MCXboxBroadcast Extension build 118 (git-master-30c55d7) for Bedrock 1.21.130 (898)
+[16:18:59] [Server thread/INFO]: [Geyser-Spigot] Done (1.947s)! Run /geyser help for help!
+[16:18:59] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Starting SessionManager...
+[16:18:59] [Server thread/INFO]: Running delayed init tasks
+[16:18:59] [Craft Scheduler Thread - 2 - DriveBackupV2/INFO]: [DriveBackupV2] Checking for updates...
+[16:18:59] [Craft Scheduler Thread - 4 - ViaVersion/INFO]: [ViaVersion] Finished mapping loading, shutting down loader executor.
+[16:18:59] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.regions.WorldGuardFeature] Plugin 'WorldGuard' found. Using it now.
+[16:18:59] [Server thread/INFO]: [com.fastasyncworldedit.bukkit.FaweBukkit] Attempting to use plugin 'WorldGuard'
+[16:18:59] [Server thread/INFO]: [Multiverse-Inventories] First run!
+[16:18:59] [Server thread/INFO]: Checking for conflicts in groups...
+[16:18:59] [Server thread/INFO]: No group conflicts found!
+[16:18:59] [Server thread/INFO]: [Citizens] Loaded 2 NPCs.
+[16:18:59] [Server thread/INFO]: +> [ScriptEvent] Processed 0 script event paths. 
+[16:18:59] [Server thread/INFO]: +> [Denizen] +-------------------------+ 
+[16:18:59] [Server thread/INFO]: +> [Denizen] Denizen fully loaded at: 2026/01/05 16:18:56 
+[16:18:59] [Server thread/WARN]: java.net.UnknownHostException: api.jeff-media.de
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+[16:18:59] [Server thread/WARN]: 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+[16:18:59] [Server thread/WARN]: 	at java.base/java.net.Socket.connect(Socket.java:659)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:166)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:206)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:288)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1377)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1302)
+[16:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:223)
+[16:18:59] [Server thread/WARN]: 	at lumberjack___tree_gravity___leaf_decay___custom_tree_drops_60306_563681.jar//de.jeff_media.lumberjack.libs.updatechecker.UpdateChecker.lambda$checkNow$5(UpdateChecker.java:203)
+[16:18:59] [Server thread/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+[16:18:59] [Server thread/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[16:18:59] [Server thread/WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[16:18:59] [Server thread/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+[16:18:59] [Server thread/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[16:18:59] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[16:18:59] [Server thread/WARN]: [LumberJack] Could not check for updates.
+[16:18:59] [Server thread/INFO]: Done (22.935s)! For help, type "help"
+[16:19:00] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Successfully authenticated as HowellFUMC (2535447526139195) with 4/2000 friends
+[16:19:00] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Creating Xbox LIVE session...
+[16:19:01] [Craft Scheduler Thread - 7 - ImageFrame/INFO]: [ImageFrame] Data loading completed! Loaded 34 ImageMaps!
+[16:19:02] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Creation of Xbox LIVE session was successful!
+[16:21:12] [User Authenticator #0/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[16:21:12] [Server thread/INFO]: [HorriblePlayerLoginEventHack] You have plugins listening to the PlayerLoginEvent, this will cause re-configuration APIs to be unavailable: [LuckPerms, Denizen, WorldGuard]
+[16:21:13] [Server thread/INFO]: [DriveBackupV2] Enabling automatic backups
+[16:21:13] [Server thread/INFO]: chrishooton joined the game
+[16:21:13] [Server thread/INFO]: chrishooton[/50.199.44.226:58760] logged in with entity id 22 at ([Minecraft_Church]-6.665668677269865, 64.0, 89.72876412517964)
+[16:22:02] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:23:42] [Server thread/INFO]: chrishooton issued server command: /mvp remove advent
+[16:24:56] [Server thread/INFO]: chrishooton issued server command: /mv check
+[16:25:05] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:25:13] [Server thread/INFO]: chrishooton issued server command: /mv coordinates
+[16:25:36] [Server thread/INFO]: chrishooton issued server command: /mvtp Minecraft_Church
+[16:25:48] [Server thread/INFO]: chrishooton issued server command: /mvp remove restore
+[16:25:56] [Server thread/INFO]: chrishooton issued server command: /mv remove restore
+[16:25:56] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'restore'
+[16:25:56] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'restore'
+[16:25:56] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'restore'
+[16:25:56] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'restore' in 0.00s
+[16:25:56] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'restore'
+[16:25:56] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'restore'
+[16:26:02] [Server thread/INFO]: chrishooton issued server command: /mv remove AdventWorld
+[16:26:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'AdventWorld'
+[16:26:02] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'AdventWorld'
+[16:26:02] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'AdventWorld'
+[16:26:02] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'AdventWorld' in 0.00s
+[16:26:02] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'AdventWorld'
+[16:26:02] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'AdventWorld'
+[16:26:11] [Server thread/INFO]: chrishooton issued server command: /mv list
+[16:26:26] [Server thread/INFO]: chrishooton issued server command: /mv remove jungle
+[16:26:26] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk system to halt for world 'Jungle'
+[16:26:26] [Server thread/INFO]: [ChunkHolderManager] Halted chunk system for world 'Jungle'
+[16:26:26] [Server thread/INFO]: [ChunkHolderManager] Saving all chunkholders for world 'Jungle'
+[16:26:26] [Server thread/INFO]: [ChunkHolderManager] Saved 0 block chunks, 0 entity chunks, 0 poi chunks in world 'Jungle' in 0.00s
+[16:26:26] [Server thread/INFO]: [ChunkHolderManager] Waiting 60s for chunk I/O to halt for world 'Jungle'
+[16:26:26] [Server thread/INFO]: [ChunkHolderManager] Halted I/O scheduler for world 'Jungle'
+[16:26:35] [Server thread/INFO]: chrishooton issued server command: /mvp list
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal sabbath has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal rich has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:35] [Server thread/WARN]: [Multiverse-Portals] Portal jungle has an invalid DESTINATION! Failed!
+[16:26:52] [Server thread/INFO]: chrishooton issued server command: /mvp remove jungle
+[16:26:57] [Server thread/INFO]: chrishooton issued server command: /mvp remove rich
+[16:27:10] [Server thread/INFO]: chrishooton issued server command: /mvp remove sabbath
+[16:27:20] [Server thread/INFO]: chrishooton issued server command: /mvp remove sheep
+[16:27:35] [Server thread/INFO]: chrishooton issued server command: /mvp list
+[16:28:07] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:28:08] [Server thread/INFO]: chrishooton issued server command: //hpos1
+[16:28:20] [Server thread/INFO]: chrishooton issued server command: //hpos2
+[16:28:43] [Server thread/INFO]: chrishooton issued server command: /rg define room7 -w Minecraft_Church
+[16:28:49] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:29:57] [Server thread/INFO]: chrishooton issued server command: /rg flag -w Minecraft_Church room7 entry deny
+[16:30:19] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:30:33] [Server thread/INFO]: chrishooton issued server command: /rg setpriority -w Minecraft_Church room7 20
+[16:30:49] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:31:10] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:34:00] [Server thread/INFO]: chrishooton lost connection: Disconnected
+[16:34:01] [Server thread/INFO]: chrishooton left the game
+[16:34:13] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[16:34:21] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Transferred bedrock client ToastyCase2379 (2535459450696793) to target server.
+[16:34:34] [GeyserServerChild-4-1/INFO]: [Geyser-Spigot] Player connected with username ToastyCase2379 (898)
+[16:34:34] [localSession-7-2/INFO]: [Geyser-Spigot] ToastyCase2379 (logged in as: ToastyCase2379) has connected to the Java server
+[16:34:35] [Server thread/INFO]: [floodgate] Floodgate player logged in as .ToastyCase2379 joined (UUID: 00000000-0000-0000-0009-01fca7e6b459)
+[16:34:35] [Server thread/INFO]: .ToastyCase2379 joined the game
+[16:34:35] [Server thread/INFO]: .ToastyCase2379[/50.199.44.226:0] logged in with entity id 1268 at ([Minecraft_Church]12.305468, 63.0625, 90.39966)
+[16:35:38] [GeyserServerChild-4-1/INFO]: [Geyser-Spigot] ToastyCase2379 has disconnected from the Java server because of Bedrock client disconnected
+[16:35:38] [Geyser Spigot connection thread-6-3/INFO]: [floodgate] Floodgate player logged in as .ToastyCase2379 disconnected
+[16:35:38] [Server thread/INFO]: .ToastyCase2379 lost connection: Disconnected
+[16:35:38] [Server thread/INFO]: .ToastyCase2379 left the game
+[16:36:18] [User Authenticator #1/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[16:36:19] [Server thread/INFO]: chrishooton joined the game
+[16:36:19] [Server thread/INFO]: chrishooton[/50.199.44.226:22030] logged in with entity id 1503 at ([Minecraft_Church]2.4402979291842883, 63.0625, 122.67935915970337)
+[16:37:13] [Server thread/INFO]: chrishooton issued server command: /rg addmember -w Minecraft_Church sidechapel g:child
+[16:37:15] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:37:45] [Server thread/INFO]: chrishooton issued server command: /rg addmember -w Minecraft_Church room7 g:child
+[16:37:49] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:40:18] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:40:40] [Server thread/INFO]: chrishooton issued server command: /rg flag -w Minecraft_Church room7 entry deny g:guest
+[16:43:21] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:43:36] [Server thread/INFO]: chrishooton issued server command: /rg flag -w Minecraft_Church room7 entry deny -g nonmembers
+[16:46:09] [Server thread/INFO]: chrishooton issued server command: /rg info room7
+[16:46:23] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:47:00] [Server thread/INFO]: chrishooton issued server command: /rg flag room7 entry deny -w Minecraft_Church
+[16:49:26] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:49:50] [Server thread/INFO]: chrishooton issued server command: /rg flag room7 entry deny
+[16:50:06] [Server thread/INFO]: chrishooton issued server command: /rg addmember room7 g:child
+[16:50:19] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:50:23] [Server thread/INFO]: chrishooton issued server command: /rg addmember room7 g:director
+[16:50:37] [Server thread/INFO]: chrishooton issued server command: /rg addmember room7 g:observer
+[16:50:49] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:52:29] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:55:32] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[16:55:44] [Server thread/INFO]: chrishooton issued server command: /rg flag __global__ deny-message "&7This space is not open right now.&r"
+[16:55:49] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[16:56:23] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Transferred bedrock client ToastyCase2379 (2535459450696793) to target server.
+[16:56:35] [GeyserServerChild-4-2/INFO]: [Geyser-Spigot] Player connected with username ToastyCase2379 (898)
+[16:56:35] [localSession-7-3/INFO]: [Geyser-Spigot] ToastyCase2379 (logged in as: ToastyCase2379) has connected to the Java server
+[16:56:36] [Server thread/INFO]: [floodgate] Floodgate player logged in as .ToastyCase2379 joined (UUID: 00000000-0000-0000-0009-01fca7e6b459)
+[16:56:36] [Server thread/INFO]: .ToastyCase2379 joined the game
+[16:56:36] [Server thread/INFO]: .ToastyCase2379[/50.199.44.226:0] logged in with entity id 1825 at ([Minecraft_Church]7.6804123, 63.0625, 121.27274)
+[16:58:34] [Server thread/INFO]: There are 2 of a max of 35 players online: chrishooton, .ToastyCase2379
+[16:59:32] [Server thread/INFO]: chrishooton issued server command: /rg flag __global__ deny-message "&7This space is not open right now.&r"
+[16:59:49] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[17:01:37] [Server thread/INFO]: There are 2 of a max of 35 players online: chrishooton, .ToastyCase2379
+[17:04:40] [Server thread/INFO]: There are 2 of a max of 35 players online: chrishooton, .ToastyCase2379
+[17:06:21] [Server thread/INFO]: chrishooton lost connection: Disconnected
+[17:06:21] [Server thread/INFO]: chrishooton left the game
+[17:07:42] [Server thread/INFO]: There are 1 of a max of 35 players online: .ToastyCase2379
+[17:08:53] [User Authenticator #2/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[17:08:55] [Server thread/INFO]: chrishooton joined the game
+[17:08:55] [Server thread/INFO]: chrishooton[/50.199.44.226:38848] logged in with entity id 1900 at ([Minecraft_Church]7.401012464261, 63.0625, 119.9213591045763)
+[17:09:03] [Server thread/INFO]: chrishooton issued server command: /plugins
+[17:10:45] [Server thread/INFO]: There are 2 of a max of 35 players online: .ToastyCase2379, chrishooton
+[17:13:48] [Server thread/INFO]: There are 2 of a max of 35 players online: .ToastyCase2379, chrishooton
+[17:15:50] [Geyser Spigot connection thread-6-4/INFO]: [floodgate] Floodgate player logged in as .ToastyCase2379 disconnected
+[17:15:50] [GeyserServerChild-4-2/INFO]: [Geyser-Spigot] ToastyCase2379 has disconnected from the Java server because of Bedrock client disconnected
+[17:15:50] [Server thread/INFO]: .ToastyCase2379 lost connection: Disconnected
+[17:15:50] [Server thread/INFO]: .ToastyCase2379 left the game
+[17:16:50] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:18:59] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Creating backups, the server may lag for a little while...
+[17:18:59] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup(s) and compressing...
+[17:18:59] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "Minecraft_Church"
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "Minecraft_Church" created
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "SD"
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Failed to create local backup
+Even if local-keep-count is set to zero, the plugin needs to temporarily create a local backup
+Skipping backup location
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: java.nio.file.NoSuchFileException: SD
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:57)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:161)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/java.nio.file.Files.readAttributes(Files.java:1702)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:289)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:277)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.makeBackup(FileUtil.java:96)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.makeBackupFile(UploadThread.java:380)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run_internal(UploadThread.java:259)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run(UploadThread.java:202)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[17:19:02] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "GoodShepherd"
+[17:19:03] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "GoodShepherd" created
+[17:19:03] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "plugins"
+[17:19:12] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "plugins" created
+[17:19:12] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup(s) created and compressed
+[17:19:12] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading backup(s)...
+[17:19:13] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/Minecraft_Church/Minecraft_Church-2026-1-5--17-18.zip"
+[17:19:13] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[17:19:29] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 16.35 seconds (5579.59KB/s)
+[17:19:29] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Minecraft_Church-2026-1-5--17-18.zip" complete
+[17:19:29] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Location SD is empty, skipping
+[17:19:29] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/GoodShepherd/GoodShepherd-2026-1-5--17-19.zip"
+[17:19:29] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[17:19:37] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 7.74 seconds (4635.89KB/s)
+[17:19:37] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "GoodShepherd-2026-1-5--17-19.zip" complete
+[17:19:37] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/plugins/Backup-plugins-2026-1-5--17-19.zip"
+[17:19:37] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[17:19:53] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 44.85 seconds (6537.29KB/s)
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Backup-plugins-2026-1-5--17-19.zip" complete
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Backup(s) uploaded
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Checking for upload errors...
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Backup to OneDrive complete
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] No upload errors found
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Backup complete
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] The next backup is in 58 minutes
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "GoodShepherd"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "GoodShepherd-2026-1-5--17-19.zip"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "GoodShepherd"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "Minecraft_Church"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Minecraft_Church-2026-1-5--17-18.zip"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "Minecraft_Church"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "plugins"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Backup-plugins-2026-1-5--17-19.zip"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "plugins"
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete
+[17:20:22] [Craft Scheduler Thread - 129 - DriveBackupV2/INFO]: [DriveBackupV2] Backup took 82 seconds to complete
+[17:22:56] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:25:58] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:26:44] [Server thread/INFO]: chrishooton lost connection: Disconnected
+[17:26:44] [Server thread/INFO]: chrishooton left the game
+[17:29:01] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:32:04] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:35:07] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:38:09] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:41:12] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:44:15] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:47:17] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:50:20] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[17:51:26] [User Authenticator #3/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[17:51:27] [Server thread/INFO]: chrishooton joined the game
+[17:51:27] [Server thread/INFO]: chrishooton[/50.199.44.226:11112] logged in with entity id 2008 at ([Minecraft_Church]7.47136167835547, 63.0625, 119.99960371470159)
+[17:51:51] [Server thread/INFO]: chrishooton issued server command: /npc create Doorkeeper
+[17:52:12] [Server thread/INFO]: chrishooton issued server command: /npc --type player
+[17:52:38] [Server thread/INFO]: chrishooton issued server command: /npc lookclose
+[17:53:07] [Server thread/INFO]: chrishooton issued server command: /npc protected
+[17:53:23] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:56:25] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:56:40] [Server thread/INFO]: chrishooton issued server command: /npc skin --url https://www.minecraftskins.com/uploads/skins/2025/06/26/sloth-w-light-grey-hoodie-23361186.png?v938
+[17:57:58] [Server thread/INFO]: chrishooton issued server command: /npc vulnerable false
+[17:59:11] [Server thread/INFO]: chrishooton issued server command: /npc move help
+[17:59:28] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[17:59:34] [Server thread/INFO]: chrishooton issued server command: //hpos1
+[17:59:41] [Server thread/INFO]: chrishooton issued server command: //hpos2
+[17:59:50] [Server thread/INFO]: chrishooton issued server command: /rg create doorkeep
+[18:00:19] [WorldGuard Region I/O/INFO]: [WorldGuard] Region data changes made in 'Minecraft_Church' have been background saved
+[18:00:27] [Server thread/INFO]: chrishooton issued server command: /rg doorkeep info
+[18:00:34] [Server thread/INFO]: chrishooton issued server command: /rg info doorkeep
+[18:00:41] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" doorkeep
+[18:01:15] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 2 doorkeep
+[18:01:18] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 3 doorkeep
+[18:01:20] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 4 doorkeep
+[18:01:22] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 5 doorkeep
+[18:01:23] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 6 doorkeep
+[18:01:27] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 5 doorkeep
+[18:01:30] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 4 doorkeep
+[18:01:31] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 3 doorkeep
+[18:01:32] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 2 doorkeep
+[18:01:32] [Server thread/INFO]: chrishooton issued server command: /rg flags -w "Minecraft_Church" -p 1 doorkeep
+[18:02:31] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[18:05:33] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[18:08:36] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[18:11:39] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[18:14:00] [Server thread/INFO]: Automatic saving is now disabled
+[18:14:03] [Server thread/INFO]: Automatic saving is now enabled
+[18:14:38] [Server thread/INFO]: chrishooton was kicked due to keepalive timeout!
+[18:14:38] [Server thread/INFO]: chrishooton lost connection: Timed out
+[18:14:38] [Server thread/INFO]: chrishooton left the game
+[18:14:42] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:16:28] [User Authenticator #4/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[18:17:06] [Server thread/INFO]: chrishooton (c48f0113-4076-3aca-b576-7f42341d2531) lost connection: Timed out
+[18:17:06] [Server thread/INFO]: chrishooton (c48f0113-4076-3aca-b576-7f42341d2531) lost connection: Timed out
+[18:17:44] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:18:59] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating backups, the server may lag for a little while...
+[18:18:59] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup(s) and compressing...
+[18:18:59] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "Minecraft_Church"
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "Minecraft_Church" created
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "SD"
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Failed to create local backup
+Even if local-keep-count is set to zero, the plugin needs to temporarily create a local backup
+Skipping backup location
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: java.nio.file.NoSuchFileException: SD
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:57)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:161)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.nio.file.Files.readAttributes(Files.java:1702)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:289)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:277)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.makeBackup(FileUtil.java:96)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.makeBackupFile(UploadThread.java:380)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run_internal(UploadThread.java:259)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run(UploadThread.java:202)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[18:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "GoodShepherd"
+[18:19:03] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "GoodShepherd" created
+[18:19:03] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "plugins"
+[18:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "plugins" created
+[18:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup(s) created and compressed
+[18:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading backup(s)...
+[18:19:13] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/Minecraft_Church/Minecraft_Church-2026-1-5--18-18.zip"
+[18:19:13] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[18:19:24] [User Authenticator #5/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[18:19:27] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 14.09 seconds (6475.68KB/s)
+[18:19:27] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Minecraft_Church-2026-1-5--18-18.zip" complete
+[18:19:27] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Location SD is empty, skipping
+[18:19:27] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/GoodShepherd/GoodShepherd-2026-1-5--18-19.zip"
+[18:19:27] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[18:19:37] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 10.43 seconds (3438.03KB/s)
+[18:19:37] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "GoodShepherd-2026-1-5--18-19.zip" complete
+[18:19:37] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/plugins/Backup-plugins-2026-1-5--18-19.zip"
+[18:19:37] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[18:19:58] [Server thread/INFO]: chrishooton (c48f0113-4076-3aca-b576-7f42341d2531) lost connection: Timed out
+[18:19:58] [Server thread/INFO]: chrishooton (c48f0113-4076-3aca-b576-7f42341d2531) lost connection: Timed out
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 38.51 seconds (7613.85KB/s)
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Backup-plugins-2026-1-5--18-19.zip" complete
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup(s) uploaded
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Checking for upload errors...
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup to OneDrive complete
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] No upload errors found
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup complete
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] The next backup is in 58 minutes
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Disabling automatic backups due to inactivity
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "GoodShepherd"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "GoodShepherd-2026-1-5--18-19.zip"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "GoodShepherd"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "Minecraft_Church"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Minecraft_Church-2026-1-5--18-18.zip"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "Minecraft_Church"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "plugins"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Backup-plugins-2026-1-5--18-19.zip"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "plugins"
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete
+[18:20:16] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup took 76 seconds to complete
+[18:20:47] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:23:50] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:24:25] [MCXboxBroadcast Thread-1/WARN]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Connection to websocket lost, re-creating session...
+[18:24:25] [WebSocketConnectReadThread-174/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] [713fc3aa-7d90-4b11-b056-92e089ba26b4] RTC Websocket [9c978f21-7647-451f-93cf-fcb66887d127] disconnected: Normal close (1000)
+[18:24:26] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] WebSocket session reconnected
+[18:26:52] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:29:55] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:32:58] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:36:00] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:39:03] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:42:06] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:45:08] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:47:07] [Server thread/INFO]: +> [ScriptRegistry] Loading 2 script files... 
+[18:47:07] [Server thread/INFO]: +> [DenizenCore] Scripts loaded! File load took 1ms, processing 17ms. 
+[18:47:07] [Server thread/INFO]: +> [ScriptEvent] Processed 0 script event paths. 
+[18:47:07] [Server thread/INFO]: Denizen/scripts/... reloaded from disk to memory.
+[18:47:07] [Server thread/INFO]: '/denizen reload scripts' is the old way of doing things ... use '/ex reload' instead!
+[18:47:22] [Server thread/INFO]: Starting InstantQueue 'EXCOMMAND_0_ScreensInappropriate'... 
+[18:47:22] [Server thread/INFO]: +- Queue 'EXCOMMAND_0_ScreensInappropriate' Executing: (line 1) reload ---------+ 
+[18:47:22] [Server thread/INFO]: +> Executing 'RELOAD': type='SCRIPTS'   
+[18:47:22] [Server thread/INFO]: Completing queue 'EXCOMMAND_0_ScreensInappropriate' in 2ms. 
+[18:47:22] [Server thread/INFO]: +> [ScriptRegistry] Loading 2 script files... 
+[18:47:22] [Server thread/INFO]: +> [DenizenCore] Scripts loaded! File load took 39ms, processing 4ms. 
+[18:47:22] [Server thread/INFO]: +> [ScriptEvent] Processed 0 script event paths. 
+[18:48:11] [Server thread/INFO]: There are 0 of a max of 35 players online: 
+[18:49:56] [User Authenticator #6/INFO]: UUID of player chrishooton is c48f0113-4076-3aca-b576-7f42341d2531
+[18:49:57] [Server thread/INFO]: [DriveBackupV2] Enabling automatic backups
+[18:49:57] [Server thread/INFO]: chrishooton joined the game
+[18:49:57] [Server thread/INFO]: chrishooton[/50.199.44.226:54270] logged in with entity id 2856 at ([Minecraft_Church]5.955599330826576, 63.0625, 120.82982450773005)
+[18:50:17] [Server thread/INFO]: chrishooton issued server command: /npc select --range 2
+[18:50:51] [Server thread/INFO]: chrishooton issued server command: /npc assignment --set doorkeeper_assign
+[18:50:51] [Server thread/INFO]: +> Executing 'Action': Type='On assignment'  npc='n@2 (Doorkeeper)'  Script='s@doorkeeper_assign (ASSIGNMENT)'  Player='p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)'   
+[18:50:51] [Server thread/INFO]: +- Building action 'On ASSIGNMENT' for n@2 ---------+ 
+[18:50:51] [Server thread/INFO]: Starting InstantQueue 'DOORKEEPER_ASSIGN_1_RoutersSay' with player 'chrishooton' and NPC '2/Doorkeeper'... 
+[18:50:51] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_1_RoutersSay' Executing: (line 5) trigger name:click state:true ---------+ 
+[18:50:51] [Server thread/INFO]: +> Executing 'TRIGGER': trigger='click'  toggle='true'  npc='n@2 (Doorkeeper)'   
+[18:50:51] [Server thread/INFO]: Completing queue 'DOORKEEPER_ASSIGN_1_RoutersSay' in 1ms. 
+[18:50:59] [Server thread/INFO]: +> Executing 'Action': Type='On CLICK'  npc='n@2 (Doorkeeper)'  Script='s@doorkeeper_assign (ASSIGNMENT)'  Player='p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)'   
+[18:50:59] [Server thread/INFO]: +> [Static Tag Processing] Pre-Filled tag <&7> with '', and cached result. 
+[18:50:59] [Server thread/INFO]: +> [Static Tag Processing] Pre-Filled tag <&r> with '', and cached result. 
+[18:50:59] [Server thread/INFO]: +- Building action 'On CLICK' for n@2 ---------+ 
+[18:50:59] [Server thread/INFO]: Starting InstantQueue 'DOORKEEPER_ASSIGN_2_AssessmentLebanon' with player 'chrishooton' and NPC '2/Doorkeeper'... 
+[18:50:59] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_2_AssessmentLebanon' Executing: (line 8) narrate "<&7>Welcome. Some rooms open when a grown-up helps.<&r>" ---------+ 
+[18:50:59] [Server thread/INFO]: +> Executing 'NARRATE': Narrating='Welcome. Some rooms open when a grown-up helps.'  Targets='[p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)]'   
+[18:50:59] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_2_AssessmentLebanon' Executing: (line 9) narrate "<&7>You can explore here while they do.<&r>" ---------+ 
+[18:50:59] [Server thread/INFO]: +> Executing 'NARRATE': Narrating='You can explore here while they do.'  Targets='[p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)]'   
+[18:50:59] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_2_AssessmentLebanon' Executing: (line 10) narrate "<&7>If you want, show them the sign near the door.<&r>" ---------+ 
+[18:50:59] [Server thread/INFO]: +> Executing 'NARRATE': Narrating='If you want, show them the sign near the door.'  Targets='[p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)]'   
+[18:50:59] [Server thread/INFO]: Completing queue 'DOORKEEPER_ASSIGN_2_AssessmentLebanon' in 1ms. 
+[18:51:14] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[18:52:39] [Server thread/INFO]: chrishooton issued server command: /if giveinvisibleframe glowing 1
+[18:54:16] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[18:57:19] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:00:22] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:03:25] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:06:27] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:09:30] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:12:33] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:15:35] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:18:38] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:18:59] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating backups, the server may lag for a little while...
+[19:18:59] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup(s) and compressing...
+[19:18:59] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "Minecraft_Church"
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "Minecraft_Church" created
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "SD"
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Failed to create local backup
+Even if local-keep-count is set to zero, the plugin needs to temporarily create a local backup
+Skipping backup location
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: java.nio.file.NoSuchFileException: SD
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:57)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:161)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.nio.file.Files.readAttributes(Files.java:1702)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:289)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:277)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.makeBackup(FileUtil.java:96)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.makeBackupFile(UploadThread.java:380)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run_internal(UploadThread.java:259)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run(UploadThread.java:202)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[19:19:02] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "GoodShepherd"
+[19:19:03] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "GoodShepherd" created
+[19:19:03] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "plugins"
+[19:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "plugins" created
+[19:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup(s) created and compressed
+[19:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading backup(s)...
+[19:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/Minecraft_Church/Minecraft_Church-2026-1-5--19-18.zip"
+[19:19:12] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[19:19:26] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 13.79 seconds (6615.83KB/s)
+[19:19:26] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Minecraft_Church-2026-1-5--19-18.zip" complete
+[19:19:26] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Location SD is empty, skipping
+[19:19:26] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/GoodShepherd/GoodShepherd-2026-1-5--19-19.zip"
+[19:19:26] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[19:19:33] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 6.81 seconds (5262.49KB/s)
+[19:19:33] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "GoodShepherd-2026-1-5--19-19.zip" complete
+[19:19:33] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/plugins/Backup-plugins-2026-1-5--19-19.zip"
+[19:19:33] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 37.58 seconds (7803.31KB/s)
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Backup-plugins-2026-1-5--19-19.zip" complete
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup(s) uploaded
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Checking for upload errors...
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup to OneDrive complete
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] No upload errors found
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup complete
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] The next backup is in 58 minutes
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "GoodShepherd"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "GoodShepherd-2026-1-5--19-19.zip"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "GoodShepherd"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "Minecraft_Church"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Minecraft_Church-2026-1-5--19-18.zip"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "Minecraft_Church"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "plugins"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Backup-plugins-2026-1-5--19-19.zip"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "plugins"
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete
+[19:20:11] [Craft Scheduler Thread - 192 - DriveBackupV2/INFO]: [DriveBackupV2] Backup took 71 seconds to complete
+[19:21:41] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:24:43] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:27:46] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:30:49] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:33:51] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:36:54] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:39:57] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:43:00] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:46:02] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:49:05] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:51:15] [Server thread/INFO]: +> Executing 'Action': Type='On CLICK'  npc='n@2 (Doorkeeper)'  Script='s@doorkeeper_assign (ASSIGNMENT)'  Player='p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)'   
+[19:51:15] [Server thread/INFO]: +- Building action 'On CLICK' for n@2 ---------+ 
+[19:51:15] [Server thread/INFO]: Starting InstantQueue 'DOORKEEPER_ASSIGN_3_RelationsDavidson' with player 'chrishooton' and NPC '2/Doorkeeper'... 
+[19:51:15] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_3_RelationsDavidson' Executing: (line 8) narrate "<&7>Welcome. Some rooms open when a grown-up helps.<&r>" ---------+ 
+[19:51:15] [Server thread/INFO]: +> Executing 'NARRATE': Narrating='Welcome. Some rooms open when a grown-up helps.'  Targets='[p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)]'   
+[19:51:15] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_3_RelationsDavidson' Executing: (line 9) narrate "<&7>You can explore here while they do.<&r>" ---------+ 
+[19:51:15] [Server thread/INFO]: +> Executing 'NARRATE': Narrating='You can explore here while they do.'  Targets='[p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)]'   
+[19:51:15] [Server thread/INFO]: +- Queue 'DOORKEEPER_ASSIGN_3_RelationsDavidson' Executing: (line 10) narrate "<&7>If you want, show them the sign near the door.<&r>" ---------+ 
+[19:51:15] [Server thread/INFO]: +> Executing 'NARRATE': Narrating='If you want, show them the sign near the door.'  Targets='[p@c48f0113-4076-3aca-b576-7f42341d2531 (chrishooton)]'   
+[19:51:15] [Server thread/INFO]: Completing queue 'DOORKEEPER_ASSIGN_3_RelationsDavidson' in 0ms. 
+[19:52:08] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:55:10] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[19:58:13] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:01:16] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:04:18] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:07:21] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:10:24] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:13:26] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:14:45] [MCXboxBroadcast Thread-1/WARN]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] Connection to websocket lost, re-creating session...
+[20:14:46] [WebSocketConnectReadThread-904/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] [c7f543e9-2db4-47d8-aad7-f56c34d2a6a6] RTC Websocket [0ac07185-e524-44a1-8b7b-c1df7a6455da] disconnected: Normal close (1000)
+[20:14:46] [MCXboxBroadcast Thread-1/INFO]: [Geyser-Spigot] [mcxboxbroadcast] [Primary Session] WebSocket session reconnected
+[20:16:29] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:18:59] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Creating backups, the server may lag for a little while...
+[20:18:59] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup(s) and compressing...
+[20:18:59] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "Minecraft_Church"
+[20:18:59] [Server thread/WARN]: java.net.UnknownHostException: api.jeff-media.de
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:569)
+[20:18:59] [Server thread/WARN]: 	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:284)
+[20:18:59] [Server thread/WARN]: 	at java.base/java.net.Socket.connect(Socket.java:659)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.security.ssl.SSLSocketImpl.connect(SSLSocketImpl.java:304)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.security.ssl.BaseSSLSocketImpl.connect(BaseSSLSocketImpl.java:181)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.NetworkClient.doConnect(NetworkClient.java:166)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:516)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.http.HttpClient.openServer(HttpClient.java:604)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.HttpsClient.<init>(HttpsClient.java:206)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.HttpsClient.New(HttpsClient.java:288)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.getNewHttpClient(AbstractDelegateHttpsURLConnection.java:193)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect0(HttpURLConnection.java:963)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.plainConnect(HttpURLConnection.java:899)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.AbstractDelegateHttpsURLConnection.connect(AbstractDelegateHttpsURLConnection.java:179)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1377)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1302)
+[20:18:59] [Server thread/WARN]: 	at java.base/sun.net.www.protocol.https.HttpsURLConnectionImpl.getInputStream(HttpsURLConnectionImpl.java:223)
+[20:18:59] [Server thread/WARN]: 	at lumberjack___tree_gravity___leaf_decay___custom_tree_drops_60306_563681.jar//de.jeff_media.lumberjack.libs.updatechecker.UpdateChecker.lambda$checkNow$5(UpdateChecker.java:203)
+[20:18:59] [Server thread/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+[20:18:59] [Server thread/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[20:18:59] [Server thread/WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[20:18:59] [Server thread/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+[20:18:59] [Server thread/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[20:18:59] [Server thread/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[20:18:59] [Server thread/WARN]: [LumberJack] Could not check for updates.
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "Minecraft_Church" created
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "SD"
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Failed to create local backup
+Even if local-keep-count is set to zero, the plugin needs to temporarily create a local backup
+Skipping backup location
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: java.nio.file.NoSuchFileException: SD
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.translateToIOException(UnixException.java:92)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:106)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixException.rethrowAsIOException(UnixException.java:111)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileAttributeViews$Basic.readAttributes(UnixFileAttributeViews.java:57)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.UnixFileSystemProvider.readAttributes(UnixFileSystemProvider.java:161)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/sun.nio.fs.LinuxFileSystemProvider.readAttributes(LinuxFileSystemProvider.java:99)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/java.nio.file.Files.readAttributes(Files.java:1702)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:289)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.generateFileList(FileUtil.java:277)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.util.FileUtil.makeBackup(FileUtil.java:96)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.makeBackupFile(UploadThread.java:380)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run_internal(UploadThread.java:259)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at DriveBackupV2 (1).jar//ratismal.drivebackup.UploadThread.run(UploadThread.java:202)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftTask.run(CraftTask.java:78)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at org.bukkit.craftbukkit.scheduler.CraftAsyncTask.run(CraftAsyncTask.java:57)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at com.destroystokyo.paper.ServerSchedulerReportingWrapper.run(ServerSchedulerReportingWrapper.java:22)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1090)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:614)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/WARN]: 	at java.base/java.lang.Thread.run(Thread.java:1474)
+[20:19:02] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "GoodShepherd"
+[20:19:03] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "GoodShepherd" created
+[20:19:03] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Creating local backup for "plugins"
+[20:19:12] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup for "plugins" created
+[20:19:12] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup(s) created and compressed
+[20:19:12] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading backup(s)...
+[20:19:12] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/Minecraft_Church/Minecraft_Church-2026-1-5--20-18.zip"
+[20:19:12] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[20:19:32] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:19:33] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 20.68 seconds (4411.5KB/s)
+[20:19:33] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Minecraft_Church-2026-1-5--20-18.zip" complete
+[20:19:33] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Location SD is empty, skipping
+[20:19:33] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/GoodShepherd/GoodShepherd-2026-1-5--20-19.zip"
+[20:19:33] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[20:19:40] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 6.52 seconds (5503.16KB/s)
+[20:19:40] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "GoodShepherd-2026-1-5--20-19.zip" complete
+[20:19:40] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Starting upload(s) for file "/home/minecraft/multicraft/servers/server2969109/import_profile_MoLRJ/backups/plugins/Backup-plugins-2026-1-5--20-19.zip"
+[20:19:40] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Uploading file to OneDrive
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] File uploaded in 35.56 seconds (8244.77KB/s)
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Upload(s) for file "Backup-plugins-2026-1-5--20-19.zip" complete
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Backup(s) uploaded
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Checking for upload errors...
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Backup to OneDrive complete
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] No upload errors found
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Backup complete
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] The next backup is in 58 minutes
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "GoodShepherd"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "GoodShepherd-2026-1-5--20-19.zip"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "GoodShepherd"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "Minecraft_Church"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Minecraft_Church-2026-1-5--20-18.zip"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "Minecraft_Church"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Pruning local backups for "plugins"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] There are 1 file(s) which exceeds the local limit of 0, deleting oldest
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Deleted local backup "Backup-plugins-2026-1-5--20-19.zip"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete for "plugins"
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Local backup pruning complete
+[20:20:15] [Craft Scheduler Thread - 193 - DriveBackupV2/INFO]: [DriveBackupV2] Backup took 76 seconds to complete
+[20:22:35] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:25:37] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:28:40] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton
+[20:31:43] [Server thread/INFO]: There are 1 of a max of 35 players online: chrishooton

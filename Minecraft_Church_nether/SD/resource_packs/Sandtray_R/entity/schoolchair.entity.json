@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:schoolchair",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/schoolchair"
+			},
+			"geometry": {
+				"default": "geometry.schoolchair"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#f01818",
+				"overlay_color": "#171882"
+			}
+		}
+	}
+}

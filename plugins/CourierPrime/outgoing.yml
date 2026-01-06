@@ -1,0 +1,284 @@
+4ee23c41-d976-4e5c-ad26-5567cbf1876b:
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Start
+      by reading the story on the lecturn. Then go to the room marked explore. Take
+      care of the animals there. "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Start
+      by reading the story on",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"the
+      lecturn. Then go to the",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"room
+      marked explore. Take care",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"19:42:37
+      08/28/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Focussing
+      only on looking good infront of your friends isn’tfollowing God’s way. We need
+      to showlove, even when there is nothing init for us. "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Focussing
+      only on looking good",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"infront
+      of your friends",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"isn’tfollowing
+      God’s way. We",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"13:47:03
+      09/03/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Where
+      did you see God today? Anything good? Anything Beautiful? "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Where
+      did you see God today?",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Anything
+      good? Anything",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Beautiful?
+      ",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"20:55:51
+      09/04/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Hi,
+      Go to the explore world and build a two pens for sheep. Then put sheep in one
+      of them and see if you can move them all to the other pen without loosing them.
+      "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Hi,
+      Go to the explore world",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"and
+      build a two pens for",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"sheep.
+      Then put sheep in one",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"18:46:16
+      09/11/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+00000000-0000-0000-0009-01f1c8ac4847:
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Where
+      did you see God today? Anything good? Anything Beautiful? "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Where
+      did you see God today?",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Anything
+      good? Anything",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Beautiful?
+      ",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"20:55:51
+      09/04/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Hi,
+      Go to the explore world and build a two pens for sheep. Then put sheep in one
+      of them and see if you can move them all to the other pen without loosing them.
+      "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Hi,
+      Go to the explore world",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"and
+      build a two pens for",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"sheep.
+      Then put sheep in one",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"18:46:16
+      09/11/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+00000000-0000-0000-0009-01fc6f949af7:
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Start
+      by reading the story on the lecturn. Then go to the room marked explore. Take
+      care of the animals there. "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Start
+      by reading the story on",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"the
+      lecturn. Then go to the",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"room
+      marked explore. Take care",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"19:42:37
+      08/28/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Focussing
+      only on looking good infront of your friends isn’tfollowing God’s way. We need
+      to showlove, even when there is nothing init for us. "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Focussing
+      only on looking good",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"infront
+      of your friends",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"isn’tfollowing
+      God’s way. We",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"13:47:03
+      09/03/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Where
+      did you see God today? Anything good? Anything Beautiful? "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Where
+      did you see God today?",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Anything
+      good? Anything",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Beautiful?
+      ",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"20:55:51
+      09/04/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Hi,
+      Go to the explore world and build a two pens for sheep. Then put sheep in one
+      of them and see if you can move them all to the other pen without loosing them.
+      "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Hi,
+      Go to the explore world",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"and
+      build a two pens for",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"sheep.
+      Then put sheep in one",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"18:46:16
+      09/11/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+0ac71c29-cd4e-44bb-841b-1c8403cd56a5:
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Start
+      by reading the story on the lecturn. Then go to the room marked explore. Take
+      care of the animals there. "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Start
+      by reading the story on",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"the
+      lecturn. Then go to the",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"room
+      marked explore. Take care",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"19:42:37
+      08/28/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Focussing
+      only on looking good infront of your friends isn’tfollowing God’s way. We need
+      to showlove, even when there is nothing init for us. "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Focussing
+      only on looking good",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"infront
+      of your friends",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"isn’tfollowing
+      God’s way. We",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"13:47:03
+      09/03/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Where
+      did you see God today? Anything good? Anything Beautiful? "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Where
+      did you see God today?",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Anything
+      good? Anything",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Beautiful?
+      ",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"20:55:51
+      09/04/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Hi,
+      Go to the explore world and build a two pens for sheep. Then put sheep in one
+      of them and see if you can move them all to the other pen without loosing them.
+      "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Hi,
+      Go to the explore world",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"and
+      build a two pens for",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"sheep.
+      Then put sheep in one",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"18:46:16
+      09/11/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+00000000-0000-0000-0009-01f9e124653b:
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Start
+      by reading the story on the lecturn. Then go to the room marked explore. Take
+      care of the animals there. "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Start
+      by reading the story on",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"the
+      lecturn. Then go to the",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"room
+      marked explore. Take care",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"19:42:37
+      08/28/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Focussing
+      only on looking good infront of your friends isn’tfollowing God’s way. We need
+      to showlove, even when there is nothing init for us. "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Focussing
+      only on looking good",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"infront
+      of your friends",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"isn’tfollowing
+      God’s way. We",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"13:47:03
+      09/03/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Where
+      did you see God today? Anything good? Anything Beautiful? "],text:""}}],title:{raw:"§fLetter
+      from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Where
+      did you see God today?",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Anything
+      good? Anything",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Beautiful?
+      ",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"20:55:51
+      09/04/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1
+- ==: org.bukkit.inventory.ItemStack
+  DataVersion: 4671
+  id: minecraft:written_book
+  count: 1
+  components:
+    minecraft:written_book_content: '{author:"chrishooton",pages:[{raw:{extra:["Hi,
+      Go to the explore world and build a two pens for sheep. Then put sheep in one
+      of them and see if you can move them all to the other pen without loosing them.
+      "],text:""}}],title:{raw:"§fLetter from §achrishooton"}}'
+    minecraft:lore: '["",{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"Hi,
+      Go to the explore world",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"and
+      build a two pens for",underlined:0b}],text:""},{extra:[{bold:0b,color:"dark_purple",italic:1b,obfuscated:0b,strikethrough:0b,text:"sheep.
+      Then put sheep in one",underlined:0b}],text:""},"",{extra:[{bold:0b,color:"dark_gray",italic:0b,obfuscated:0b,strikethrough:0b,text:"18:46:16
+      09/11/25 (1)",underlined:0b}],text:""},{extra:["§TLETTER_TO_ALL"],text:""}]'
+    minecraft:custom_data: '{PublicBukkitValues:{"courierprime:playername":"chrishooton"}}'
+  schema_version: 1

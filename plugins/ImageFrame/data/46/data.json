@@ -1,0 +1,119 @@
+{
+  "type": "imageframe:url_static",
+  "index": 46,
+  "name": "w0bo",
+  "url": "https://static.wixstatic.com/media/d33f67_72b43d7a1e184f6f9e8f19179eefef83~mv2.png",
+  "width": 3,
+  "height": 7,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1757618641285,
+  "mapdata": [
+    {
+      "mapid": 423,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 424,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 425,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 426,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 427,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 428,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 429,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 430,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 431,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 432,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 433,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 434,
+      "image": "11.png",
+      "markers": []
+    },
+    {
+      "mapid": 435,
+      "image": "12.png",
+      "markers": []
+    },
+    {
+      "mapid": 436,
+      "image": "13.png",
+      "markers": []
+    },
+    {
+      "mapid": 437,
+      "image": "14.png",
+      "markers": []
+    },
+    {
+      "mapid": 438,
+      "image": "15.png",
+      "markers": []
+    },
+    {
+      "mapid": 439,
+      "image": "16.png",
+      "markers": []
+    },
+    {
+      "mapid": 440,
+      "image": "17.png",
+      "markers": []
+    },
+    {
+      "mapid": 441,
+      "image": "18.png",
+      "markers": []
+    },
+    {
+      "mapid": 442,
+      "image": "19.png",
+      "markers": []
+    },
+    {
+      "mapid": 443,
+      "image": "20.png",
+      "markers": []
+    }
+  ]
+}

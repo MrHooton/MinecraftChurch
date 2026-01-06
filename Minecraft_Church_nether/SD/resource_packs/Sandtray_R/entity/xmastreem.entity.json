@@ -1,0 +1,22 @@
+{
+  "format_version": "1.10.0",
+  "minecraft:client_entity": {
+    "description": {
+      "identifier": "otb:xmastreem",
+      "materials": {
+        "default": "player_animated"
+      },
+      "textures": {
+        "default": "textures/entity/xmastree"
+      },
+      "geometry": {
+        "default": "geometry.xmastree"
+      },
+      "render_controllers": ["controller.render.xmastree"],
+      "spawn_egg": {
+        "base_color": "#136a2c",
+        "overlay_color": "#65f927"
+      }
+    }
+  }
+}

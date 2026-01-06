@@ -1,0 +1,44 @@
+{
+  "type": "imageframe:url_static",
+  "index": 22,
+  "name": "sign",
+  "url": "https://static.wixstatic.com/media/d33f67_26a9b8f0ff154b6d920a7f002abbab4c~mv2.png",
+  "width": 3,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755636433805,
+  "mapdata": [
+    {
+      "mapid": 159,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 160,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 161,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 162,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 163,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 164,
+      "image": "5.png",
+      "markers": []
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "type": "imageframe:url_static",
+  "index": 1,
+  "name": "chapelwindow",
+  "url": "https://static.wixstatic.com/media/d33f67_40c37a9622fd456a908e7bbb8ea5a99f~mv2.png",
+  "width": 2,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755112792399,
+  "mapdata": [
+    {
+      "mapid": 43,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 44,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 45,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 46,
+      "image": "3.png",
+      "markers": []
+    }
+  ]
+}

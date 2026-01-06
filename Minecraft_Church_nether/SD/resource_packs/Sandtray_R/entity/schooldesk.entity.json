@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:schooldesk",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/schooldesk"
+			},
+			"geometry": {
+				"default": "geometry.schooldesk"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#8c8e4b",
+				"overlay_color": "#777f8c"
+			}
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"format_version": "1.8.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:toypandalarge",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/toypanda"
+			},
+			"geometry": {
+				"default": "geometry.toypanda"
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target"
+			},
+			"animation_controllers": [
+				{
+					"move": "controller.animation.panda.move"
+				},
+				{
+					"unhappy": "controller.animation.panda.unhappy"
+				},
+				{
+					"sneezing": "controller.animation.panda.sneezing"
+				},
+				{
+					"baby": "controller.animation.panda.baby"
+				}
+			],
+			"render_controllers": ["controller.render.panda"],
+			"spawn_egg": {
+				"base_color": "#03010e",
+				"overlay_color": "#ffffff"
+			}
+		}
+	}
+}

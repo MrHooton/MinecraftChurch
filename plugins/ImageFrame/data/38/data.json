@@ -1,0 +1,19 @@
+{
+  "type": "imageframe:url_static",
+  "index": 38,
+  "name": "teaparty",
+  "url": "https://static.wixstatic.com/media/d33f67_cae43babdeca46deb4421116ea03f31a~mv2.png",
+  "width": 1,
+  "height": 1,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755811792502,
+  "mapdata": [
+    {
+      "mapid": 380,
+      "image": "0.png",
+      "markers": []
+    }
+  ]
+}

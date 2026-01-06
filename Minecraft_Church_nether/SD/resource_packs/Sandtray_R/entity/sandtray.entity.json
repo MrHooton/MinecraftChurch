@@ -1,0 +1,22 @@
+{
+	"format_version": "1.10.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:sandtray",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/sandtray"
+			},
+			"geometry": {
+				"default": "geometry.sandtray"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#b5b351",
+				"overlay_color": "#f4cca0"
+			}
+		}
+	}
+}

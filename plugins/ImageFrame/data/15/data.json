@@ -1,0 +1,24 @@
+{
+  "type": "imageframe:url_static",
+  "index": 15,
+  "name": "w2",
+  "url": "https://static.wixstatic.com/media/d33f67_8820bfb944214cfda27eec8b3b7c47c0~mv2.png",
+  "width": 1,
+  "height": 2,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755546923447,
+  "mapdata": [
+    {
+      "mapid": 104,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 105,
+      "image": "1.png",
+      "markers": []
+    }
+  ]
+}

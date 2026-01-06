@@ -1,0 +1,38 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:client_entity": {
+		"description": {
+			"identifier": "otb:ellienpc",
+			"materials": {
+				"default": "entity_alphatest"
+			},
+			"textures": {
+				"default": "textures/entity/ellienpc"
+			},
+			"geometry": {
+				"default": "geometry.ellienpc"
+			},
+			"scripts": {
+				"animate": [
+					{
+						"move": "query.modified_move_speed"
+					},
+					"look_at_target",
+					{
+						"baby_transform": "query.is_baby"
+					}
+				]
+			},
+			"animations": {
+				"look_at_target": "animation.common.look_at_target",
+				"move": "animation.npc.move",
+				"baby_transform": "animation.npc.baby_transform"
+			},
+			"render_controllers": ["controller.render.default"],
+			"spawn_egg": {
+				"base_color": "#ebeff0",
+				"overlay_color": "#6cacd9"
+			}
+		}
+	}
+}

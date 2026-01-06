@@ -1,0 +1,74 @@
+{
+  "type": "imageframe:url_static",
+  "index": 42,
+  "name": "new13-9",
+  "url": "https://static.wixstatic.com/media/d33f67_8b96b8d8be5d45c8b8148de49eee57f2~mv2.png",
+  "width": 4,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1757538202496,
+  "mapdata": [
+    {
+      "mapid": 387,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 388,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 389,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 390,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 391,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 392,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 393,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 394,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 395,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 396,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 397,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 398,
+      "image": "11.png",
+      "markers": []
+    }
+  ]
+}

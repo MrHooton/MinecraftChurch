@@ -1,0 +1,74 @@
+{
+  "type": "imageframe:url_static",
+  "index": 19,
+  "name": "w913",
+  "url": "https://static.wixstatic.com/media/d33f67_4926dfe09834466f8b92cc0457b301bd~mv2.png",
+  "width": 4,
+  "height": 3,
+  "ditheringType": "nearest-color",
+  "creator": "1abcb6b6-158c-43b8-af79-076f502af55c",
+  "hasAccess": {},
+  "creationTime": 1755616467200,
+  "mapdata": [
+    {
+      "mapid": 137,
+      "image": "0.png",
+      "markers": []
+    },
+    {
+      "mapid": 138,
+      "image": "1.png",
+      "markers": []
+    },
+    {
+      "mapid": 139,
+      "image": "2.png",
+      "markers": []
+    },
+    {
+      "mapid": 140,
+      "image": "3.png",
+      "markers": []
+    },
+    {
+      "mapid": 141,
+      "image": "4.png",
+      "markers": []
+    },
+    {
+      "mapid": 142,
+      "image": "5.png",
+      "markers": []
+    },
+    {
+      "mapid": 143,
+      "image": "6.png",
+      "markers": []
+    },
+    {
+      "mapid": 144,
+      "image": "7.png",
+      "markers": []
+    },
+    {
+      "mapid": 145,
+      "image": "8.png",
+      "markers": []
+    },
+    {
+      "mapid": 146,
+      "image": "9.png",
+      "markers": []
+    },
+    {
+      "mapid": 147,
+      "image": "10.png",
+      "markers": []
+    },
+    {
+      "mapid": 148,
+      "image": "11.png",
+      "markers": []
+    }
+  ]
+}
