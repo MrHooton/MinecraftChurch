@@ -50,7 +50,7 @@ router.post('/generate',
       const { child_name, child_uuid } = req.body;
 
       // Generate a random 6-character code
-      const code = generateCode(config.security.codeLength);
+      let code = generateCode(config.security.codeLength);
 
       // Check if code already exists (unlikely but possible)
       let existingCode = await db.query(
@@ -61,15 +61,11 @@ router.post('/generate',
       // Regenerate if collision (very rare)
       let attempts = 0;
       while (existingCode.length > 0 && attempts < 10) {
-        const newCode = generateCode(config.security.codeLength);
+        code = generateCode(config.security.codeLength);
         existingCode = await db.query(
           'SELECT code FROM verification_codes WHERE code = ?',
-          [newCode]
+          [code]
         );
-        if (existingCode.length === 0) {
-          code = newCode;
-          break;
-        }
         attempts++;
       }
 
