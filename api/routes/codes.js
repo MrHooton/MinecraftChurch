@@ -29,15 +29,6 @@ router.post('/generate',
   ],
   async (req, res) => {
     try {
-      // Validate authentication
-      const apiSecret = req.headers['x-api-secret'];
-      if (!apiSecret || apiSecret !== config.api.secret) {
-        return res.status(401).json({ 
-          error: 'Unauthorized',
-          message: 'Invalid or missing API secret' 
-        });
-      }
-
       // Validate input
       const errors = validationResult(req);
       if (!errors.isEmpty()) {

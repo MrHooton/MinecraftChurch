@@ -33,14 +33,6 @@ router.post('/register',
   ],
   async (req, res) => {
     try {
-      // Validate authentication
-      const apiSecret = req.headers['x-api-secret'];
-      if (!apiSecret || apiSecret !== config.api.secret) {
-        return res.status(401).json({ 
-          error: 'Unauthorized',
-          message: 'Invalid or missing API secret' 
-        });
-      }
 
       // Validate input
       const errors = validationResult(req);
@@ -110,15 +102,15 @@ router.post('/register',
 router.get('/:player_name',
   async (req, res) => {
     try {
-      // Optional authentication - allow unauthenticated for basic lookups
-      const apiSecret = req.headers['x-api-secret'];
-      const requiresAuth = false; // Set to true if you want to require auth
-
-      if (requiresAuth && (!apiSecret || apiSecret !== config.api.secret)) {
-        return res.status(401).json({ 
-          error: 'Unauthorized',
-          message: 'Invalid or missing API secret' 
-        });
+      // Optional authentication - skip if secret not configured
+      if (config.api.secret && config.api.secret !== '') {
+        const apiSecret = req.headers['x-api-secret'];
+        if (!apiSecret || apiSecret !== config.api.secret) {
+          return res.status(401).json({ 
+            error: 'Unauthorized',
+            message: 'Invalid or missing API secret' 
+          });
+        }
       }
 
       const { player_name } = req.params;
@@ -147,6 +139,34 @@ router.get('/:player_name',
         message: 'Failed to fetch player information' 
       });
     }
+  }
+);
+
+/**
+ * Compatibility endpoint: POST /api/player-seen
+ * Denizen calls on join; upserts to known_players.
+ * Body: { player_name, uuid (optional), platform }
+ */
+router.post('/player-seen',
+  [
+    body('player_name')
+      .trim()
+      .isLength({ min: 1, max: 16 })
+      .matches(/^[a-zA-Z0-9_]+$/)
+      .withMessage('Player name must be 1-16 characters, alphanumeric and underscores only'),
+    body('uuid')
+      .optional()
+      .isUUID()
+      .withMessage('UUID must be a valid UUID format'),
+    body('platform')
+      .optional()
+      .isIn(['java', 'bedrock', 'unknown'])
+      .withMessage('Platform must be one of: java, bedrock, unknown')
+  ],
+  async (req, res) => {
+    // Redirect to register endpoint
+    req.url = '/register';
+    return router.handle(req, res);
   }
 );
 

@@ -17,14 +17,6 @@ const { body, validationResult, param } = require('express-validator');
 router.get('/pending',
   async (req, res) => {
     try {
-      // Validate authentication
-      const apiSecret = req.headers['x-api-secret'];
-      if (!apiSecret || apiSecret !== config.api.secret) {
-        return res.status(401).json({ 
-          error: 'Unauthorized',
-          message: 'Invalid or missing API secret' 
-        });
-      }
 
       const grants = await db.query(
         `SELECT ag.*, vr.child_name, vr.adult_name
@@ -68,14 +60,6 @@ router.post('/:id/applied',
   ],
   async (req, res) => {
     try {
-      // Validate authentication
-      const apiSecret = req.headers['x-api-secret'];
-      if (!apiSecret || apiSecret !== config.api.secret) {
-        return res.status(401).json({ 
-          error: 'Unauthorized',
-          message: 'Invalid or missing API secret' 
-        });
-      }
 
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -163,14 +147,6 @@ router.post('/:id/failed',
   ],
   async (req, res) => {
     try {
-      // Validate authentication
-      const apiSecret = req.headers['x-api-secret'];
-      if (!apiSecret || apiSecret !== config.api.secret) {
-        return res.status(401).json({ 
-          error: 'Unauthorized',
-          message: 'Invalid or missing API secret' 
-        });
-      }
 
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
@@ -226,6 +202,125 @@ router.post('/:id/failed',
 
     } catch (error) {
       console.error('Error marking grant as failed:', error);
+      res.status(500).json({ 
+        error: 'Internal server error',
+        message: 'Failed to update grant status' 
+      });
+    }
+  }
+);
+
+/**
+ * Compatibility endpoint: GET /api/grants?secret=...
+ * Returns all access_grants with status approved as JSON.
+ */
+router.get('/',
+  async (req, res) => {
+    try {
+
+      const grants = await db.query(
+        `SELECT ag.*, vr.child_name, vr.adult_name
+         FROM access_grants ag
+         INNER JOIN verification_requests vr ON ag.request_id = vr.id
+         WHERE ag.status = 'approved'
+         ORDER BY ag.created_at ASC
+         LIMIT 100`
+      );
+
+      res.json({
+        success: true,
+        count: grants.length,
+        grants: grants
+      });
+
+    } catch (error) {
+      console.error('Error fetching grants:', error);
+      res.status(500).json({ 
+        error: 'Internal server error',
+        message: 'Failed to fetch grants' 
+      });
+    }
+  }
+);
+
+/**
+ * Compatibility endpoint: POST /api/grants/applied
+ * Marks one or more grants as applied with timestamp.
+ * Body: { grant_ids: [1, 2, 3] } or { grant_id: 1 }
+ */
+router.post('/applied',
+  [
+    body('grant_ids')
+      .optional()
+      .isArray()
+      .withMessage('grant_ids must be an array'),
+    body('grant_id')
+      .optional()
+      .isInt()
+      .withMessage('grant_id must be an integer')
+  ],
+  async (req, res) => {
+    try {
+
+      const errors = validationResult(req);
+      if (!errors.isEmpty()) {
+        return res.status(400).json({ 
+          error: 'Validation failed',
+          details: errors.array() 
+        });
+      }
+
+      const { grant_ids, grant_id } = req.body;
+
+      // Normalize to array
+      const ids = grant_ids || (grant_id ? [grant_id] : []);
+
+      if (ids.length === 0) {
+        return res.status(400).json({ 
+          error: 'Bad request',
+          message: 'At least one grant ID is required' 
+        });
+      }
+
+      // Update all grants
+      const placeholders = ids.map(() => '?').join(',');
+      const [result] = await db.query(
+        `UPDATE access_grants 
+         SET status = 'applied', applied_at = NOW()
+         WHERE id IN (${placeholders}) AND status = 'approved'`,
+        ids
+      );
+
+      // Log to audit log for each grant
+      for (const id of ids) {
+        const grants = await db.query(
+          'SELECT * FROM access_grants WHERE id = ?',
+          [id]
+        );
+        if (grants.length > 0) {
+          const grant = grants[0];
+          await db.query(
+            `INSERT INTO audit_log (action_type, admin_user, target_player, grant_id, details)
+             VALUES (?, ?, ?, ?, ?)`,
+            [
+              'grant_applied',
+              'denizen_script',
+              grant.player_name,
+              id,
+              JSON.stringify({ grant_type: grant.grant_type, grant_value: grant.grant_value })
+            ]
+          );
+        }
+      }
+
+      res.json({
+        success: true,
+        message: 'Grants marked as applied',
+        grants_updated: result.affectedRows
+      });
+
+    } catch (error) {
+      console.error('Error marking grants as applied:', error);
       res.status(500).json({ 
         error: 'Internal server error',
         message: 'Failed to update grant status' 

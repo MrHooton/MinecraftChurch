@@ -12,7 +12,8 @@ const db = require('./db');
 
 // Import routes
 const codesRouter = require('./routes/codes');
-const requestsRouter = require('./routes/requests');
+const requestsModule = require('./routes/requests');
+const requestsRouter = requestsModule.router || requestsModule;
 const grantsRouter = require('./routes/grants');
 const playersRouter = require('./routes/players');
 
@@ -67,6 +68,29 @@ app.use('/api/codes', codesRouter);
 app.use('/api/requests', requestsRouter);
 app.use('/api/grants', grantsRouter);
 app.use('/api/players', playersRouter);
+
+// Compatibility endpoints (matching original requirements)
+// POST /api/create-code -> POST /api/codes/generate
+app.post('/api/create-code', (req, res, next) => {
+  req.url = '/api/codes/generate';
+  req.originalUrl = '/api/codes/generate';
+  codesRouter.handle(req, res, next);
+});
+
+// GET /api/approve -> handled by exported function
+if (requestsModule.handleApproveGet) {
+  app.get('/api/approve', requestsModule.handleApproveGet);
+}
+
+// GET /api/grants -> handled in grantsRouter (router.get('/') handles this)
+// POST /api/grants/applied -> handled in grantsRouter (router.post('/applied') handles this)
+
+// POST /api/player-seen -> POST /api/players/register
+app.post('/api/player-seen', (req, res, next) => {
+  req.url = '/api/players/register';
+  req.originalUrl = '/api/players/register';
+  playersRouter.handle(req, res, next);
+});
 
 // Root endpoint
 app.get('/', (req, res) => {
