@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Check out selected ref
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -72,9 +72,9 @@ jobs:
           INCLUDE_SERVER_PROPERTIES: ${{ inputs.include_server_properties }}
         run: |
           set -euo pipefail
-          mkdir -p .deploy
-          : > .deploy/upload.txt
-          : > .deploy/delete.txt
+          mkdir -p deploy-plan
+          : > deploy-plan/upload.txt
+          : > deploy-plan/delete.txt
 
           is_forbidden() {
             local f="$1"
@@ -146,35 +146,35 @@ jobs:
           fi
 
           if [[ "$MODE" == "full" || -z "$base" ]]; then
-            git ls-files > .deploy/candidates-upload.txt
-            : > .deploy/candidates-delete.txt
+            git ls-files > deploy-plan/candidates-upload.txt
+            : > deploy-plan/candidates-delete.txt
             if [[ -z "$base" && "$MODE" == "changed" ]]; then
               echo "No previous deployment marker exists on main, so 'changed' is treated as a first full deployment."
             fi
           else
-            git diff --name-only --diff-filter=ACMRT "$base" HEAD > .deploy/candidates-upload.txt
-            git diff --name-only --diff-filter=D "$base" HEAD > .deploy/candidates-delete.txt
+            git diff --name-only --diff-filter=ACMRT "$base" HEAD > deploy-plan/candidates-upload.txt
+            git diff --name-only --diff-filter=D "$base" HEAD > deploy-plan/candidates-delete.txt
           fi
 
           while IFS= read -r f; do
             [[ -n "$f" ]] || continue
             if [[ -f "$f" ]] && is_allowed "$f"; then
-              printf '%s\n' "$f" >> .deploy/upload.txt
+              printf '%s\n' "$f" >> deploy-plan/upload.txt
             fi
-          done < .deploy/candidates-upload.txt
+          done < deploy-plan/candidates-upload.txt
 
           while IFS= read -r f; do
             [[ -n "$f" ]] || continue
             if is_allowed "$f"; then
-              printf '%s\n' "$f" >> .deploy/delete.txt
+              printf '%s\n' "$f" >> deploy-plan/delete.txt
             fi
-          done < .deploy/candidates-delete.txt
+          done < deploy-plan/candidates-delete.txt
 
-          sort -u -o .deploy/upload.txt .deploy/upload.txt
-          sort -u -o .deploy/delete.txt .deploy/delete.txt
+          sort -u -o deploy-plan/upload.txt deploy-plan/upload.txt
+          sort -u -o deploy-plan/delete.txt deploy-plan/delete.txt
 
-          upload_count="$(wc -l < .deploy/upload.txt | tr -d ' ')"
-          delete_count="$(wc -l < .deploy/delete.txt | tr -d ' ')"
+          upload_count="$(wc -l < deploy-plan/upload.txt | tr -d ' ')"
+          delete_count="$(wc -l < deploy-plan/delete.txt | tr -d ' ')"
 
           echo "upload_count=$upload_count" >> "$GITHUB_OUTPUT"
           echo "delete_count=$delete_count" >> "$GITHUB_OUTPUT"
@@ -194,14 +194,14 @@ jobs:
             if [[ "$upload_count" == "0" ]]; then
               echo "_None_"
             else
-              sed 's/^/- `/; s/$/`/' .deploy/upload.txt
+              sed 's/^/- `/; s/$/`/' deploy-plan/upload.txt
             fi
             echo
             echo "### Deleted in Git"
             if [[ "$delete_count" == "0" ]]; then
               echo "_None_"
             else
-              sed 's/^/- `/; s/$/`/' .deploy/delete.txt
+              sed 's/^/- `/; s/$/`/' deploy-plan/delete.txt
             fi
           } >> "$GITHUB_STEP_SUMMARY"
 
@@ -209,7 +209,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: minecraft-deploy-plan
-          path: .deploy/
+          path: deploy-plan/
           if-no-files-found: error
           retention-days: 3
 
@@ -222,7 +222,7 @@ jobs:
 
     steps:
       - name: Check out selected ref
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
@@ -230,7 +230,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: minecraft-deploy-plan
-          path: .deploy
+          path: deploy-plan
 
       - name: Validate connection settings
         shell: bash
@@ -294,7 +294,7 @@ jobs:
           ALLOW_DELETES: ${{ inputs.allow_deletes }}
         run: |
           set -euo pipefail
-          batch=".deploy/sftp.batch"
+          batch="deploy-plan/sftp.batch"
           : > "$batch"
 
           printf 'cd "%s"\n' "${MC_SFTP_PATH}" >> "$batch"
@@ -313,13 +313,13 @@ jobs:
             fi
 
             printf 'put -p "%s" "%s"\n' "$f" "$f" >> "$batch"
-          done < .deploy/upload.txt
+          done < deploy-plan/upload.txt
 
           if [[ "$ALLOW_DELETES" == "true" ]]; then
             while IFS= read -r f; do
               [[ -n "$f" ]] || continue
               printf -- '-rm "%s"\n' "$f" >> "$batch"
-            done < .deploy/delete.txt
+            done < deploy-plan/delete.txt
           fi
 
           echo "SFTP batch prepared with $(wc -l < "$batch" | tr -d ' ') commands."
@@ -337,10 +337,10 @@ jobs:
           port="${MC_SFTP_PORT:-22}"
 
           if [[ -n "${MC_SFTP_PRIVATE_KEY}" ]]; then
-            sftp               -b .deploy/sftp.batch               -P "$port"               -i "$HOME/.ssh/id_minecraft"               -o BatchMode=yes               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
+            sftp               -b deploy-plan/sftp.batch               -P "$port"               -i "$HOME/.ssh/id_minecraft"               -o BatchMode=yes               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
           else
             export SSHPASS="${MC_SFTP_PASSWORD}"
-            sshpass -e sftp               -b .deploy/sftp.batch               -P "$port"               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
+            sshpass -e sftp               -b deploy-plan/sftp.batch               -P "$port"               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
           fi
 
       - name: Mark successful deployment
