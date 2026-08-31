@@ -49,7 +49,7 @@ jobs:
 
     steps:
       - name: Check out selected ref
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
@@ -206,7 +206,7 @@ jobs:
           } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Save deployment plan
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: minecraft-deploy-plan
           path: deploy-plan/
@@ -222,12 +222,12 @@ jobs:
 
     steps:
       - name: Check out selected ref
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           fetch-depth: 0
 
       - name: Download deployment plan
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: minecraft-deploy-plan
           path: deploy-plan
