@@ -31,6 +31,11 @@ on:
         required: true
         default: false
         type: boolean
+      server_stopped:
+        description: Confirm the Minecraft server is stopped before live deployment
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -231,6 +236,17 @@ jobs:
         with:
           name: minecraft-deploy-plan
           path: deploy-plan
+
+      - name: Require stopped-server confirmation
+        shell: bash
+        env:
+          SERVER_STOPPED: ${{ inputs.server_stopped }}
+        run: |
+          set -euo pipefail
+          if [[ "${SERVER_STOPPED}" != "true" ]]; then
+            echo "::error::Stop the Minecraft server before a live SFTP deployment, then re-run with server_stopped=true."
+            exit 1
+          fi
 
       - name: Validate connection settings
         shell: bash
