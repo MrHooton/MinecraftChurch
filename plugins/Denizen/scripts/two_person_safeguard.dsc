@@ -97,11 +97,10 @@ two_person_safeguard_monitor:
     # Using world-level monitoring + periodic checks instead
     
     # Monitor world join and teleport (for ejection after entry)
-on player joins:
-  wait 5t
-  if <player.world.name> != Minecraft_Church:
-    stop
-
+    on player joins:
+      - wait 5t
+      - if <player.world.name> != Minecraft_Church:
+        - stop
       - run two_person_world_monitor
     
     # Try to intercept mvtp command
