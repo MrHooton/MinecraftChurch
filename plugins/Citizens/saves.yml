@@ -1,5 +1,5 @@
 # Citizens NPC Storage
-last-created-npc-id: 2
+last-created-npc-id: 4
 npc:
 - metadata:
     cached-skin-uuid: b3a55d88-4a99-4f78-87e4-f28d3ebf6a21
@@ -15,14 +15,29 @@ npc:
       textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTc2NzI5MjEzMjU5NSwKICAicHJvZmlsZUlkIiA6ICJiM2E1NWQ4ODRhOTk0Zjc4ODdlNGYyOGQzZWJmNmEyMSIsCiAgInByb2ZpbGVOYW1lIiA6ICJNYWl6eSIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS9hM2JkMTYwNzlmNzY0Y2Q1NDFlMDcyZTg4OGZlNDM4ODVlNzExZjk4NjU4MzIzZGIwZjlhNjA0NWRhOTFlZTdhIgogICAgfQogIH0KfQ==
     location:
       worldid: 1a550e8d-87c3-4fbf-8a99-3c1065b199a6
-      x: 8.264
+      x: 8.6251
       y: 63.0
-      z: 49.6424
-      bodyYaw: -177.7498
-      pitch: 24.75
-      yaw: -177.7498
+      z: 158.9078
+      bodyYaw: 100.50037
+      pitch: 14.7
+      yaw: 100.5004
+      world: Minecraft_Church
     type: PLAYER
-  traitnames: owner,spawned,scoreboardtrait,skintrait,location,type,inventory,chunktickettrait
+    assignment:
+      assignment_list:
+      - doorkeeper_assign
+    triggers:
+      enabled:
+        CHAT: true
+        CLICK: true
+        PROXIMITY: false
+        DAMAGE: false
+      properly_set:
+        CHAT: false
+        CLICK: true
+        PROXIMITY: false
+        DAMAGE: false
+  traitnames: owner,spawned,scoreboardtrait,assignment,skintrait,type,inventory,triggers,targetable,leashedtrait,location,constants,chunktickettrait
   name: Maizy
   navigator:
     usedefaultstuckaction: false
@@ -40,12 +55,13 @@ npc:
       - hello_shepherd
     location:
       worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
-      x: 36.5134
-      y: 80.0
-      z: -32.0048
-      bodyYaw: 297.05115
+      x: -29.4733
+      y: 80.5625
+      z: 1.5587
+      bodyYaw: 331.6598
       pitch: 0.0
-      yaw: -62.9489
+      yaw: 331.6598
+      world: GoodShepherd
     type: VILLAGER
     triggers:
       enabled:
@@ -58,7 +74,7 @@ npc:
         CLICK: false
         PROXIMITY: false
         DAMAGE: false
-  traitnames: owner,scoreboardtrait,spawned,assignment,location,constants,type,triggers,targetable,chunktickettrait
+  traitnames: owner,scoreboardtrait,spawned,assignment,leashedtrait,location,constants,type,triggers,targetable,chunktickettrait
   name: Shepherd
   navigator:
     usedefaultstuckaction: false
@@ -70,61 +86,375 @@ npc:
 - metadata:
     cached-skin-uuid: 7f75cd28-66fb-46df-ad64-3f818ce20177
     cached-skin-uuid-name: 0690297e-25a1-435c-be35-fa3515319e69
+    minecraft-ai: false
   traits:
     scoreboardtrait:
       tags:
       - CITIZENS_NPC
     owner:
       uuid: c48f0113-4076-3aca-b576-7f42341d2531
-    assignment:
-      assignment_list:
-      - doorkeeper_assign
     skintrait:
       signature: TuVnAuK5MJQvXPBVvQc/I3Y+REbHIifhvLrzpizf/CK4x8Ejaf8FFQdkzXjgU4amWugGe8yMBqf4xRNMKLASTEmsqfuJ3AbcE7wklklhNOTjdgZ/r6CgwyEAaWxPA41ri7VncD3e98CmOZGQXUJOaHnXqi+Y8kn7owmI+4B2g+Ql2qDh6H8SkaBWJEnXLJFdN5sQx0NeBWugJg35+QXskSQFllKXXJl7wRve6PTRyYcfxZwubt/Ryswm2Pq//EiA7j44CAt5Zho0q654mOCkJGlyNzkivCh1I76zIBTd3tGtgobL2xZS/ArZDM8FVpAREc5FhyzxkFcE8/moTOR+E3DlP2AT1pTHIz5+56VRImg8URveUDb+2U3Tji7vHdgGaWnlG68fyri7lX7Ar9E//pSgeG8hNgKl55SPxMkWk8SX5YH8SIPpxPVXEr9NETqd/nh5q8vEUjdQvHZ7h8VaQA2LtER53ufOKfyGWMzzJtDCpcLUpRIhppZ+tosRIxyIBanbFiLwhzOKWSlmu/Paz+8YFG34+wpaozbmaZBHgEHJII8CAgUJtLsBi6+IpA870wGnywf8aDi7b075T/4U1BgkT9mRWaKPuqLG6tUwKYA2mYAZIhCsRyj3MRfXo2d5Q8IFUCtcen3W5EqZmF2zbAROYFt+dTMg43l3K/kCe00=
       skinName: 0690297e-25a1-435c-be35-fa3515319e69
       textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTc2NzYzNTgwMTcyNCwKICAicHJvZmlsZUlkIiA6ICJmZDFhYjdjNTYwMTM0YzQ1YTA2YWZjZWY1OGViZDVkNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJDbGF1MTA3IiwKICAic2lnbmF0dXJlUmVxdWlyZWQiIDogdHJ1ZSwKICAidGV4dHVyZXMiIDogewogICAgIlNLSU4iIDogewogICAgICAidXJsIiA6ICJodHRwOi8vdGV4dHVyZXMubWluZWNyYWZ0Lm5ldC90ZXh0dXJlLzlkODNmOTRjZTc2YjE2YWZlMjdjODI3NjNmOGJjYWE0OTU3MWE4ZjA4NjYyMGZmMTZlZDJhY2UwZjQzYzBlZWQiCiAgICB9CiAgfQp9
     lookclose:
-      enableRandomLook: false
-      disablewhilenavigating: true
-      headonly: false
-      randomSwitchTargets: false
-      randomYawRange:
-      - 0.0
-      - 360.0
-      realisticlooking: false
-      linkedbody: false
-      range: 10.0
-      randomLookDelay: 60
       enabled: true
-      targetnpcs: false
-      perplayer: false
       randomPitchRange:
       - 0.0
       - 0.0
+      randomYawRange:
+      - 0.0
+      - 360.0
     location:
       worldid: 1a550e8d-87c3-4fbf-8a99-3c1065b199a6
-      x: 5.7879
+      x: 5.7252
       y: 63.0625
-      z: 118.3173
-      bodyYaw: -0.9474869
+      z: 115.1655
+      bodyYaw: 6.326195
       pitch: 0.0
-      yaw: -0.9475
+      yaw: 6.3262
+      world: Minecraft_Church
     type: PLAYER
+    assignment:
+      assignment_list:
+      - doorkeeper_assign
     triggers:
-      properly_set:
-        CHAT: false
-        CLICK: true
-        PROXIMITY: false
-        DAMAGE: false
       enabled:
         CHAT: true
         CLICK: true
         PROXIMITY: false
         DAMAGE: false
-  traitnames: scoreboardtrait,owner,spawned,rotationtrait,assignment,skintrait,lookclose,inventory,type,triggers,location,constants,chunktickettrait
+      properly_set:
+        CHAT: false
+        CLICK: true
+        PROXIMITY: false
+        DAMAGE: false
+  traitnames: scoreboardtrait,owner,spawned,rotationtrait,assignment,skintrait,lookclose,inventory,type,triggers,targetable,leashedtrait,denizen_flags,location,constants,chunktickettrait
   name: Doorkeeper
   navigator:
     usedefaultstuckaction: false
     speedmodifier: 1.0
     avoidwater: false
   uuid: de704b02-bf31-4504-94bf-7bb073257ca1
+- traits:
+    owner:
+      uuid: c48f0113-4076-3aca-b576-7f42341d2531
+    profession: SHEPHERD
+    scoreboardtrait:
+      tags:
+      - CITIZENS_NPC
+    lookclose:
+      enabled: true
+      randomPitchRange:
+      - 0.0
+      - 0.0
+      randomYawRange:
+      - 0.0
+      - 360.0
+    location:
+      worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+      x: -89.2227
+      y: 88.0
+      z: -82.5
+      bodyYaw: 90.00212
+      pitch: -4.0532
+      yaw: 90.0021
+      world: GoodShepherd
+    type: PLAYER
+    villagertrait:
+      level: 5
+      type: minecraft:plains
+    skintrait:
+      signature: YfMc7EimBOQyTDdvJmIXuQpVQLsSy5P/joHl1D5elBynFhN480VSfB9qgywJRYESlOYvyTfs24OHguLJknKzv/UKLUwbJeXARP/NR2KvC3kuvDp1htjMaviiNNhscfxN2V2kV4UhN6wZjiGqkOCV8W/hm+XhAGsoQ6iCirjjZMnZ06uFwIcPCbjtzI/EAhFRsQXTmqqWy4z8W2iXxnC+Su2/dStC+aY+fmgQwQGkQ2DJinWgemFy7LmGfKhWVxs4uIB+4E8GPblFiOZq9HnqOywP0pVtoqNZwha3J73WA1a5FmAuyLP9z0TlfSkR+DaY3a64OXVGkPRP5Wd/rDR1NL0YYzkwzZw71CRBT1ex2qXu7LgCdF9k2GnoSv7UDNr1sU/6cNtvY3ved/I3GQpUXeQ5yXYmvhg8ZlogCLdZJBl/9lXo+hxFzwebY8+MVYimQVnHutR30OcEiJqcj/mGG4/+PsIR+34GfEab+9hVQlfoYfg1VMSjMouSXzcYvmaXIyG7wpiZU1+d+5xVaeDsYPdrpJ63PxsdvZXik/m30LkJ8hZrU/CKsNjpQUT67cDSnXyGHexM016BqYtjY6SdaQLtD9ShtGrLy4F3mFbbemTRDlHtglAoUj30IyvQIG50fcQk/SmJzTzKO6cD8s0QA5QdR/GTjuxD9yKA4iQ4dRI=
+      textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTc2NzgwNTc3NDUzNiwKICAicHJvZmlsZUlkIiA6ICIzMjA3MWFlYjYzZjI0NmY0YTVlMGZhMWY3ODg3ZGRhNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJNcl9HZW5lcyIsCiAgInNpZ25hdHVyZVJlcXVpcmVkIiA6IHRydWUsCiAgInRleHR1cmVzIiA6IHsKICAgICJTS0lOIiA6IHsKICAgICAgInVybCIgOiAiaHR0cDovL3RleHR1cmVzLm1pbmVjcmFmdC5uZXQvdGV4dHVyZS80M2RmYTQwZjU3NWMyNTRhNTFiZjM5ODJhYTBmYTVkNjAzZDQxOTE2NmYzNjhhMWI5NjA4ZTlkMjNkODBmZDk5IgogICAgfQogIH0KfQ==
+      skinName: bddfab64-0eb9-4d14-b749-99c19f698a08
+    waypoints:
+      linear:
+        points:
+          '22':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 68.0
+              y: 67.0
+              z: -314.0
+              pitch: 0.0
+              yaw: 0.0
+          '23':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 65.0
+              y: 65.0
+              z: -318.0
+              pitch: 0.0
+              yaw: 0.0
+          '24':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 64.0
+              y: 64.0
+              z: -322.0
+              pitch: 0.0
+              yaw: 0.0
+          '25':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 64.0
+              y: 63.0
+              z: -327.0
+              pitch: 0.0
+              yaw: 0.0
+          '26':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 109.0
+              y: 72.0
+              z: -219.0
+              pitch: 0.0
+              yaw: 0.0
+          '27':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 109.0
+              y: 72.0
+              z: -225.0
+              pitch: 0.0
+              yaw: 0.0
+          '10':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 134.0
+              y: 70.0
+              z: -259.0
+              pitch: 0.0
+              yaw: 0.0
+          '11':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 133.0
+              y: 70.0
+              z: -264.0
+              pitch: 0.0
+              yaw: 0.0
+          '12':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 130.0
+              y: 70.0
+              z: -268.0
+              pitch: 0.0
+              yaw: 0.0
+          '13':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 116.0
+              y: 70.0
+              z: -268.0
+              pitch: 0.0
+              yaw: 0.0
+          '14':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 111.0
+              y: 71.0
+              z: -267.0
+              pitch: 0.0
+              yaw: 0.0
+          '15':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 93.0
+              y: 71.0
+              z: -271.0
+              pitch: 0.0
+              yaw: 0.0
+          '16':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 90.0
+              y: 71.0
+              z: -278.0
+              pitch: 0.0
+              yaw: 0.0
+          '17':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 83.0
+              y: 71.0
+              z: -281.0
+              pitch: 0.0
+              yaw: 0.0
+          '18':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 81.0
+              y: 71.0
+              z: -287.0
+              pitch: 0.0
+              yaw: 0.0
+          '19':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 75.0
+              y: 71.0
+              z: -291.0
+              pitch: 0.0
+              yaw: 0.0
+          '0':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 98.0
+              y: 72.0
+              z: -204.0
+              pitch: 0.0
+              yaw: 0.0
+          '1':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 101.0
+              y: 72.0
+              z: -204.0
+              pitch: 0.0
+              yaw: 0.0
+          '2':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 104.0
+              y: 72.0
+              z: -210.0
+              pitch: 0.0
+              yaw: 0.0
+          '3':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 108.0
+              y: 72.0
+              z: -215.0
+              pitch: 0.0
+              yaw: 0.0
+          '4':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 74.0
+              y: 71.0
+              z: -298.0
+              pitch: 0.0
+              yaw: 0.0
+          '5':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 72.0
+              y: 70.0
+              z: -308.0
+              pitch: 0.0
+              yaw: 0.0
+          '6':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 110.0
+              y: 70.0
+              z: -234.0
+              pitch: 0.0
+              yaw: 0.0
+          '7':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 115.0
+              y: 70.0
+              z: -237.0
+              pitch: 0.0
+              yaw: 0.0
+          '8':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 122.0
+              y: 70.0
+              z: -245.0
+              pitch: 0.0
+              yaw: 0.0
+          '9':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 127.0
+              y: 70.0
+              z: -250.0
+              pitch: 0.0
+              yaw: 0.0
+          '20':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 63.0
+              y: 63.0
+              z: -330.0
+              pitch: 0.0
+              yaw: 0.0
+          '21':
+            location:
+              worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+              x: 62.0
+              y: 63.0
+              z: -332.0
+              pitch: 0.0
+              yaw: 0.0
+      provider: wander
+      wander: {
+        }
+    equipment:
+      off_hand:
+        amount: 1
+        type: stick
+      hand:
+        amount: 1
+        type: wheat
+    inventory:
+    - amount: 1
+      type: wheat
+  traitnames: spawned,owner,profession,scoreboardtrait,rotationtrait,skintrait,lookclose,equipment,type,inventory,targetable,waypoints,leashedtrait,denizen_flags,location,villagertrait,chunktickettrait
+  name: GoodShepherd
+  navigator:
+    usedefaultstuckaction: false
+    speedmodifier: 0.5
+    avoidwater: false
+  uuid: e1aa7cbb-6295-4c6e-9c26-4371576b5e18
+  metadata:
+    nameplate-visible: hover
+    minecraft-ai: true
+    cached-skin-uuid: ecbd2ca0-56a8-47d1-bc37-1fcbd56e6eae
+    cached-skin-uuid-name: bddfab64-0eb9-4d14-b749-99c19f698a08
+    collidable: true
+- metadata:
+    cached-skin-uuid-name: 95638795-11ef-4a7d-a5e4-ba9dd5d132e6
+  traits:
+    scoreboardtrait:
+      tags:
+      - CITIZENS_NPC
+    owner:
+      uuid: c48f0113-4076-3aca-b576-7f42341d2531
+    skintrait:
+      signature: la//m9CO+Z/tqtOySk8OklaZ1ua91/BrAwUxNklvVHPG32Jcam8vw58H42Wi6oyvAU2yCDIiP1leLEyl94A4nxivhOPSb4dP3f6lCHJ4KZay/ZoDGr6vC+ttS0iPavjjNUHn8LspXKqca5bRmhSk+m+x6MplTD1qOOZdxVhF6gJLla368DC1RcR0UrJA5rff2iDB4Ik8cQQft57GO8vNLlFMloYRlY9uOPmNRpc7dHriViTKbSfMCiEwFmwNHLv1L5zma1DkKfY8GEbb6kD3uk4ZyxGIM7rHPly7n4kUZTbzwdZqIwHNL8/hmvSFDu7KDt3pD27tyoCBazIcp4yfl/3G/zUr/GRja7MyBbRxm6W507mojHg3RjebVLyZAzVO4gUVT/TFHWnNPW/93hSbXgEPkRxCTfXY+nax05hzCSxKVci0KheLrP70Bbb5hTq7V5K62lJJ/dG3MusuLP+ivK5ge3nHd1hvPuG63sXwOYdDqfWmMaBQG0Jpy7LfnP3FoOWtOHDts5x4Npt0w2Adrl28lY+3LxDDvRJ60H+cimBGsCVEjHQ0R4UBCc9oc0bdP+9UxxW7LhTcnR0j8T3OaWQ5jS4+M+nLOvffs2/lXQEDCGD5dngWLzA0tC6AP0WlYlPdyAprERmPQE7lSYJmNBHYRs6liFAAOI9qPajYycE=
+      skinName: 95638795-11ef-4a7d-a5e4-ba9dd5d132e6
+      textureRaw: ewogICJ0aW1lc3RhbXAiIDogMTc3MjIyNTI3MTE3OSwKICAicHJvZmlsZUlkIiA6ICI4YmM3MjdlYThjZjA0YWUzYTI4MDVhY2YzNjRjMmQyNCIsCiAgInByb2ZpbGVOYW1lIiA6ICJub3RpbnZlbnRpdmUiLAogICJzaWduYXR1cmVSZXF1aXJlZCIgOiB0cnVlLAogICJ0ZXh0dXJlcyIgOiB7CiAgICAiU0tJTiIgOiB7CiAgICAgICJ1cmwiIDogImh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvZjZmM2E2ZTM2YzcyNDlkYWMyNTMxMGQzZmEwZDU1NGE1Yjg5ZmIzYTNiNTViMjZjZjMzZjg0MTAwYWQxNDNiYiIKICAgIH0KICB9Cn0=
+    lookclose:
+      enabled: true
+      randomPitchRange:
+      - 0.0
+      - 0.0
+      randomYawRange:
+      - 0.0
+      - 360.0
+    location:
+      worldid: b6176bab-1bfa-47fa-9960-2c29e1a4c3a9
+      x: -9.1349
+      y: 77.0
+      z: -14.741
+      bodyYaw: -84.12485
+      pitch: 4.9621
+      yaw: -84.1248
+      world: GoodShepherd
+    type: PLAYER
+  traitnames: scoreboardtrait,spawned,owner,rotationtrait,skintrait,lookclose,leashedtrait,location,inventory,type,chunktickettrait
+  name: Jesus
+  navigator:
+    usedefaultstuckaction: false
+    speedmodifier: 1.0
+    avoidwater: false
+  uuid: 7eec0479-fc42-48c4-8779-17ba9455ea63

@@ -69,3 +69,26 @@ paper_1_21_9_3550213_the_end/
 # ---------- Generated server/player data ----------
 usercache.json
 map-color-cache.dat
+# ---------- CommandSigns runtime ----------
+plugins/CommandSigns/CommandBlocks/executions/
+
+# ---------- Courier runtime ----------
+plugins/CourierPrime/outgoing.yml
+
+# ---------- Geyser generated data ----------
+plugins/Geyser-Spigot/locales/
+plugins/Geyser-Spigot/extensions/mcxboxbroadcast/cache.json
+
+# ---------- ImageFrame generated/runtime content ----------
+plugins/ImageFrame/**/data/
+plugins/ImageFrame/**/players/
+plugins/ImageFrame/**/language/
+plugins/ImageFrame/**/upload/
+plugins/ImageFrame/**/language_hashes.json
+plugins/ImageFrame/**/deletedMaps.bin
+
+# ---------- Multiverse-Inventories player/runtime state ----------
+plugins/Multiverse-Inventories/groups/
+plugins/Multiverse-Inventories/players/
+plugins/Multiverse-Inventories/worlds/
+plugins/Multiverse-Inventories/playernames.json

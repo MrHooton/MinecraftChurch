@@ -75,6 +75,9 @@ npc:
       maximum-search-blocks: 1024
       # Whether to open doors while pathfinding (should close them as well)
       open-doors: false
+      # Whether to simulate jumping while pathfinding - increases pathfinding CPU cost.
+      # Async pathfinder recommended. Still experimental.
+      experimental-jumps: false
     # Debug pathfinding by showing fake target blocks
     debug-paths: false
     # The default distance in blocks where the NPC will just teleport to the destination
