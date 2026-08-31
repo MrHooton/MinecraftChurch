@@ -36,6 +36,11 @@ on:
         required: true
         default: false
         type: boolean
+      remove_obsolete_via_jars:
+        description: Remove obsolete ViaVersion 5.9.1 and ViaBackwards 5.8.0 jars
+        required: true
+        default: false
+        type: boolean
 
 permissions:
   contents: write
@@ -143,11 +148,11 @@ jobs:
           git fetch --tags --force
 
           base=""
-          if git rev-parse -q --verify "refs/tags/${DEPLOY_MARKER}" >/dev/null; then
-            base="${DEPLOY_MARKER}"
-          elif [[ "$MODE" == "changed" && "${GITHUB_REF_NAME}" != "main" ]]; then
+          if [[ "$MODE" == "changed" && "${GITHUB_REF_NAME}" != "main" ]]; then
             base="origin/main"
-            echo "No deployment marker exists yet; comparing this branch to origin/main."
+            echo "Repair branch deployment: comparing this branch to origin/main."
+          elif git rev-parse -q --verify "refs/tags/${DEPLOY_MARKER}" >/dev/null; then
+            base="${DEPLOY_MARKER}"
           fi
 
           if [[ "$MODE" == "full" || -z "$base" ]]; then
@@ -194,6 +199,7 @@ jobs:
             echo "- Deletions detected: **$delete_count**"
             echo "- Dry run: **${{ inputs.dry_run }}**"
             echo "- Remote deletions enabled: **${{ inputs.allow_deletes }}**"
+            echo "- Remove obsolete Via jars: **${{ inputs.remove_obsolete_via_jars }}**"
             echo
             echo "### Upload"
             if [[ "$upload_count" == "0" ]]; then
@@ -336,6 +342,11 @@ jobs:
               [[ -n "$f" ]] || continue
               printf -- '-rm "%s"\n' "$f" >> "$batch"
             done < deploy-plan/delete.txt
+          fi
+
+          if [[ "${{ inputs.remove_obsolete_via_jars }}" == "true" ]]; then
+            printf -- '-rm "plugins/ViaVersion-5.9.1.jar"\n' >> "$batch"
+            printf -- '-rm "plugins/ViaBackwards-5.8.0.jar"\n' >> "$batch"
           fi
 
           echo "SFTP batch prepared with $(wc -l < "$batch" | tr -d ' ') commands."
