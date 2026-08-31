@@ -1,0 +1,359 @@
+name: Deploy Minecraft config
+
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: What should be deployed?
+        required: true
+        default: changed
+        type: choice
+        options:
+          - changed
+          - full
+      dry_run:
+        description: Preview only; do not connect to the server
+        required: true
+        default: true
+        type: boolean
+      allow_deletes:
+        description: Also delete allowed files removed from Git
+        required: true
+        default: false
+        type: boolean
+      include_server_properties:
+        description: Include server.properties (normally leave off)
+        required: true
+        default: false
+        type: boolean
+      allow_non_main:
+        description: Permit deployment from a branch other than main
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: write
+
+concurrency:
+  group: minecraft-production-deploy
+  cancel-in-progress: false
+
+env:
+  DEPLOY_MARKER: minecraft-production-deployed
+
+jobs:
+  plan:
+    name: Build deployment plan
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out selected ref
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Guard deployment branch
+        shell: bash
+        env:
+          ALLOW_NON_MAIN: ${{ inputs.allow_non_main }}
+        run: |
+          set -euo pipefail
+          if [[ "${GITHUB_REF_NAME}" != "main" && "${ALLOW_NON_MAIN}" != "true" ]]; then
+            echo "::error::This workflow is restricted to main unless 'allow_non_main' is explicitly enabled."
+            exit 1
+          fi
+
+      - name: Build allowlisted file plan
+        id: plan
+        shell: bash
+        env:
+          MODE: ${{ inputs.mode }}
+          INCLUDE_SERVER_PROPERTIES: ${{ inputs.include_server_properties }}
+        run: |
+          set -euo pipefail
+          mkdir -p .deploy
+          : > .deploy/upload.txt
+          : > .deploy/delete.txt
+
+          is_forbidden() {
+            local f="$1"
+            case "$f" in
+              *.jar|*.pem|*.db|*.mv.db|*.log|*.tmp) return 0 ;;
+              *OneDriveCredential.json|*secrets.secret|*server_flags.dat) return 0 ;;
+              plugins/Denizen/player_flags/*) return 0 ;;
+              plugins/.paper-remapped/*) return 0 ;;
+              */cache/*|*/tmp/*|*/backups/*|*/backup/*) return 0 ;;
+              */data/*.png|*/players/*|*/upload/*) return 0 ;;
+              *) return 1 ;;
+            esac
+          }
+
+          is_allowed() {
+            local f="$1"
+
+            if is_forbidden "$f"; then
+              return 1
+            fi
+
+            case "$f" in
+              config/paper-global.yml) return 0 ;;
+              config/paper-world-defaults.yml) return 0 ;;
+
+              plugins/Denizen/config.yml) return 0 ;;
+              plugins/Denizen/scripts/*.dsc) return 0 ;;
+
+              plugins/Multiverse-Core/config.yml) return 0 ;;
+              plugins/Multiverse-Core/worlds.yml) return 0 ;;
+              plugins/Multiverse-Core/anchors.yml) return 0 ;;
+
+              plugins/Multiverse-Portals/config.yml) return 0 ;;
+              plugins/Multiverse-Portals/portals.yml) return 0 ;;
+
+              plugins/Multiverse-Inventories/config.yml) return 0 ;;
+              plugins/Multiverse-Inventories/groups.yml) return 0 ;;
+
+              plugins/Geyser-Spigot/config.yml) return 0 ;;
+              plugins/floodgate/config.yml) return 0 ;;
+
+              plugins/WorldGuard/worlds/*) return 0 ;;
+              plugins/LuckPerms/config.yml) return 0 ;;
+
+              plugins/CommandSigns/config.yml) return 0 ;;
+              plugins/CommandSigns/CommandBlocks/configurations/*.json) return 0 ;;
+
+              plugins/FastAsyncWorldEdit/config.yml) return 0 ;;
+              plugins/NoFlyZone/config.yml) return 0 ;;
+              plugins/SimplePushEvents/config.yml) return 0 ;;
+              plugins/CourierPrime/config.yml) return 0 ;;
+
+              server.properties)
+                [[ "$INCLUDE_SERVER_PROPERTIES" == "true" ]]
+                return
+                ;;
+              *) return 1 ;;
+            esac
+          }
+
+          git fetch --tags --force
+
+          base=""
+          if git rev-parse -q --verify "refs/tags/${DEPLOY_MARKER}" >/dev/null; then
+            base="${DEPLOY_MARKER}"
+          fi
+
+          if [[ "$MODE" == "full" || -z "$base" ]]; then
+            git ls-files > .deploy/candidates-upload.txt
+            : > .deploy/candidates-delete.txt
+            if [[ -z "$base" && "$MODE" == "changed" ]]; then
+              echo "No previous deployment marker exists, so 'changed' is treated as a first full deployment."
+            fi
+          else
+            git diff --name-only --diff-filter=ACMRT "$base" HEAD > .deploy/candidates-upload.txt
+            git diff --name-only --diff-filter=D "$base" HEAD > .deploy/candidates-delete.txt
+          fi
+
+          while IFS= read -r f; do
+            [[ -n "$f" ]] || continue
+            if [[ -f "$f" ]] && is_allowed "$f"; then
+              printf '%s\n' "$f" >> .deploy/upload.txt
+            fi
+          done < .deploy/candidates-upload.txt
+
+          while IFS= read -r f; do
+            [[ -n "$f" ]] || continue
+            if is_allowed "$f"; then
+              printf '%s\n' "$f" >> .deploy/delete.txt
+            fi
+          done < .deploy/candidates-delete.txt
+
+          sort -u -o .deploy/upload.txt .deploy/upload.txt
+          sort -u -o .deploy/delete.txt .deploy/delete.txt
+
+          upload_count="$(wc -l < .deploy/upload.txt | tr -d ' ')"
+          delete_count="$(wc -l < .deploy/delete.txt | tr -d ' ')"
+
+          echo "upload_count=$upload_count" >> "$GITHUB_OUTPUT"
+          echo "delete_count=$delete_count" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## Minecraft deployment plan"
+            echo
+            echo "- Ref: \`${GITHUB_REF_NAME}\`"
+            echo "- Commit: \`${GITHUB_SHA}\`"
+            echo "- Mode: \`$MODE\`"
+            echo "- Uploads: **$upload_count**"
+            echo "- Deletions detected: **$delete_count**"
+            echo "- Dry run: **${{ inputs.dry_run }}**"
+            echo "- Remote deletions enabled: **${{ inputs.allow_deletes }}**"
+            echo
+            echo "### Upload"
+            if [[ "$upload_count" == "0" ]]; then
+              echo "_None_"
+            else
+              sed 's/^/- `/; s/$/`/' .deploy/upload.txt
+            fi
+            echo
+            echo "### Deleted in Git"
+            if [[ "$delete_count" == "0" ]]; then
+              echo "_None_"
+            else
+              sed 's/^/- `/; s/$/`/' .deploy/delete.txt
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Save deployment plan
+        uses: actions/upload-artifact@v4
+        with:
+          name: minecraft-deploy-plan
+          path: .deploy/
+          if-no-files-found: error
+          retention-days: 3
+
+  deploy:
+    name: Deploy over SFTP
+    needs: plan
+    if: ${{ inputs.dry_run == false }}
+    runs-on: ubuntu-latest
+    environment: minecraft-production
+
+    steps:
+      - name: Check out selected ref
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Download deployment plan
+        uses: actions/download-artifact@v4
+        with:
+          name: minecraft-deploy-plan
+          path: .deploy
+
+      - name: Validate connection settings
+        shell: bash
+        env:
+          MC_SFTP_HOST: ${{ secrets.MC_SFTP_HOST }}
+          MC_SFTP_PORT: ${{ secrets.MC_SFTP_PORT }}
+          MC_SFTP_USER: ${{ secrets.MC_SFTP_USER }}
+          MC_SFTP_PATH: ${{ secrets.MC_SFTP_PATH }}
+          MC_SFTP_PRIVATE_KEY: ${{ secrets.MC_SFTP_PRIVATE_KEY }}
+          MC_SFTP_PASSWORD: ${{ secrets.MC_SFTP_PASSWORD }}
+        run: |
+          set -euo pipefail
+
+          : "${MC_SFTP_HOST:?MC_SFTP_HOST is not configured}"
+          : "${MC_SFTP_USER:?MC_SFTP_USER is not configured}"
+          : "${MC_SFTP_PATH:?MC_SFTP_PATH is not configured}"
+
+          if [[ -z "${MC_SFTP_PRIVATE_KEY}" && -z "${MC_SFTP_PASSWORD}" ]]; then
+            echo "::error::Configure either MC_SFTP_PRIVATE_KEY or MC_SFTP_PASSWORD."
+            exit 1
+          fi
+
+          echo "Connection settings are present."
+          echo "Port: ${MC_SFTP_PORT:-22}"
+
+      - name: Prepare SSH trust and authentication
+        shell: bash
+        env:
+          MC_SFTP_HOST: ${{ secrets.MC_SFTP_HOST }}
+          MC_SFTP_PORT: ${{ secrets.MC_SFTP_PORT }}
+          MC_SFTP_PRIVATE_KEY: ${{ secrets.MC_SFTP_PRIVATE_KEY }}
+          MC_SFTP_PASSWORD: ${{ secrets.MC_SFTP_PASSWORD }}
+          MC_SFTP_KNOWN_HOSTS: ${{ secrets.MC_SFTP_KNOWN_HOSTS }}
+        run: |
+          set -euo pipefail
+          port="${MC_SFTP_PORT:-22}"
+
+          mkdir -p "$HOME/.ssh"
+          chmod 700 "$HOME/.ssh"
+
+          if [[ -n "${MC_SFTP_KNOWN_HOSTS}" ]]; then
+            printf '%s\n' "${MC_SFTP_KNOWN_HOSTS}" > "$HOME/.ssh/known_hosts"
+          else
+            echo "::warning::MC_SFTP_KNOWN_HOSTS is not set. Falling back to ssh-keyscan."
+            ssh-keyscan -p "$port" "${MC_SFTP_HOST}" > "$HOME/.ssh/known_hosts"
+          fi
+          chmod 600 "$HOME/.ssh/known_hosts"
+
+          if [[ -n "${MC_SFTP_PRIVATE_KEY}" ]]; then
+            printf '%s\n' "${MC_SFTP_PRIVATE_KEY}" > "$HOME/.ssh/id_minecraft"
+            chmod 600 "$HOME/.ssh/id_minecraft"
+          elif [[ -n "${MC_SFTP_PASSWORD}" ]]; then
+            sudo apt-get update -qq
+            sudo apt-get install -y -qq sshpass
+          fi
+
+      - name: Build SFTP batch
+        shell: bash
+        env:
+          MC_SFTP_PATH: ${{ secrets.MC_SFTP_PATH }}
+          ALLOW_DELETES: ${{ inputs.allow_deletes }}
+        run: |
+          set -euo pipefail
+          batch=".deploy/sftp.batch"
+          : > "$batch"
+
+          printf 'cd "%s"\n' "${MC_SFTP_PATH}" >> "$batch"
+
+          while IFS= read -r f; do
+            [[ -n "$f" ]] || continue
+
+            parent="$(dirname "$f")"
+            if [[ "$parent" != "." ]]; then
+              current=""
+              IFS='/' read -ra parts <<< "$parent"
+              for part in "${parts[@]}"; do
+                current="${current:+$current/}$part"
+                printf -- '-mkdir "%s"\n' "$current" >> "$batch"
+              done
+            fi
+
+            printf 'put -p "%s" "%s"\n' "$f" "$f" >> "$batch"
+          done < .deploy/upload.txt
+
+          if [[ "$ALLOW_DELETES" == "true" ]]; then
+            while IFS= read -r f; do
+              [[ -n "$f" ]] || continue
+              printf -- '-rm "%s"\n' "$f" >> "$batch"
+            done < .deploy/delete.txt
+          fi
+
+          echo "SFTP batch prepared with $(wc -l < "$batch" | tr -d ' ') commands."
+
+      - name: Deploy
+        shell: bash
+        env:
+          MC_SFTP_HOST: ${{ secrets.MC_SFTP_HOST }}
+          MC_SFTP_PORT: ${{ secrets.MC_SFTP_PORT }}
+          MC_SFTP_USER: ${{ secrets.MC_SFTP_USER }}
+          MC_SFTP_PRIVATE_KEY: ${{ secrets.MC_SFTP_PRIVATE_KEY }}
+          MC_SFTP_PASSWORD: ${{ secrets.MC_SFTP_PASSWORD }}
+        run: |
+          set -euo pipefail
+          port="${MC_SFTP_PORT:-22}"
+
+          if [[ -n "${MC_SFTP_PRIVATE_KEY}" ]]; then
+            sftp               -b .deploy/sftp.batch               -P "$port"               -i "$HOME/.ssh/id_minecraft"               -o BatchMode=yes               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
+          else
+            export SSHPASS="${MC_SFTP_PASSWORD}"
+            sshpass -e sftp               -b .deploy/sftp.batch               -P "$port"               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
+          fi
+
+      - name: Mark successful deployment
+        shell: bash
+        run: |
+          set -euo pipefail
+          git tag -f "${DEPLOY_MARKER}" "${GITHUB_SHA}"
+          git push origin "refs/tags/${DEPLOY_MARKER}" --force
+
+      - name: Deployment summary
+        shell: bash
+        run: |
+          {
+            echo "## Deployment complete"
+            echo
+            echo "Deployed \`${GITHUB_SHA}\` from \`${GITHUB_REF_NAME}\`."
+            echo
+            echo "This workflow does **not** restart or reload the Minecraft server."
+          } >> "$GITHUB_STEP_SUMMARY"
