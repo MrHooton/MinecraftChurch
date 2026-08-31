@@ -1,0 +1,71 @@
+# ============================================================
+# Minecraft Church server repository
+# Track hand-maintained configuration and scripts.
+# Ignore generated, runtime, binary, backup, and secret data.
+# ============================================================
+
+# ---------- Secrets / credentials ----------
+plugins/Denizen/secrets.secret
+plugins/DriveBackupV2/OneDriveCredential.json
+plugins/Geyser-Spigot/key.pem
+**/*.pem
+**/*Credential*.json
+
+# ---------- Plugin binaries ----------
+**/*.jar
+
+# ---------- Paper generated/remapped files ----------
+plugins/.paper-remapped/
+
+# ---------- Runtime caches / temp ----------
+**/cache/
+**/tmp/
+*.tmp
+*.log
+
+# ---------- Databases / runtime state ----------
+**/*.db
+**/*.mv.db
+
+plugins/Denizen/player_flags/
+plugins/Denizen/server_flags.dat
+
+# ---------- Generated translations / locales ----------
+plugins/LuckPerms/translations/repository/
+plugins/SkinsRestorer/locales/repository/
+
+# ---------- Metrics ----------
+plugins/bStats/
+plugins/PluginMetrics/
+
+# ---------- Backups ----------
+config/legacy-backup/
+plugins/*_backup_*/
+rbackup_*/
+restore/
+
+# ---------- Server-generated infrastructure ----------
+logs/
+cache/
+crash-reports/
+libraries/
+versions/
+jar/
+database/
+
+# ---------- World data ----------
+Minecraft_Church/
+Minecraft_Church_nether/
+Minecraft_Church_the_end/
+AdventWorld/
+GoodShepherd/
+Jungle/
+village/
+sheep/
+paper_1_21_9_3550213/
+paper_1_21_9_3550213_nether/
+paper_1_21_9_3550213_the_end/
+
+# ---------- Generated server/player data ----------
+usercache.json
+map-color-cache.dat
