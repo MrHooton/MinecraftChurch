@@ -140,13 +140,16 @@ jobs:
           base=""
           if git rev-parse -q --verify "refs/tags/${DEPLOY_MARKER}" >/dev/null; then
             base="${DEPLOY_MARKER}"
+          elif [[ "$MODE" == "changed" && "${GITHUB_REF_NAME}" != "main" ]]; then
+            base="origin/main"
+            echo "No deployment marker exists yet; comparing this branch to origin/main."
           fi
 
           if [[ "$MODE" == "full" || -z "$base" ]]; then
             git ls-files > .deploy/candidates-upload.txt
             : > .deploy/candidates-delete.txt
             if [[ -z "$base" && "$MODE" == "changed" ]]; then
-              echo "No previous deployment marker exists, so 'changed' is treated as a first full deployment."
+              echo "No previous deployment marker exists on main, so 'changed' is treated as a first full deployment."
             fi
           else
             git diff --name-only --diff-filter=ACMRT "$base" HEAD > .deploy/candidates-upload.txt
