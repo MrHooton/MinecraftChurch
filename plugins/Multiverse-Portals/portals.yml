@@ -89,44 +89,24 @@ portals:
     destination: w:homes
     check-destination-safety: true
     version: 1.1
-  advent:
+  sheep:
     currency: air
     price: 0.0
     safe-teleport: true
     teleport-non-players: false
     owner: chrishooton
-    location: Minecraft_Church:3.0,63.0,119.0:5.0,66.0,120.0
-    destination: w:AdventWorld
+    location: Minecraft_Church:10.0,63.0,102.0:10.0,65.0,103.0
+    destination: w:sheep
     check-destination-safety: true
     version: 1.1
-  restore:
+  respond:
     currency: air
     price: 0.0
     safe-teleport: true
     teleport-non-players: false
     owner: chrishooton
-    location: Minecraft_Church:5.0,63.0,119.0:5.0,65.0,119.0
-    destination: w:restore
-    check-destination-safety: true
-    version: 1.1
-  jungle:
-    currency: air
-    price: 0.0
-    safe-teleport: true
-    teleport-non-players: false
-    owner: chrishooton
-    location: Minecraft_Church:3.0,63.0,119.0:4.0,65.0,119.0
-    destination: w:Jungle
-    check-destination-safety: true
-    version: 1.1
-  rich:
-    currency: air
-    price: 0.0
-    safe-teleport: true
-    teleport-non-players: false
-    owner: chrishooton
-    location: Minecraft_Church:4.0,63.0,119.0:5.0,64.0,119.0
-    destination: w:richman
+    location: Minecraft_Church:5.0,63.0,119.0:5.0,65.0,120.0
+    destination: w:GoodShepherd
     check-destination-safety: true
     version: 1.1
   sabbath:
@@ -139,13 +119,43 @@ portals:
     destination: w:sabbath
     check-destination-safety: true
     version: 1.1
-  sheep:
+  advent:
     currency: air
     price: 0.0
     safe-teleport: true
     teleport-non-players: false
     owner: chrishooton
-    location: Minecraft_Church:10.0,63.0,102.0:10.0,65.0,103.0
-    destination: w:sheep
+    location: Minecraft_Church:3.0,63.0,119.0:5.0,66.0,120.0
+    destination: w:AdventWorld
+    check-destination-safety: true
+    version: 1.1
+  jungle:
+    currency: air
+    price: 0.0
+    safe-teleport: true
+    teleport-non-players: false
+    owner: chrishooton
+    location: Minecraft_Church:3.0,63.0,119.0:4.0,65.0,119.0
+    destination: w:Jungle
+    check-destination-safety: true
+    version: 1.1
+  restore:
+    currency: air
+    price: 0.0
+    safe-teleport: true
+    teleport-non-players: false
+    owner: chrishooton
+    location: Minecraft_Church:5.0,63.0,119.0:5.0,65.0,119.0
+    destination: w:restore
+    check-destination-safety: true
+    version: 1.1
+  rich:
+    currency: air
+    price: 0.0
+    safe-teleport: true
+    teleport-non-players: false
+    owner: chrishooton
+    location: Minecraft_Church:4.0,63.0,119.0:5.0,64.0,119.0
+    destination: w:richman
     check-destination-safety: true
     version: 1.1

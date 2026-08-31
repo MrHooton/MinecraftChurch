@@ -1,10 +1,10 @@
 {
-  "id": 3,
-  "name": "i1 tea",
+  "id": 15,
+  "name": "i15",
   "disabled": false,
   "activation_mode": "BOTH",
   "location": {
-    "x": -32.0,
+    "x": -10.0,
     "y": -60.0,
     "z": -3.0,
     "world": "sd"
@@ -15,11 +15,9 @@
     "reset_on_move": false
   },
   "commands": [
-    "/if refresh chrishooton:WallIcon https://static.wixstatic.com/media/d33f67_cae43babdeca46deb4421116ea03f31a~mv2.png"
+    "/if refresh chrishooton:WallIcon https://static.wixstatic.com/media/d33f67_fffd1bcb6f9740fb99bc1ca18dfe6a67~mv2.png"
   ],
-  "temporarily_granted_permissions": [
-    "9"
-  ],
+  "temporarily_granted_permissions": [],
   "addons": {
     "ncs_economy": {
       "price": 0.0

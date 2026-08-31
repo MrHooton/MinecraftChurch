@@ -28,33 +28,28 @@ GoodShepherd:
   seed: 419842575551
   spawn-location:
     ==: MVSpawnLocation
-    x: 0.0
-    y: 76.0
-    z: 0.0
-    pitch: 0.0
-    yaw: 0.0
+    x: 22.390524785874366
+    y: 79.0
+    z: -28.183126603608248
+    pitch: 4.6500826
+    yaw: -158.20557
   spawning:
+    animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     ambient:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
+    water_animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     axolotl:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    misc:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    water_ambient:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -69,7 +64,12 @@ GoodShepherd:
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    water_animal:
+    water_ambient:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -106,28 +106,28 @@ Minecraft_Church:
   seed: 0
   spawn-location:
     ==: MVSpawnLocation
-    x: 14.060057562287724
+    x: 13.860914684024284
     y: 63.0625
-    z: 94.72332726208518
-    pitch: 15.450016
-    yaw: -1.949962
+    z: 94.43725450313275
+    pitch: 3.336305
+    yaw: 94.606544
   spawning:
+    animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     ambient:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    misc:
+    water_animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    water_ambient:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    animal:
+    axolotl:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -142,7 +142,12 @@ Minecraft_Church:
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    water_animal:
+    water_ambient:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -185,12 +190,12 @@ Minecraft_Church_nether:
     pitch: 0.0
     yaw: 0.0
   spawning:
-    misc:
+    animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    animal:
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -233,12 +238,12 @@ Minecraft_Church_the_end:
     pitch: 0.0
     yaw: 0.0
   spawning:
-    misc:
+    monster:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    monster:
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -281,22 +286,17 @@ homes:
     pitch: 0.0
     yaw: 0.0
   spawning:
+    animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     ambient:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    misc:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    water_ambient:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    animal:
+    water_animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -311,14 +311,19 @@ homes:
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    water_animal:
+    water_ambient:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
   world-blacklist: []
   version: 1.2
-paper_1_21_9_3550213:
+paper_26_1_2_3911851:
   adjust-spawn: true
   alias: ''
   allow-advancement-grant: true
@@ -345,7 +350,7 @@ paper_1_21_9_3550213:
   pvp: true
   respawn-world: ''
   scale: 1.0
-  seed: -3213564139925829742
+  seed: -7682100201019754969
   spawn-location:
     ==: MVSpawnLocation
     x: 0.0
@@ -354,97 +359,16 @@ paper_1_21_9_3550213:
     pitch: 0.0
     yaw: 0.0
   spawning:
-    misc:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    animal:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
     monster:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-  world-blacklist: []
-  version: 1.2
-paper_1_21_9_3550213_nether:
-  adjust-spawn: true
-  alias: ''
-  allow-advancement-grant: true
-  allow-flight: false
-  allow-weather: true
-  anchor-respawn: true
-  auto-heal: true
-  auto-load: true
-  bed-respawn: true
-  biome: ''
-  difficulty: normal
-  entry-fee:
-    enabled: false
-    amount: 0.0
-    currency: '@vault-economy'
-  environment: nether
-  gamemode: survival
-  generator: ''
-  hidden: false
-  hunger: true
-  keep-spawn-in-memory: true
-  player-limit: -1
-  portal-form: all
-  pvp: true
-  respawn-world: ''
-  scale: 8.0
-  seed: -3213564139925829742
-  spawn-location:
-    ==: MVSpawnLocation
-    x: 0.0
-    y: 53.0
-    z: 0.0
-    pitch: 0.0
-    yaw: 0.0
-  spawning: {}
-  world-blacklist: []
-  version: 1.2
-paper_1_21_9_3550213_the_end:
-  adjust-spawn: true
-  alias: ''
-  allow-advancement-grant: true
-  allow-flight: false
-  allow-weather: true
-  anchor-respawn: true
-  auto-heal: true
-  auto-load: true
-  bed-respawn: true
-  biome: ''
-  difficulty: normal
-  entry-fee:
-    enabled: false
-    amount: 0.0
-    currency: '@vault-economy'
-  environment: the_end
-  gamemode: survival
-  generator: ''
-  hidden: false
-  hunger: true
-  keep-spawn-in-memory: true
-  player-limit: -1
-  portal-form: all
-  pvp: true
-  respawn-world: ''
-  scale: 16.0
-  seed: 8313297820193744806
-  spawn-location:
-    ==: MVSpawnLocation
-    x: 0.0
-    y: 61.0
-    z: 0.0
-    pitch: 0.0
-    yaw: 0.0
-  spawning: {}
+    misc:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
   world-blacklist: []
   version: 1.2
 sd:
@@ -483,17 +407,17 @@ sd:
     pitch: -4.4999113
     yaw: 94.35047
   spawning:
-    misc:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
     animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
     monster:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -536,22 +460,17 @@ sheep:
     pitch: 0.0
     yaw: 0.0
   spawning:
+    animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     ambient:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    misc:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    water_ambient:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    animal:
+    water_animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -566,7 +485,12 @@ sheep:
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    water_animal:
+    water_ambient:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -609,27 +533,22 @@ village:
     pitch: 0.0
     yaw: 0.0
   spawning:
+    animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     ambient:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
+    water_animal:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
     axolotl:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    misc:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    water_ambient:
-      spawn: true
-      tick-rate: -1
-      spawn-limit: -1
-      exceptions: []
-    animal:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
@@ -644,7 +563,12 @@ village:
       tick-rate: -1
       spawn-limit: -1
       exceptions: []
-    water_animal:
+    water_ambient:
+      spawn: true
+      tick-rate: -1
+      spawn-limit: -1
+      exceptions: []
+    misc:
       spawn: true
       tick-rate: -1
       spawn-limit: -1
