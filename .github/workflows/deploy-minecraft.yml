@@ -225,7 +225,7 @@ jobs:
           retention-days: 3
 
   deploy:
-    name: Deploy over SFTP
+    name: Deploy over FTP
     needs: plan
     if: ${{ inputs.dry_run == false }}
     runs-on: ubuntu-latest
@@ -250,76 +250,54 @@ jobs:
         run: |
           set -euo pipefail
           if [[ "${SERVER_STOPPED}" != "true" ]]; then
-            echo "::error::Stop the Minecraft server before a live SFTP deployment, then re-run with server_stopped=true."
+            echo "::error::Stop the Minecraft server before a live FTP deployment, then re-run with server_stopped=true."
             exit 1
           fi
 
       - name: Validate connection settings
         shell: bash
         env:
-          MC_SFTP_HOST: ${{ secrets.MC_SFTP_HOST }}
-          MC_SFTP_PORT: ${{ secrets.MC_SFTP_PORT }}
-          MC_SFTP_USER: ${{ secrets.MC_SFTP_USER }}
-          MC_SFTP_PATH: ${{ secrets.MC_SFTP_PATH }}
-          MC_SFTP_PRIVATE_KEY: ${{ secrets.MC_SFTP_PRIVATE_KEY }}
-          MC_SFTP_PASSWORD: ${{ secrets.MC_SFTP_PASSWORD }}
+          MC_FTP_HOST: ${{ secrets.MC_FTP_HOST || secrets.MC_FTP_HOST }}
+          MC_FTP_PORT: ${{ secrets.MC_FTP_PORT || secrets.MC_FTP_PORT }}
+          MC_FTP_USER: ${{ secrets.MC_FTP_USER || secrets.MC_FTP_USER }}
+          MC_FTP_PATH: ${{ secrets.MC_FTP_PATH || secrets.MC_FTP_PATH }}
+          MC_FTP_PASSWORD: ${{ secrets.MC_FTP_PASSWORD || secrets.MC_FTP_PASSWORD }}
         run: |
           set -euo pipefail
 
-          : "${MC_SFTP_HOST:?MC_SFTP_HOST is not configured}"
-          : "${MC_SFTP_USER:?MC_SFTP_USER is not configured}"
-          : "${MC_SFTP_PATH:?MC_SFTP_PATH is not configured}"
+          : "${MC_FTP_HOST:?MC_FTP_HOST/MC_FTP_HOST is not configured}"
+          : "${MC_FTP_USER:?MC_FTP_USER/MC_FTP_USER is not configured}"
+          : "${MC_FTP_PATH:?MC_FTP_PATH/MC_FTP_PATH is not configured}"
+          : "${MC_FTP_PASSWORD:?MC_FTP_PASSWORD/MC_FTP_PASSWORD is not configured}"
 
-          if [[ -z "${MC_SFTP_PRIVATE_KEY}" && -z "${MC_SFTP_PASSWORD}" ]]; then
-            echo "::error::Configure either MC_SFTP_PRIVATE_KEY or MC_SFTP_PASSWORD."
-            exit 1
-          fi
+          echo "FTP connection settings are present."
+          echo "Port: ${MC_FTP_PORT:-21}"
 
-          echo "Connection settings are present."
-          echo "Port: ${MC_SFTP_PORT:-22}"
-
-      - name: Prepare SSH trust and authentication
+      - name: Install FTP client
         shell: bash
-        env:
-          MC_SFTP_HOST: ${{ secrets.MC_SFTP_HOST }}
-          MC_SFTP_PORT: ${{ secrets.MC_SFTP_PORT }}
-          MC_SFTP_PRIVATE_KEY: ${{ secrets.MC_SFTP_PRIVATE_KEY }}
-          MC_SFTP_PASSWORD: ${{ secrets.MC_SFTP_PASSWORD }}
-          MC_SFTP_KNOWN_HOSTS: ${{ secrets.MC_SFTP_KNOWN_HOSTS }}
         run: |
           set -euo pipefail
-          port="${MC_SFTP_PORT:-22}"
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq lftp
 
-          mkdir -p "$HOME/.ssh"
-          chmod 700 "$HOME/.ssh"
-
-          if [[ -n "${MC_SFTP_KNOWN_HOSTS}" ]]; then
-            printf '%s\n' "${MC_SFTP_KNOWN_HOSTS}" > "$HOME/.ssh/known_hosts"
-          else
-            echo "::warning::MC_SFTP_KNOWN_HOSTS is not set. Falling back to ssh-keyscan."
-            ssh-keyscan -p "$port" "${MC_SFTP_HOST}" > "$HOME/.ssh/known_hosts"
-          fi
-          chmod 600 "$HOME/.ssh/known_hosts"
-
-          if [[ -n "${MC_SFTP_PRIVATE_KEY}" ]]; then
-            printf '%s\n' "${MC_SFTP_PRIVATE_KEY}" > "$HOME/.ssh/id_minecraft"
-            chmod 600 "$HOME/.ssh/id_minecraft"
-          elif [[ -n "${MC_SFTP_PASSWORD}" ]]; then
-            sudo apt-get update -qq
-            sudo apt-get install -y -qq sshpass
-          fi
-
-      - name: Build SFTP batch
+      - name: Build FTP batch
         shell: bash
         env:
-          MC_SFTP_PATH: ${{ secrets.MC_SFTP_PATH }}
+          MC_FTP_PATH: ${{ secrets.MC_FTP_PATH || secrets.MC_FTP_PATH }}
           ALLOW_DELETES: ${{ inputs.allow_deletes }}
         run: |
           set -euo pipefail
-          batch="deploy-plan/sftp.batch"
+          batch="deploy-plan/ftp.batch"
           : > "$batch"
 
-          printf 'cd "%s"\n' "${MC_SFTP_PATH}" >> "$batch"
+          printf 'set cmd:fail-exit yes\n' >> "$batch"
+          printf 'set net:max-retries 2\n' >> "$batch"
+          printf 'set net:timeout 20\n' >> "$batch"
+          printf 'set net:reconnect-interval-base 5\n' >> "$batch"
+          printf 'set ftp:passive-mode true\n' >> "$batch"
+          printf 'set ftp:ssl-allow yes\n' >> "$batch"
+          printf 'set ssl:verify-certificate yes\n' >> "$batch"
+          printf 'cd "%s"\n' "${MC_FTP_PATH}" >> "$batch"
 
           while IFS= read -r f; do
             [[ -n "$f" ]] || continue
@@ -330,45 +308,44 @@ jobs:
               IFS='/' read -ra parts <<< "$parent"
               for part in "${parts[@]}"; do
                 current="${current:+$current/}$part"
-                printf -- '-mkdir "%s"\n' "$current" >> "$batch"
+                printf 'mkdir -p "%s"\n' "$current" >> "$batch"
               done
             fi
 
-            printf 'put -p "%s" "%s"\n' "$f" "$f" >> "$batch"
+            printf 'put "%s" -o "%s"\n' "$f" "$f" >> "$batch"
           done < deploy-plan/upload.txt
 
           if [[ "$ALLOW_DELETES" == "true" ]]; then
             while IFS= read -r f; do
               [[ -n "$f" ]] || continue
-              printf -- '-rm "%s"\n' "$f" >> "$batch"
+              printf 'rm -f "%s"\n' "$f" >> "$batch"
             done < deploy-plan/delete.txt
           fi
 
           if [[ "${{ inputs.remove_obsolete_via_jars }}" == "true" ]]; then
-            printf -- '-rm "plugins/ViaVersion-5.9.1.jar"\n' >> "$batch"
-            printf -- '-rm "plugins/ViaBackwards-5.8.0.jar"\n' >> "$batch"
+            printf 'rm -f "plugins/ViaVersion-5.9.1.jar"\n' >> "$batch"
+            printf 'rm -f "plugins/ViaBackwards-5.8.0.jar"\n' >> "$batch"
           fi
 
-          echo "SFTP batch prepared with $(wc -l < "$batch" | tr -d ' ') commands."
+          printf 'bye\n' >> "$batch"
+          echo "FTP batch prepared with $(wc -l < "$batch" | tr -d ' ') commands."
 
       - name: Deploy
         shell: bash
         env:
-          MC_SFTP_HOST: ${{ secrets.MC_SFTP_HOST }}
-          MC_SFTP_PORT: ${{ secrets.MC_SFTP_PORT }}
-          MC_SFTP_USER: ${{ secrets.MC_SFTP_USER }}
-          MC_SFTP_PRIVATE_KEY: ${{ secrets.MC_SFTP_PRIVATE_KEY }}
-          MC_SFTP_PASSWORD: ${{ secrets.MC_SFTP_PASSWORD }}
+          MC_FTP_HOST: ${{ secrets.MC_FTP_HOST || secrets.MC_FTP_HOST }}
+          MC_FTP_PORT: ${{ secrets.MC_FTP_PORT || secrets.MC_FTP_PORT }}
+          MC_FTP_USER: ${{ secrets.MC_FTP_USER || secrets.MC_FTP_USER }}
+          MC_FTP_PASSWORD: ${{ secrets.MC_FTP_PASSWORD || secrets.MC_FTP_PASSWORD }}
         run: |
           set -euo pipefail
-          port="${MC_SFTP_PORT:-22}"
+          port="${MC_FTP_PORT:-21}"
 
-          if [[ -n "${MC_SFTP_PRIVATE_KEY}" ]]; then
-            sftp               -b deploy-plan/sftp.batch               -P "$port"               -i "$HOME/.ssh/id_minecraft"               -o BatchMode=yes               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
-          else
-            export SSHPASS="${MC_SFTP_PASSWORD}"
-            sshpass -e sftp               -b deploy-plan/sftp.batch               -P "$port"               -o StrictHostKeyChecking=yes               "${MC_SFTP_USER}@${MC_SFTP_HOST}"
-          fi
+          lftp \
+            -u "${MC_FTP_USER}","${MC_FTP_PASSWORD}" \
+            -p "$port" \
+            "${MC_FTP_HOST}" \
+            -f deploy-plan/ftp.batch
 
       - name: Mark successful deployment
         shell: bash
