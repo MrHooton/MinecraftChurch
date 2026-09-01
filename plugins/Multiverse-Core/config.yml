@@ -113,7 +113,7 @@ spawn:
   
   # Sets the destination that Multiverse will use to spawn players on every login.
   # Set the above enable-join-destination to false to disable
-  join-destination: e:Minecraft_Church:14,63,93:13,97
+  join-destination: e:Minecraft_Church:14,63,93:13:97
   
   # This only applies if the `respawn-world` property is not set for the world that the player died in,
   # and the player does not have bed or anchor set.
