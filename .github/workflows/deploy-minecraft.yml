@@ -257,18 +257,18 @@ jobs:
       - name: Validate connection settings
         shell: bash
         env:
-          MC_FTP_HOST: ${{ secrets.MC_FTP_HOST || secrets.MC_FTP_HOST }}
-          MC_FTP_PORT: ${{ secrets.MC_FTP_PORT || secrets.MC_FTP_PORT }}
-          MC_FTP_USER: ${{ secrets.MC_FTP_USER || secrets.MC_FTP_USER }}
-          MC_FTP_PATH: ${{ secrets.MC_FTP_PATH || secrets.MC_FTP_PATH }}
-          MC_FTP_PASSWORD: ${{ secrets.MC_FTP_PASSWORD || secrets.MC_FTP_PASSWORD }}
+          MC_FTP_HOST: ${{ secrets.MC_FTP_HOST || secrets.MC_SFTP_HOST }}
+          MC_FTP_PORT: ${{ secrets.MC_FTP_PORT || secrets.MC_SFTP_PORT }}
+          MC_FTP_USER: ${{ secrets.MC_FTP_USER || secrets.MC_SFTP_USER }}
+          MC_FTP_PATH: ${{ secrets.MC_FTP_PATH || secrets.MC_SFTP_PATH }}
+          MC_FTP_PASSWORD: ${{ secrets.MC_FTP_PASSWORD || secrets.MC_SFTP_PASSWORD }}
         run: |
           set -euo pipefail
 
-          : "${MC_FTP_HOST:?MC_FTP_HOST/MC_FTP_HOST is not configured}"
-          : "${MC_FTP_USER:?MC_FTP_USER/MC_FTP_USER is not configured}"
-          : "${MC_FTP_PATH:?MC_FTP_PATH/MC_FTP_PATH is not configured}"
-          : "${MC_FTP_PASSWORD:?MC_FTP_PASSWORD/MC_FTP_PASSWORD is not configured}"
+          : "${MC_FTP_HOST:?MC_FTP_HOST/MC_SFTP_HOST is not configured}"
+          : "${MC_FTP_USER:?MC_FTP_USER/MC_SFTP_USER is not configured}"
+          : "${MC_FTP_PATH:?MC_FTP_PATH/MC_SFTP_PATH is not configured}"
+          : "${MC_FTP_PASSWORD:?MC_FTP_PASSWORD/MC_SFTP_PASSWORD is not configured}"
 
           echo "FTP connection settings are present."
           echo "Port: ${MC_FTP_PORT:-21}"
@@ -283,7 +283,7 @@ jobs:
       - name: Build FTP batch
         shell: bash
         env:
-          MC_FTP_PATH: ${{ secrets.MC_FTP_PATH || secrets.MC_FTP_PATH }}
+          MC_FTP_PATH: ${{ secrets.MC_FTP_PATH || secrets.MC_SFTP_PATH }}
           ALLOW_DELETES: ${{ inputs.allow_deletes }}
         run: |
           set -euo pipefail
@@ -333,10 +333,10 @@ jobs:
       - name: Deploy
         shell: bash
         env:
-          MC_FTP_HOST: ${{ secrets.MC_FTP_HOST || secrets.MC_FTP_HOST }}
-          MC_FTP_PORT: ${{ secrets.MC_FTP_PORT || secrets.MC_FTP_PORT }}
-          MC_FTP_USER: ${{ secrets.MC_FTP_USER || secrets.MC_FTP_USER }}
-          MC_FTP_PASSWORD: ${{ secrets.MC_FTP_PASSWORD || secrets.MC_FTP_PASSWORD }}
+          MC_FTP_HOST: ${{ secrets.MC_FTP_HOST || secrets.MC_SFTP_HOST }}
+          MC_FTP_PORT: ${{ secrets.MC_FTP_PORT || secrets.MC_SFTP_PORT }}
+          MC_FTP_USER: ${{ secrets.MC_FTP_USER || secrets.MC_SFTP_USER }}
+          MC_FTP_PASSWORD: ${{ secrets.MC_FTP_PASSWORD || secrets.MC_SFTP_PASSWORD }}
         run: |
           set -euo pipefail
           port="${MC_FTP_PORT:-21}"
