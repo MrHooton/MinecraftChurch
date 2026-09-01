@@ -344,8 +344,8 @@ jobs:
           lftp \
             -u "${MC_FTP_USER}","${MC_FTP_PASSWORD}" \
             -p "$port" \
-            "${MC_FTP_HOST}" \
-            -f deploy-plan/ftp.batch
+            -e "source deploy-plan/ftp.batch" \
+            "${MC_FTP_HOST}"
 
       - name: Mark successful deployment
         shell: bash
