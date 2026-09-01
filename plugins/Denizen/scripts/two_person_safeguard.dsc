@@ -97,26 +97,22 @@ two_person_safeguard_monitor:
     # Using world-level monitoring + periodic checks instead
     
     # Monitor world join and teleport (for ejection after entry)
-on player joins:
-  wait 5t
-  if <player.world.name> != Minecraft_Church:
-    stop
-
+    on player joins:
+      - wait 5t
+      - if <player.world.name> != Minecraft_Church:
+        - stop
       - run two_person_world_monitor
     
     # Try to intercept mvtp command
     on mvtp command:
-      - announce "<&7>[DEBUG] MVTP command detected from <player.name>" to_console
       - if <context.args.size> < 1:
         - stop
       - define target_world <context.args.get[1]>
-      - announce "<&7>[DEBUG] Target world: <[target_world]>" to_console
       
       # Check if target world is protected
       - define protected_worlds <script[two_person_config].data_key[protected_worlds]>
       - define vetted_only_worlds <script[two_person_config].data_key[vetted_only_worlds]>
       - if !<[protected_worlds].contains[<[target_world]>]>:
-        - announce "<&7>[DEBUG] World not protected, allowing" to_console
         - stop
       
       # Get player's group from database
@@ -131,26 +127,21 @@ on player joins:
         - define player_group <[perm_rows].get[1].get[permission_level].if_null[guest]>
       - sql disconnect id:db_<queue.id>
       
-      - announce "<&7>[DEBUG] Player group: <[player_group]>" to_console
 
       # If this is a vetted-only world, block non-vetted roles from entering at all.
       - if <[vetted_only_worlds].contains[<[target_world]>]>:
         - define vetted_allowed <script[two_person_config].data_key[vetted_allowed_groups]>
         - if !<[vetted_allowed].contains[<[player_group]>]>:
-          - determine cancelled
           - narrate "<&c>Access Denied"
           - narrate "<&7>This spiritual direction world is restricted to <&b>director<&7>/<&b>observer<&7> (vetted staff) and supervised <&b>children<&7>."
-          - announce "<&7>[DEBUG] Command BLOCKED (non-vetted role '<[player_group]>')" to_console
-          - stop
+          - determine cancelled
       
       # Check if player is a child
       - define child_groups <script[two_person_config].data_key[child_groups]>
       - if !<[child_groups].contains[<[player_group]>]>:
-        - announce "<&7>[DEBUG] Player is not a child, allowing" to_console
         - stop
       
       # Player is a child trying to enter protected world - count supervisors
-      - announce "<&7>[DEBUG] Child attempting protected world, checking supervisors..." to_console
       - define supervisor_count 0
       - define supervisor_groups <script[two_person_config].data_key[supervisor_groups]>
       - define min_adults <script[two_person_config].data_key[min_adults]>
@@ -163,7 +154,6 @@ on player joins:
           - foreach stop
       
       - if <[target_world_obj]> == null:
-        - announce "<&7>[DEBUG] Target world not found" to_console
         - stop
       
       # Count supervisors in target world
@@ -180,19 +170,15 @@ on player joins:
             - define supervisor_count <[supervisor_count].add[1]>
       - sql disconnect id:db_<queue.id>
       
-      - announce "<&7>[DEBUG] Supervisor count in target: <[supervisor_count]>" to_console
       
       # Check if adequate supervision
       - if <[supervisor_count]> < <[min_adults]>:
-        # Block the teleport
-        - determine cancelled
+        # Block the teleport after explaining why.
         - narrate "<&c>⚠ SAFEGUARDING: Access Denied"
         - narrate "<&7>World <&b><[target_world]><&7> requires <&b><[min_adults]> supervising adults<&7> (director/observer) for child access."
         - narrate "<&7>Currently present: <&b><[supervisor_count]> supervisor(s)<&7>."
         - narrate "<&7>Please wait for adequate supervision before entering."
-        - announce "<&7>[DEBUG] Command BLOCKED due to insufficient supervision" to_console
-      - else:
-        - announce "<&7>[DEBUG] Adequate supervision, allowing teleport" to_console
+        - determine cancelled
     
     # Fallback: eject after teleport if command interception doesn't work
     on player teleports:
@@ -283,6 +269,7 @@ on player joins:
 # ============================================================================
 safeguard_background_monitor:
   type: task
+  debug: false
   script:
     - announce "<&a>[SAFEGUARD] Starting background monitor (checks every 30 seconds)" to_console
     - while true:
@@ -344,6 +331,7 @@ two_person_foyer_walk_check:
 # ============================================================================
 two_person_world_monitor:
   type: task
+  debug: false
   script:
     # Get configuration
     - define protected_worlds <script[two_person_config].data_key[protected_worlds]>
@@ -361,10 +349,8 @@ two_person_world_monitor:
       - foreach <server.worlds> as:w:
         - if <[w].name> == <[world_name]>:
           - define world <[w]>
-          - announce "<&7>[DEBUG] Found world: <[world_name]>" to_console
           - foreach stop
       - if <[world]> == null:
-        - announce "<&7>[DEBUG] World <[world_name]> not found, skipping" to_console
         - foreach next
       
       # Count supervisors and children in this world
@@ -376,7 +362,6 @@ two_person_world_monitor:
       - if <[world].players.size> == 0:
         - foreach next
       
-      - announce "<&7>[DEBUG] Checking players in world <[world_name]> (<[world].players.size> player(s))" to_console
       
       # Connect to database to get player groups (Vault not available)
       - ~sql id:db_<queue.id> connect:mysql.apexhosting.gdn:3306/apexMC2969109 username:apexMC2969109 password:<secret[mysql_password]>
@@ -679,32 +664,23 @@ two_person_check_world_entry:
   script:
     - define world_name <[player].world.name>
     
-    # DEBUG
-    - announce "<&7>[DEBUG] Checking world entry for <[player].name> in world '<[world_name]>'" to_console
     
     # Get configuration
     - define protected_worlds <script[two_person_config].data_key[protected_worlds]>
     - define exempt_worlds <script[two_person_config].data_key[exempt_worlds]>
     
-    # DEBUG
-    - announce "<&7>[DEBUG] Protected worlds: <[protected_worlds]>" to_console
-    - announce "<&7>[DEBUG] Exempt worlds: <[exempt_worlds]>" to_console
     
     # Check if world is exempt (no supervision required)
     - if <[exempt_worlds].contains[<[world_name]>]>:
-      - announce "<&7>[DEBUG] World is exempt, allowing entry" to_console
       - stop
     
     # Check if this world requires two-person rule
     - if !<[protected_worlds].contains[<[world_name]>]>:
-      - announce "<&7>[DEBUG] World not in protected list, allowing entry" to_console
       - stop
     
     # Get player's group
     - define player_group <[player].groups.first.if_null[guest]>
     
-    # DEBUG
-    - announce "<&7>[DEBUG] Player group: <[player_group]>" to_console
     
     # Get supervisor and child groups from config
     - define supervisor_groups <script[two_person_config].data_key[supervisor_groups]>

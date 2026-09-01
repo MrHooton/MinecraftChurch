@@ -1,58 +1,58 @@
 donottouch:
   configexists: true
-  pushchannel: da8f49f0a8
+  pushchannel: disabled
 messages:
   general:
     title: 'Minecraft Server:'
     startup:
-      status: true
+      status: false
       content: The server is online now!
     poweroff:
-      status: true
+      status: false
       content: The server is shutting down!
     chatcommand:
-      status: true
+      status: false
       content: '[%PLAYER%] wrote: %MESSAGE%'
       permission: spe.usechatcommand
   player:
     advancement:
-      status: true
+      status: false
       content: 'The player %PLAYER% unlocked the advancement: %NAME%'
     join:
-      status: true
+      status: false
       content: The player %PLAYER% joined!
     leave:
-      status: true
+      status: false
       content: The player %PLAYER% left!
     count:
-      status: true
+      status: false
       content: 'Players online right now: %ONLINE%/%MAX%'
     death:
-      status: true
+      status: false
       content: 'The Player %PLAYER% died: %MESSAGE%'
     portalcreation:
-      status: true
+      status: false
       content: The Player %PLAYER% created a portal at %LOCATION%
     command:
-      disableall: false
+      disableall: true
       op:
-        status: true
+        status: false
         content: The player %PLAYER% executed /op for %TARGET% !
       deop:
-        status: true
+        status: false
         content: The player %PLAYER% executed /deop for %TARGET% !
       ban:
-        status: true
+        status: false
         content: The player %PLAYER% executed /ban for %TARGET% !
       banip:
-        status: true
+        status: false
         content: The player %PLAYER% executed /ban-ip for %TARGET% !
       pardon:
-        status: true
+        status: false
         content: The player %PLAYER% executed /pardon for %TARGET% !
       pardonip:
-        status: true
+        status: false
         content: The player %PLAYER% executed /pardon-ip for %TARGET% !
       whitelist:
-        status: true
+        status: false
         content: 'The player %PLAYER% used a whitelist command: %CONTENT%'
