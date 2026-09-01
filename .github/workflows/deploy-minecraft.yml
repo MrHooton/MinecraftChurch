@@ -301,17 +301,6 @@ jobs:
 
           while IFS= read -r f; do
             [[ -n "$f" ]] || continue
-
-            parent="$(dirname "$f")"
-            if [[ "$parent" != "." ]]; then
-              current=""
-              IFS='/' read -ra parts <<< "$parent"
-              for part in "${parts[@]}"; do
-                current="${current:+$current/}$part"
-                printf 'mkdir -p "%s"\n' "$current" >> "$batch"
-              done
-            fi
-
             printf 'put "%s" -o "%s"\n' "$f" "$f" >> "$batch"
           done < deploy-plan/upload.txt
 
