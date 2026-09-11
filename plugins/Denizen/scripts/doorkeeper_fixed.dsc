@@ -114,11 +114,13 @@ player_join_registration:
 doorkeeper_register_player:
   type: task
   script:
-    # Register player in MySQL database
-    - announce "<&7>[DOORKEEPER] Registering player <player.name>..." to_console
+    # Determine platform using the existing Floodgate flag convention.
+    # Identity hardening does not alter the no-prefix Floodgate setup.
+    - announce "<&7>[DOORKEEPER] Registering player <player.name> with UUID-first identity checks..." to_console
     - define platform "java"
     - if <player.has_flag[floodgate.is_bedrock_player]>:
       - define platform "bedrock"
 
-    # Use MySQL-based registration (handles both insert and update automatically)
-    - run verification_register_player def:<player.name>|<player.uuid>|<[platform]>
+    # UUID-first registration. A same-name/different-UUID collision is logged and preserved,
+    # rather than silently changing the UUID stored for an existing identity.
+    - run identity_register_player def:<player.name>|<player.uuid>|<[platform]>
