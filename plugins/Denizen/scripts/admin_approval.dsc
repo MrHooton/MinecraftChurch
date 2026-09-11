@@ -80,9 +80,10 @@ view_request_command:
 # Lists all verification requests (or filter by status)
 list_all_command:
   type: command
-  name: list
+  name: requests
+  aliases: verificationrequests|vrequests
   description: List all verification requests, optionally filtered by status
-  usage: /list [status]
+  usage: /requests [status]
   permission: minecraftchurch.admin
   script:
     - if <context.source_type> != player:
