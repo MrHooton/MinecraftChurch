@@ -1,6 +1,9 @@
 /**
  * Known Players Routes
- * Handles registration and lookup of known players
+ * Handles registration and lookup of known players.
+ *
+ * Identity rule: UUID is authoritative when present. Player names are mutable labels.
+ * A same-name/different-UUID collision is rejected rather than silently rebinding identity.
  */
 
 const express = require('express');
@@ -33,62 +36,125 @@ router.post('/register',
   ],
   async (req, res) => {
     try {
-
-      // Validate input
       const errors = validationResult(req);
       if (!errors.isEmpty()) {
-        return res.status(400).json({ 
+        return res.status(400).json({
           error: 'Validation failed',
-          details: errors.array() 
+          details: errors.array()
         });
       }
 
       const { player_name, uuid, platform = 'unknown' } = req.body;
 
-      // Check if player already exists
-      const existing = await db.query(
+      // Look up both axes independently. UUID is authoritative whenever supplied.
+      const existingByName = await db.query(
         'SELECT * FROM known_players WHERE player_name = ?',
         [player_name]
       );
 
-      if (existing.length > 0) {
-        // Update existing player
+      let existingByUuid = [];
+      if (uuid) {
+        existingByUuid = await db.query(
+          'SELECT * FROM known_players WHERE uuid = ?',
+          [uuid]
+        );
+      }
+
+      // Protect against the dangerous case: a familiar name arrives with a different UUID.
+      // Never silently overwrite the UUID attached to an existing identity.
+      if (uuid && existingByName.length > 0) {
+        const namedRecord = existingByName[0];
+        if (namedRecord.uuid && String(namedRecord.uuid).toLowerCase() !== String(uuid).toLowerCase()) {
+          console.warn(
+            `[IDENTITY] Name collision refused: ${player_name} requested ${uuid}, stored UUID is ${namedRecord.uuid}`
+          );
+          return res.status(409).json({
+            error: 'Identity collision',
+            message: 'Player name is already associated with a different UUID',
+            player_name,
+            stored_uuid: namedRecord.uuid,
+            supplied_uuid: uuid
+          });
+        }
+      }
+
+      // UUID already exists: update the current label/platform by UUID.
+      if (uuid && existingByUuid.length > 0) {
         await db.query(
-          `UPDATE known_players 
-           SET uuid = COALESCE(?, uuid), 
-               platform = ?,
-               last_seen_at = NOW()
-           WHERE player_name = ?`,
-          [uuid || null, platform, player_name]
+          `UPDATE known_players
+           SET player_name = ?, platform = ?, last_seen_at = NOW()
+           WHERE uuid = ?`,
+          [player_name, platform, uuid]
         );
 
-        res.json({
+        return res.json({
           success: true,
-          message: 'Player updated',
-          player_name: player_name,
-          action: 'updated'
-        });
-      } else {
-        // Insert new player
-        await db.query(
-          `INSERT INTO known_players (player_name, uuid, platform)
-           VALUES (?, ?, ?)`,
-          [player_name, uuid || null, platform]
-        );
-
-        res.status(201).json({
-          success: true,
-          message: 'Player registered',
-          player_name: player_name,
-          action: 'created'
+          message: 'Player updated by UUID',
+          player_name,
+          uuid,
+          action: 'updated_by_uuid'
         });
       }
 
+      // Existing name with no UUID is a legacy record. It is safe to backfill once.
+      if (existingByName.length > 0) {
+        const namedRecord = existingByName[0];
+
+        if (uuid && !namedRecord.uuid) {
+          await db.query(
+            `UPDATE known_players
+             SET uuid = ?, platform = ?, last_seen_at = NOW()
+             WHERE player_name = ?`,
+            [uuid, platform, player_name]
+          );
+
+          return res.json({
+            success: true,
+            message: 'Legacy player UUID backfilled',
+            player_name,
+            uuid,
+            action: 'uuid_backfilled'
+          });
+        }
+
+        // Compatibility path for callers that do not provide a UUID.
+        // This updates activity/platform only and never changes identity.
+        await db.query(
+          `UPDATE known_players
+           SET platform = ?, last_seen_at = NOW()
+           WHERE player_name = ?`,
+          [platform, player_name]
+        );
+
+        return res.json({
+          success: true,
+          message: 'Player refreshed by name without UUID rebinding',
+          player_name,
+          uuid: namedRecord.uuid || null,
+          action: 'updated_name_only'
+        });
+      }
+
+      // Brand-new identity.
+      await db.query(
+        `INSERT INTO known_players (player_name, uuid, platform)
+         VALUES (?, ?, ?)`,
+        [player_name, uuid || null, platform]
+      );
+
+      return res.status(201).json({
+        success: true,
+        message: 'Player registered',
+        player_name,
+        uuid: uuid || null,
+        action: 'created'
+      });
+
     } catch (error) {
       console.error('Error registering player:', error);
-      res.status(500).json({ 
+      return res.status(500).json({
         error: 'Internal server error',
-        message: 'Failed to register player' 
+        message: 'Failed to register player'
       });
     }
   }
@@ -106,9 +172,9 @@ router.get('/:player_name',
       if (config.api.secret && config.api.secret !== '') {
         const apiSecret = req.headers['x-api-secret'];
         if (!apiSecret || apiSecret !== config.api.secret) {
-          return res.status(401).json({ 
+          return res.status(401).json({
             error: 'Unauthorized',
-            message: 'Invalid or missing API secret' 
+            message: 'Invalid or missing API secret'
           });
         }
       }
@@ -121,22 +187,22 @@ router.get('/:player_name',
       );
 
       if (players.length === 0) {
-        return res.status(404).json({ 
+        return res.status(404).json({
           error: 'Not found',
-          message: 'Player not found' 
+          message: 'Player not found'
         });
       }
 
-      res.json({
+      return res.json({
         success: true,
         player: players[0]
       });
 
     } catch (error) {
       console.error('Error fetching player:', error);
-      res.status(500).json({ 
+      return res.status(500).json({
         error: 'Internal server error',
-        message: 'Failed to fetch player information' 
+        message: 'Failed to fetch player information'
       });
     }
   }
@@ -144,7 +210,7 @@ router.get('/:player_name',
 
 /**
  * Compatibility endpoint: POST /api/player-seen
- * Denizen calls on join; upserts to known_players.
+ * Denizen calls on join; uses the same UUID-first registration logic.
  * Body: { player_name, uuid (optional), platform }
  */
 router.post('/player-seen',
@@ -164,7 +230,6 @@ router.post('/player-seen',
       .withMessage('Platform must be one of: java, bedrock, unknown')
   ],
   async (req, res) => {
-    // Redirect to register endpoint
     req.url = '/register';
     return router.handle(req, res);
   }
