@@ -101,7 +101,7 @@ identity_audit_command:
     - define live_name <player.name>
     - define live_uuid <player.uuid>
     - define live_platform "java"
-    - if <player.has_flag[floodgate.is_bedrock_player]>:
+    - if <[live_uuid].starts_with[00000000-0000-0000-0009-]>:
       - define live_platform "bedrock"
 
     - ~sql id:identityaudit_<queue.id> connect:mysql.apexhosting.gdn:3306/apexMC2969109 username:apexMC2969109 password:<secret[mysql_password]>
