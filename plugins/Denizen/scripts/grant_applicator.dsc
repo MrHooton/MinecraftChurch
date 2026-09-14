@@ -9,40 +9,55 @@ verification_apply_grant:
     # Connect to database
     - ~sql id:db_<queue.id> connect:mysql.apexhosting.gdn:3306/apexMC2969109 username:apexMC2969109 password:<secret[mysql_password]>
     - wait 2s
-    
+
+    # Resolve the authoritative UUID before touching LuckPerms.
+    # This prevents Bedrock/Floodgate users from being applied to a same-name offline Java identity.
+    - define identity_query "SELECT uuid FROM known_players WHERE player_name='<[player_name]>' AND uuid IS NOT NULL AND uuid<>'' LIMIT 2"
+    - ~sql id:db_<queue.id> "query:<[identity_query]>" save:identity_result
+    - define identity_rows <entry[identity_result].result_map>
+    - if <[identity_rows].size> < 1:
+      - narrate "Grant poller: ERROR - No canonical UUID found for <[player_name]>; grant #<[grant_id]> not applied."
+      - sql disconnect id:db_<queue.id>
+      - determine false
+    - if <[identity_rows].size> > 1:
+      - narrate "Grant poller: ERROR - Multiple identity rows found for <[player_name]>; grant #<[grant_id]> not applied."
+      - sql disconnect id:db_<queue.id>
+      - determine false
+    - define target_uuid <[identity_rows].get[1].get[uuid]>
+
     # Apply the grant via LuckPerms based on type
     - if <[grant_type].equals[group]>:
       # For group grants, use parent set (clears existing and sets new primary group)
       - define grant_value_lower <[grant_value].to_lowercase>
-      # Execute LuckPerms command to set the group
-      - narrate "Executing: lp user <[player_name]> parent set <[grant_value_lower]>"
-      - execute as_server "lp user <[player_name]> parent set <[grant_value_lower]>"
+      # Execute LuckPerms against the canonical UUID, not the mutable player name.
+      - narrate "Executing: lp user <[target_uuid]> parent set <[grant_value_lower]>"
+      - execute as_server "lp user <[target_uuid]> parent set <[grant_value_lower]>"
       - wait 2s
-      - narrate "LuckPerms command executed for <[player_name]>. Group should be set to '<[grant_value_lower]>'"
-      # Update permission_level in known_players table
+      - narrate "LuckPerms command executed for <[player_name]> (<[target_uuid]>). Group should be set to '<[grant_value_lower]>'"
+      # Update permission_level by UUID so MySQL and LuckPerms stay on the same identity.
       - if <[grant_value_lower].equals[guest].or[<[grant_value_lower].equals[child]].or[<[grant_value_lower].equals[adult]].or[<[grant_value_lower].equals[director]].or[<[grant_value_lower].equals[observer]].or[<[grant_value_lower].equals[admin]]>:
-        - define update_perm_query "UPDATE known_players SET permission_level='<[grant_value_lower]>' WHERE player_name='<[player_name]>'"
+        - define update_perm_query "UPDATE known_players SET permission_level='<[grant_value_lower]>' WHERE uuid='<[target_uuid]>'"
         - ~sql id:db_<queue.id> "update:<[update_perm_query]>"
-        - narrate "Updated permission_level to '<[grant_value_lower]>' for player <[player_name]> in database"
+        - narrate "Updated permission_level to '<[grant_value_lower]>' for <[player_name]> (<[target_uuid]>) in database"
       - else:
         - narrate "Warning: Invalid permission level '<[grant_value]>' for player <[player_name]>"
     - else:
-      # For permission grants, set the permission node
-      - execute as_server "lp user <[player_name]> permission set <[grant_value]> true"
+      # For permission grants, set the permission node on the canonical UUID.
+      - execute as_server "lp user <[target_uuid]> permission set <[grant_value]> true"
       - wait 1s
-    
+
     # Update grant status to 'applied' and set applied_at timestamp
     - define update_query "UPDATE access_grants SET status='applied', applied_at=NOW() WHERE id=<[grant_id]>"
     - ~sql id:db_<queue.id> "update:<[update_query]>"
-    
+
     # Log to audit_log (escape quotes for JSON)
     # Note: Using simple replace - if values contain quotes, they may cause issues
     - define grant_type_escaped <[grant_type]>
     - define grant_value_escaped <[grant_value]>
-    - define audit_query "INSERT INTO audit_log (action_type, admin_user, target_player, grant_id, details, created_at) VALUES ('grant_applied', 'denizen_script', '<[player_name]>', <[grant_id]>, '{\"grant_type\":\"<[grant_type_escaped]>\",\"grant_value\":\"<[grant_value_escaped]>\"}', NOW())"
+    - define audit_query "INSERT INTO audit_log (action_type, admin_user, target_player, grant_id, details, created_at) VALUES ('grant_applied', 'denizen_script', '<[player_name]>', <[grant_id]>, '{\"grant_type\":\"<[grant_type_escaped]>\",\"grant_value\":\"<[grant_value_escaped]>\",\"uuid\":\"<[target_uuid]>\"}', NOW())"
     - ~sql id:db_<queue.id> "update:<[audit_query]>"
-    
-    - narrate "Grant #<[grant_id]> successfully applied for <[player_name]>: <[grant_type]>=<[grant_value]>"
+
+    - narrate "Grant #<[grant_id]> successfully applied for <[player_name]> (<[target_uuid]>): <[grant_type]>=<[grant_value]>"
     - sql disconnect id:db_<queue.id>
     - determine true
 
@@ -54,17 +69,17 @@ verification_mark_grant_failed:
     # Connect to database
     - ~sql id:db_<queue.id> connect:mysql.apexhosting.gdn:3306/apexMC2969109 username:apexMC2969109 password:<secret[mysql_password]>
     - wait 2s
-    
+
     # Update grant status to 'failed' and set error message
     # Note: If error message contains quotes, they may cause SQL issues
     - define error_escaped <[error_message]>
     - define update_query "UPDATE access_grants SET status='failed', error='<[error_escaped]>' WHERE id=<[grant_id]>"
     - ~sql id:db_<queue.id> "update:<[update_query]>"
-    
+
     # Log to audit_log
     - define audit_query "INSERT INTO audit_log (action_type, target_player, grant_id, details, created_at) VALUES ('grant_failed', '<[player_name]>', <[grant_id]>, '{\"error\":\"<[error_escaped]>\"}', NOW())"
     - ~sql id:db_<queue.id> "update:<[audit_query]>"
-    
+
     - narrate "Grant #<[grant_id]> marked as failed for <[player_name]>: <[error_message]>"
     - sql disconnect id:db_<queue.id>
     - determine true
@@ -76,15 +91,15 @@ verification_get_pending_grants:
     # Connect to database (use ~sql to wait for connection)
     - ~sql id:db_<queue.id> connect:mysql.apexhosting.gdn:3306/apexMC2969109 username:apexMC2969109 password:<secret[mysql_password]>
     - wait 2s
-    
+
     # Query for all approved grants (use ~sql to wait for query)
     - define query "SELECT * FROM access_grants WHERE status='approved' ORDER BY created_at ASC LIMIT 50"
     - ~sql id:db_<queue.id> "query:<[query]>" save:pending_grants
-    
+
     # Get the results
     - define rows <entry[pending_grants].result_map>
     - sql disconnect id:db_<queue.id>
-    
+
     # Return the grants as a list
     - determine <[rows]>
 
