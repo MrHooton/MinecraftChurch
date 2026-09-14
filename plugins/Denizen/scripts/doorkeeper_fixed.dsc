@@ -114,8 +114,17 @@ player_join_registration:
     # Apply one shared post-login arrival teleport for Java and Bedrock after Paper has fully created the player.
     - wait 20t
     - if <player.is_online>:
-      - teleport <player> l@14,63,93,Minecraft_Church
-      - announce "<&7>[JOIN] Sent <player.name> to Minecraft_Church arrival point." to_console
+      - define before_world <player.world.name>
+      - define before_location <player.location>
+      - teleport <player> 14,63,93,Minecraft_Church
+      - wait 2t
+      - define after_world <player.world.name>
+      - define after_location <player.location>
+      - if <[after_world]> == Minecraft_Church:
+        - announce "<&a>[JOIN] Teleport verified for <player.name>: <[before_world]> -> <[after_world]> at <[after_location]>" to_console
+      - else:
+        - announce "<&c>[JOIN] TELEPORT FAILED/CANCELLED for <player.name>: before=<[before_location]> after=<[after_location]> target=Minecraft_Church,14,63,93" to_console
+        - log "text:JOIN_TELEPORT_FAILED player=<player.name> uuid=<player.uuid> before=<[before_location]> after=<[after_location]> target=Minecraft_Church,14,63,93" type:warning file:logs/identity_audit.log
 
 doorkeeper_register_player:
   type: task
