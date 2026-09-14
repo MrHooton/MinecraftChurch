@@ -16,13 +16,17 @@ ntfy_notifications:
   debug: false
   events:
     on server start:
-      - ~run ntfy_send def.message:"Minecraft Church server is online."
+      - define notification_message "Minecraft Church server is online."
+      - ~run ntfy_send def:<[notification_message]>
 
     on player joins:
-      - ~run ntfy_send def.message:"<player.name> joined the Minecraft Church server."
+      - define notification_message "<player.name> joined the Minecraft Church server."
+      - ~run ntfy_send def:<[notification_message]>
 
     on player quits:
-      - ~run ntfy_send def.message:"<player.name> left the Minecraft Church server."
+      - define notification_message "<player.name> left the Minecraft Church server."
+      - ~run ntfy_send def:<[notification_message]>
 
     on shutdown:
-      - ~run ntfy_send def.message:"Minecraft Church server is shutting down."
+      - define notification_message "Minecraft Church server is shutting down."
+      - ~run ntfy_send def:<[notification_message]>
