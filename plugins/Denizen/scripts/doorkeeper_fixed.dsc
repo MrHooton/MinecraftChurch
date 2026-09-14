@@ -110,17 +110,25 @@ player_join_registration:
     - announce "<&7>[DOORKEEPER] Player <player.name> joined server" to_console
     - run verification_init
     - run doorkeeper_register_player
+    # Multiverse's join destination can fire too early during a Floodgate login.
+    # Apply one shared post-login arrival teleport for Java and Bedrock after Paper has fully created the player.
+    - wait 20t
+    - if <player.is_online>:
+      - teleport <player> l@14,63,93,Minecraft_Church
+      - announce "<&7>[JOIN] Sent <player.name> to Minecraft_Church arrival point." to_console
 
 doorkeeper_register_player:
   type: task
   script:
-    # Determine platform using the existing Floodgate flag convention.
-    # Identity hardening does not alter the no-prefix Floodgate setup.
     - announce "<&7>[DOORKEEPER] Registering player <player.name> with UUID-first identity checks..." to_console
     - define platform "java"
-    - if <player.has_flag[floodgate.is_bedrock_player]>:
+    - define player_uuid <player.uuid>
+
+    # Floodgate Bedrock UUIDs use the 00000000-0000-0000-0009- namespace.
+    # The old floodgate.is_bedrock_player Denizen flag was never populated and misclassified Bedrock players as Java.
+    - if <[player_uuid].starts_with[00000000-0000-0000-0009-]>:
       - define platform "bedrock"
 
     # UUID-first registration. A same-name/different-UUID collision is logged and preserved,
     # rather than silently changing the UUID stored for an existing identity.
-    - run identity_register_player def:<player.name>|<player.uuid>|<[platform]>
+    - run identity_register_player def:<player.name>|<[player_uuid]>|<[platform]>
