@@ -124,6 +124,7 @@ jobs:
               plugins/Multiverse-Inventories/groups.yml) return 0 ;;
 
               plugins/Geyser-Spigot/config.yml) return 0 ;;
+              plugins/Geyser-Spigot/extensions/mcxboxbroadcast/config.yml) return 0 ;;
               plugins/floodgate/config.yml) return 0 ;;
 
               plugins/WorldGuard/worlds/*) return 0 ;;
@@ -353,3 +354,4 @@ jobs:
             echo
             echo "This workflow does **not** restart or reload the Minecraft server."
           } >> "$GITHUB_STEP_SUMMARY"
+
