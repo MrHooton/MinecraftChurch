@@ -97,11 +97,8 @@ two_person_safeguard_monitor:
     # Using world-level monitoring + periodic checks instead
     
     # Monitor world join and teleport (for ejection after entry)
-on player joins:
-  wait 5t
-  if <player.world.name> != Minecraft_Church:
-    stop
-
+    on player joins:
+      - wait 5t
       - run two_person_world_monitor
     
     # Try to intercept mvtp command
@@ -137,7 +134,7 @@ on player joins:
       - if <[vetted_only_worlds].contains[<[target_world]>]>:
         - define vetted_allowed <script[two_person_config].data_key[vetted_allowed_groups]>
         - if !<[vetted_allowed].contains[<[player_group]>]>:
-          - determine cancelled
+          - determine passively cancelled
           - narrate "<&c>Access Denied"
           - narrate "<&7>This spiritual direction world is restricted to <&b>director<&7>/<&b>observer<&7> (vetted staff) and supervised <&b>children<&7>."
           - announce "<&7>[DEBUG] Command BLOCKED (non-vetted role '<[player_group]>')" to_console
@@ -185,7 +182,7 @@ on player joins:
       # Check if adequate supervision
       - if <[supervisor_count]> < <[min_adults]>:
         # Block the teleport
-        - determine cancelled
+        - determine passively cancelled
         - narrate "<&c>⚠ SAFEGUARDING: Access Denied"
         - narrate "<&7>World <&b><[target_world]><&7> requires <&b><[min_adults]> supervising adults<&7> (director/observer) for child access."
         - narrate "<&7>Currently present: <&b><[supervisor_count]> supervisor(s)<&7>."
@@ -194,17 +191,14 @@ on player joins:
       - else:
         - announce "<&7>[DEBUG] Adequate supervision, allowing teleport" to_console
     
-    # Fallback: eject after teleport if command interception doesn't work
-    on player teleports:
-      - wait 2t
-      - run two_person_world_monitor
-    
     # Start background monitor when server starts
     on server start:
       - run safeguard_background_monitor
     
     # Monitor when players quit (could leave children unsupervised)
     on player quits:
+      - wait 1t
+      - run two_person_world_monitor
       - foreach <script[two_person_config].data_key[regions]> as:region_data:
         - define parts <[region_data].split[:]>
         - define world_name <[parts].get[1]>
@@ -247,9 +241,10 @@ on player joins:
         - stop
       - run two_person_foyer_walk_check def:<player>|<[world_name]>
 
-    # Also check after teleports/joins (walking event won't fire)
+    # Keep world and foyer checks in one event; duplicate YAML keys overwrite.
     on player teleports:
-      - wait 1t
+      - wait 2t
+      - run two_person_world_monitor
       - if !<script[two_person_foyer_config].data_key[enabled].if_null[false]>:
         - stop
       - define world_name <player.world.name>
@@ -414,7 +409,7 @@ two_person_world_monitor:
               - foreach stop
           - define spawn_loc <[lobby_world].spawn_location>
           - foreach <[nonvetted_list]> as:nv:
-            - narrate "<&c>⚠ Access Restricted"
+            - narrate "<&c>⚠ Access Restricted" targets:<[nv]>
             - narrate "<&7>This spiritual direction world is restricted to vetted roles (director/observer) and supervised children." targets:<[nv]>
             - teleport <[nv]> <[spawn_loc]>
           - announce "<&c>[SAFEGUARD] Ejected <&b><[nonvetted_list].size><&c> non-vetted player(s) from vetted world <&e><[world_name]><&c>." to_ops
@@ -1102,3 +1097,4 @@ safeguard_status_command:
     - narrate "<&c>Unknown subcommand: <[subcommand]>"
     - narrate "<&7>Available: status, list"
     - determine cancelled
+

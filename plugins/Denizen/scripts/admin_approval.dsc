@@ -238,17 +238,17 @@ verification_list_pending:
       - determine <list[]>
 
     - narrate "<&e>=== Pending Verification Requests ==="
-    - narrate "<&7>Found <[requests].size]> pending request(s):"
+    - narrate "<&7>Found <[requests].size> pending request(s):"
     - narrate ""
     - foreach <[requests]> as:req:
       - define req_map <[req]>
-      - define req_id <[req_map].get[id]>
-      - define child <[req_map].get[child_name]>
-      - define parent <[req_map].get[parent_name]>
-      - define email <[req_map].get[parent_email]>
-      - define code <[req_map].get[code]>
-      - define created <[req_map].get[created_at]>
-      - define adult <[req_map].get[adult_name]>
+      - define req_id:<[req_map].get[id].if_null[]>
+      - define child:<[req_map].get[child_name].if_null[]>
+      - define parent:<[req_map].get[parent_name].if_null[]>
+      - define email:<[req_map].get[parent_email].if_null[]>
+      - define code:<[req_map].get[code].if_null[]>
+      - define created:<[req_map].get[created_at].if_null[]>
+      - define adult:<[req_map].get[adult_name].if_null[]>
       - narrate "<&e>━━━ Request ID: <&b><&bold><[req_id]><&r><&e> ━━━"
       - narrate "<&7>Child: <&b><[child]>"
       - narrate "<&7>Parent: <&b><[parent]>"
@@ -308,19 +308,19 @@ verification_list_all:
       - narrate "<&e>=== Verification Requests (Status: <[filter_value]>) ==="
     - else:
       - narrate "<&e>=== All Verification Requests ==="
-    - narrate "<&7>Found <[requests].size]> request(s):"
+    - narrate "<&7>Found <[requests].size> request(s):"
     - narrate ""
     - foreach <[requests]> as:req:
       - define req_map <[req]>
-      - define req_id <[req_map].get[id]>
-      - define child <[req_map].get[child_name]>
-      - define parent <[req_map].get[parent_name]>
-      - define email <[req_map].get[parent_email]>
-      - define code <[req_map].get[code]>
-      - define status <[req_map].get[status]>
-      - define created <[req_map].get[created_at]>
-      - define adult <[req_map].get[adult_name]>
-      - define approved_by <[req_map].get[approved_by]>
+      - define req_id:<[req_map].get[id].if_null[]>
+      - define child:<[req_map].get[child_name].if_null[]>
+      - define parent:<[req_map].get[parent_name].if_null[]>
+      - define email:<[req_map].get[parent_email].if_null[]>
+      - define code:<[req_map].get[code].if_null[]>
+      - define status:<[req_map].get[status].if_null[]>
+      - define created:<[req_map].get[created_at].if_null[]>
+      - define adult:<[req_map].get[adult_name].if_null[]>
+      - define approved_by:<[req_map].get[approved_by].if_null[]>
 
       # Color code status
       - define status_color <&7>
@@ -360,6 +360,12 @@ verification_view_request:
     - ~sql id:db_<queue.id> connect:mysql.apexhosting.gdn:3306/apexMC2969109 username:apexMC2969109 password:<secret[mysql_password]>
     - wait 2s
 
+    # Validate before interpolating the request ID into SQL.
+    - if !<[request_id].is_integer>:
+      - narrate "<&c>Request ID must be a number."
+      - sql disconnect id:db_<queue.id>
+      - determine false
+
     # Query for the specific request
     - define query "SELECT * FROM verification_requests WHERE id=<[request_id]>"
     - ~sql id:db_<queue.id> "query:<[query]>" save:request_data
@@ -373,17 +379,17 @@ verification_view_request:
       - determine false
 
     - define req_map <[requests].get[1]>
-    - define req_id <[req_map].get[id]>
-    - define child <[req_map].get[child_name]>
-    - define adult <[req_map].get[adult_name]>
-    - define parent <[req_map].get[parent_name]>
-    - define email <[req_map].get[parent_email]>
-    - define code <[req_map].get[code]>
-    - define status <[req_map].get[status]>
-    - define created <[req_map].get[created_at]>
-    - define approved_by <[req_map].get[approved_by]>
-    - define approved_at <[req_map].get[approved_at]>
-    - define notes <[req_map].get[notes]>
+    - define req_id:<[req_map].get[id].if_null[]>
+    - define child:<[req_map].get[child_name].if_null[]>
+    - define adult:<[req_map].get[adult_name].if_null[]>
+    - define parent:<[req_map].get[parent_name].if_null[]>
+    - define email:<[req_map].get[parent_email].if_null[]>
+    - define code:<[req_map].get[code].if_null[]>
+    - define status:<[req_map].get[status].if_null[]>
+    - define created:<[req_map].get[created_at].if_null[]>
+    - define approved_by:<[req_map].get[approved_by].if_null[]>
+    - define approved_at:<[req_map].get[approved_at].if_null[]>
+    - define notes:<[req_map].get[notes].if_null[]>
 
     - narrate "<&e>━━━ Request Details ━━━"
     - narrate "<&7>Request ID: <&b><&bold><[req_id]>"
@@ -510,3 +516,4 @@ verification_create_request:
 
     - sql disconnect id:db_<queue.id>
     - determine true
+
