@@ -15,7 +15,7 @@ GoodShepherd:
     amount: 0.0
     currency: '@vault-economy'
   environment: normal
-  gamemode: survival
+  gamemode: creative
   generator: ''
   hidden: false
   hunger: true
@@ -388,7 +388,7 @@ sd:
     amount: 0.0
     currency: '@vault-economy'
   environment: normal
-  gamemode: survival
+  gamemode: creative
   generator: ''
   hidden: false
   hunger: true
